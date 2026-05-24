@@ -254,13 +254,15 @@ def cmd_source_coverage():
                     print(f"{entry['path']}: {entry['covered_by']}")
 
 def cmd_search_catalog(query):
-    query = query.lower()
+    query_norm = re.sub(r'[\W_]+', '', query).lower()
     if os.path.exists(CATALOG_PATH):
         with open(CATALOG_PATH, 'r', encoding='utf-8') as file:
             for line in file:
                 if line.strip():
                     entry = json.loads(line)
-                    if query in entry.get('title', '').lower() or any(query in t.lower() for t in entry.get('topics', [])):
+                    title_norm = re.sub(r'[\W_]+', '', entry.get('title', '')).lower()
+                    topics_norm = [re.sub(r'[\W_]+', '', t).lower() for t in entry.get('topics', [])]
+                    if query_norm in title_norm or any(query_norm in t for t in topics_norm):
                         print(json.dumps(entry))
 
 def cmd_log(title, details):
