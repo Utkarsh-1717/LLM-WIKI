@@ -1,0 +1,3 @@
+# Logs Index
+
+- [[first-ingest]]
