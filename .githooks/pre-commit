@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+python3 scripts/wiki_tool.py build
+python3 scripts/wiki_tool.py lint
+python3 scripts/wiki_tool.py source-lint
