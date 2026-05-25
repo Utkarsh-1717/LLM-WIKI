@@ -1,1 +1,2 @@
-{"path": "Raw/Sources/demo.md", "title": "LLM Wiki Starter Demo Source", "processed": true, "covered_by": ["Wiki/Topics/llm-wiki.md", "Wiki/Concepts/raw-vs-wiki.md", "Wiki/Projects/starter-demo.md", "Wiki/Logs/first-ingest.md"], "updated": "2026-05-24"}
+{"path": "Raw/Sources/demo.md", "title": "LLM Wiki Starter Demo Source", "processed": true, "covered_by": ["Wiki/Topics/llm-wiki.md", "Wiki/Concepts/raw-vs-wiki.md", "Wiki/Projects/starter-demo.md", "Wiki/Logs/first-ingest.md"], "updated": "2026-05-25"}
+{"path": "Raw/Sources/Termux guided installation setup.md", "title": "Termux guided installation setup", "processed": true, "covered_by": ["Wiki/Projects/termux-agy-setup.md"], "updated": "2026-05-25"}
