@@ -296,6 +296,9 @@ def cmd_source_lint():
                     manifest[entry['path']] = entry
 
     for f in get_files(RAW_SOURCES_DIR):
+        # Skip files inside attachments/ subdirectory
+        if '/attachments/' in f:
+            continue
         with open(f, 'r', encoding='utf-8') as file:
             content = file.read()
             fm, _ = parse_frontmatter(content)
