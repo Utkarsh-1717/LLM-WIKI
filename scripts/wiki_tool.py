@@ -153,9 +153,47 @@ def cmd_lint():
         sys.exit(1)
     print("Lint passed.")
 
+ATTACHMENT_FORMATS = {
+    ".py": "python",
+    ".pdf": "pdf",
+    ".ipynb": "notebook",
+    ".jpg": "image",
+    ".png": "image",
+    ".csv": "csv",
+    ".json": "json",
+    ".xlsx": "spreadsheet"
+}
+
+def cmd_attachment_scan():
+    """Scan Raw/Sources/attachments/ and report all files needing md summaries."""
+    from pathlib import Path
+    attachments = Path("Raw/Sources/attachments")
+    if not attachments.exists():
+        print("Raw/Sources/attachments/ does not exist.")
+        return
+    results = []
+    for f in sorted(attachments.iterdir()):
+        if f.suffix.lower() not in ATTACHMENT_FORMATS:
+            continue
+        if f.name.startswith("."):
+            continue
+        md_name = f.stem.lower().replace(" ", "-").replace("_", "-") + "-" + f.suffix[1:] + ".md"
+        md_path = Path("Raw/Sources") / md_name
+        results.append({
+            "file": str(f),
+            "format": ATTACHMENT_FORMATS[f.suffix.lower()],
+            "needs_summary": not md_path.exists(),
+            "md_target": str(md_path)
+        })
+    for r in results:
+        status = "\u274c NEEDS SUMMARY" if r["needs_summary"] else "\u2705 has summary"
+        print(f"{status} | {r['format']:<12} | {r['file']}")
+    pending = sum(1 for r in results if r["needs_summary"])
+    print(f"\nTotal attachments: {len(results)} | Pending summaries: {pending}")
+
 def cmd_source_scan(update=False, accept_covered=False):
     manifest = []
-    
+
     coverage_map = {}
     for d in WIKI_DIRS:
         for f in get_files(d):
@@ -174,22 +212,70 @@ def cmd_source_scan(update=False, accept_covered=False):
                             s_path += '.md'
                         coverage_map.setdefault(s_path, []).append(f)
 
+    # Build attachment md-summary lookup
+    from pathlib import Path
+    attachments_dir = Path("Raw/Sources/attachments")
+    attachment_md_map = {}
+    if attachments_dir.exists():
+        for att in attachments_dir.iterdir():
+            if att.suffix.lower() not in ATTACHMENT_FORMATS:
+                continue
+            if att.name.startswith("."):
+                continue
+            md_name = att.stem.lower().replace(" ", "-").replace("_", "-") + "-" + att.suffix[1:] + ".md"
+            md_path = Path("Raw/Sources") / md_name
+            attachment_md_map[str(md_path)] = {
+                "attachment_path": str(att),
+                "format": ATTACHMENT_FORMATS[att.suffix.lower()],
+                "md_summary_path": str(md_path) if md_path.exists() else None
+            }
+
     for f in get_files(RAW_SOURCES_DIR):
+        # Skip files inside attachments/ subdirectory
+        if '/attachments/' in f:
+            continue
         with open(f, 'r', encoding='utf-8') as file:
             content = file.read()
             fm, _ = parse_frontmatter(content)
             title = fm.get('Title', os.path.basename(f).replace('.md', '')) if fm else os.path.basename(f).replace('.md', '')
             covered_by = coverage_map.get(f, [])
             processed = len(covered_by) > 0 if accept_covered else (fm.get('Processed', False) if fm else False)
+            # Determine format field
+            fmt = "markdown"
+            if fm and fm.get('format'):
+                fmt = fm.get('format')
+            elif f in attachment_md_map:
+                fmt = attachment_md_map[f]['format']
+            has_md_summary = f in attachment_md_map and attachment_md_map[f]['md_summary_path'] is not None
             entry = {
                 "path": f,
                 "title": title,
+                "format": fmt,
                 "processed": processed,
                 "covered_by": covered_by,
                 "updated": datetime.now().strftime("%Y-%m-%d")
             }
             manifest.append(entry)
-            
+
+    # Also scan attachments/ for unprocessed files
+    if attachments_dir.exists():
+        for att in sorted(attachments_dir.iterdir()):
+            if att.suffix.lower() not in ATTACHMENT_FORMATS:
+                continue
+            if att.name.startswith("."):
+                continue
+            md_name = att.stem.lower().replace(" ", "-").replace("_", "-") + "-" + att.suffix[1:] + ".md"
+            md_path = Path("Raw/Sources") / md_name
+            has_md = md_path.exists()
+            entry = {
+                "path": str(att),
+                "format": ATTACHMENT_FORMATS[att.suffix.lower()],
+                "has_md_summary": has_md,
+                "md_summary_path": str(md_path) if has_md else None,
+                "processed": has_md
+            }
+            manifest.append(entry)
+
     if update:
         with open(MANIFEST_PATH, 'w', encoding='utf-8') as file:
             for c in manifest:
@@ -284,6 +370,7 @@ if __name__ == "__main__":
     subparsers.add_parser('source-lint')
     subparsers.add_parser('source-delta')
     subparsers.add_parser('source-coverage')
+    subparsers.add_parser('attachment-scan')
     
     search_parser = subparsers.add_parser('search-catalog')
     search_parser.add_argument('--query', required=True)
@@ -308,6 +395,8 @@ if __name__ == "__main__":
         cmd_source_delta()
     elif args.command == 'source-coverage':
         cmd_source_coverage()
+    elif args.command == 'attachment-scan':
+        cmd_attachment_scan()
     elif args.command == 'search-catalog':
         cmd_search_catalog(args.query)
     elif args.command == 'log':
