@@ -1,6 +1,7 @@
-{"path": "Wiki/Topics/llm-wiki.md", "title": "llm-wiki", "tag": "topic", "topics": [], "sources": ["Raw/Sources/demo.md"], "updated": "2026-05-24"}
-{"path": "Wiki/Concepts/raw-vs-wiki.md", "title": "raw-vs-wiki", "tag": "concept", "topics": ["llm-wiki"], "sources": ["Raw/Sources/demo.md"], "updated": "2026-05-24"}
+{"path": "Wiki/Topics/llm-wiki.md", "title": "llm-wiki", "tag": "topic", "topics": [], "sources": ["Raw/Sources/demo.md"], "updated": "2026-05-25"}
+{"path": "Wiki/Concepts/raw-vs-wiki.md", "title": "raw-vs-wiki", "tag": "concept", "topics": ["llm-wiki"], "sources": ["Raw/Sources/demo.md"], "updated": "2026-05-25"}
+{"path": "Wiki/Concepts/multi-format-ingest.md", "title": "multi-format-ingest", "tag": "concept", "topics": ["llm-wiki", "multi-format"], "sources": ["Raw/Sources/termux-guided-installation-setup-html.md"], "updated": "2026-05-25"}
 {"path": "Wiki/Projects/starter-demo.md", "title": "starter-demo", "tag": "project", "topics": ["llm-wiki"], "sources": ["Raw/Sources/demo.md"], "updated": "2026-05-24"}
-{"path": "Wiki/Projects/termux-agy-setup.md", "title": "termux-agy-setup", "tag": "project", "topics": ["termux", "antigravity"], "sources": ["Raw/Sources/Termux guided installation setup.md"], "updated": "2026-05-25"}
+{"path": "Wiki/Projects/termux-agy-setup.md", "title": "termux-agy-setup", "tag": "project", "topics": ["termux", "antigravity", "android", "binary-patching"], "sources": ["Raw/Sources/Termux guided installation setup.md", "Raw/Sources/termux-guided-installation-setup-html.md"], "updated": "2026-05-25"}
 {"path": "Wiki/Logs/first-ingest.md", "title": "first-ingest", "tag": "log", "topics": ["llm-wiki"], "sources": ["Raw/Sources/demo.md"], "updated": "2026-05-24"}
-{"path": "Wiki/Logs/session-2026-05-25.md", "title": "session-2026-05-25", "tag": "log", "topics": ["termux", "antigravity"], "sources": [], "updated": "2026-05-25"}
+{"path": "Wiki/Logs/session-2026-05-25.md", "title": "session-2026-05-25", "tag": "log", "topics": ["termux", "antigravity", "llm-wiki", "multi-format"], "sources": ["Raw/Sources/Termux guided installation setup.md", "Raw/Sources/termux-guided-installation-setup-html.md"], "updated": "2026-05-25"}

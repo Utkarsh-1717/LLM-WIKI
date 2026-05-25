@@ -6,3 +6,5 @@
 Raw/Files/*
 !Raw/Files/.gitkeep
 Drafts/
+Raw/Sources/attachments/*.html
+Raw/Sources/attachments/*.HTML
