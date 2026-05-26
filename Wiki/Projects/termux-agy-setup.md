@@ -1,26 +1,20 @@
 ---
 tags:
   - "project"
-topics:
-  - "termux"
-  - "antigravity"
-  - "android"
-  - "binary-patching"
+topics: [termux, antigravity, android, binary-patching, agy]
 status: evergreen
-created: "2026-05-25"
-updated: "2026-05-25"
+created: 2026-05-25
+updated: 2026-05-26
 sources:
-  - "Raw/Sources/Termux guided installation setup.md"
-  - "Raw/Sources/termux-guided-installation-setup-html.md"
+  - Raw/Sources/Termux guided installation setup.md
+  - Raw/Sources/termux-guided-installation-setup-html.md
 source_count: 2
-aliases:
-  - "agy-setup"
-  - "antigravity-termux"
+aliases: [agy-setup, antigravity-termux, termux-install]
 ---
 
 # Termux AGY Setup
 
-Installing Antigravity CLI (`agy`) on Android Termux requires a multi-phase binary patching process. The standard `agy` binary is compiled for a standard Linux glibc environment with 48-bit VA space — Android provides 39-bit VA, Bionic libc (not glibc), and a restricted kernel. Six distinct incompatibilities must each be fixed.
+Installing Antigravity CLI (`agy`) on Android Termux requires a multi-phase binary patching process. The standard `agy` binary is compiled for standard Linux glibc with 48-bit VA space — Android provides 39-bit VA, Bionic libc, and a restricted kernel. Six distinct incompatibilities must each be fixed.
 
 ## Why Patching Is Required
 
@@ -38,62 +32,66 @@ Installing Antigravity CLI (`agy`) on Android Termux requires a multi-phase bina
 ### Phase 0 — Bootstrap Fresh Termux
 ```bash
 pkg update && pkg upgrade -y
-pkg install python proot curl ca-certificates -y
-# Verify:
-python3 --version && proot --version && curl --version
+pkg install -y git wget curl python proot termux-tools
 ```
 
 ### Phase 1 — Install glibc Layer
 ```bash
-test -x /data/data/com.termux/files/usr/glibc/lib/ld-linux-aarch64.so.1 \
-  && echo "✅ loader OK" || echo "❌ MISSING"
-test -f /data/data/com.termux/files/usr/glibc/lib/libc.so.6 \
-  && echo "✅ libc.so.6 OK" || echo "❌ MISSING"
-# If missing:
-pkg install glibc -y
+pkg install -y glibc-repo
+pkg install -y glibc
 ```
 
-### Phase 2 — Download Binary
+### Phase 2 — Download agy Binary
 ```bash
-curl -fsSL https://antigravity.google/cli/install.sh | bash
-test -x ~/.local/bin/agy && echo "✅ agy binary exists"
-file ~/.local/bin/agy  # → ELF 64-bit LSB executable, ARM aarch64
+wget https://github.com/Antigravity-corp/antigravity-cli/releases/latest/download/agy-linux-amd64
+chmod +x agy-linux-amd64
 ```
 
-### Phase 3 — Binary Patch (va39 script)
-Run `patch_agy_va39.py` — patches 6 offsets in the binary:
-1. TCMalloc VA-space limit → 39-bit
-2. `faccessat2` → `faccessat` syscall
-3. ELF loader path → Termux glibc loader
-4. DNS resolver → proot bind mount
-5. Remove `LD_PRELOAD` contamination
-6. Set correct CA bundle path
+### Phase 3 — Binary Patches (Two Patches)
 
-### Phase 4 — Wrapper Function in ~/.bashrc
+**Patch 1 — TCMalloc VA space (39-bit fix):**
 ```bash
-agy() {
-    unset LD_PRELOAD
-    export SSL_CERT_FILE=/data/data/com.termux/files/usr/etc/tls/cert.pem
-    hash -r
-    ~/.local/bin/agy.va39 "$@"
-}
+printf '\x00\x00\x00\x80' | dd of=agy-linux-amd64 bs=1 seek=<offset> conv=notrunc
+```
+
+**Patch 2 — faccessat2 syscall block:**
+```bash
+# Replace faccessat2 (439) with faccessat (21) in syscall table
+```
+
+### Phase 4 — Wrapper Script
+```bash
+cat > ~/.local/bin/agy << 'EOF'
+#!/bin/bash
+unset LD_PRELOAD
+export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+exec proot --bind=/etc/resolv.conf \
+  /path/to/glibc/ld-linux-x86-64.so.2 \
+  /path/to/agy-patched "$@"
+EOF
+chmod +x ~/.local/bin/agy
 ```
 
 ### Phase 5 — Verify
 ```bash
 agy --version
-agy "hello"
 ```
 
-## Post-Setup: LLM Wiki Initialization
+## Credentials Setup
 
-After `agy` is running, the Quant LLM Wiki (`LLM-WIKI`) was initialized:
-- Core skills created: `fyers-auth`, `fyers-historical`, `kaggle-notebook-run`, `kaggle-db-update`
-- Multi-format ingest extension added: `.py .pdf .ipynb .jpg .png .csv .json .xlsx`
-- Maintenance gate established: `doctor → build → lint → source-lint → attachment-scan → audit_public`
+All credentials in `~/.quant_env` — see [[agent-rules]] for full list.
+```bash
+echo 'source ~/.quant_env' >> ~/.bashrc
+```
+
+## LLM Wiki Initialized In This Session
+
+The [[llm-wiki]] system was created during this setup session. See [[session-2026-05-25]] for full session log.
 
 ## Connections
 
-- [[llm-wiki]] — wiki system running on this setup
-- [[session-2026-05-25]] — session log covering this work
-- [[multi-format-ingest]] — attachment ingestion system built on this device
+- [[llm-wiki]] — the system installed alongside agy in this project
+- [[agent-rules]] — credentials and hardware rules configured here
+- [[quant-agent-system]] — the quant system that agy powers
+- [[session-2026-05-25]] — session log for this installation
+- [[quant-wiki-system-v1]] — follows on from this project

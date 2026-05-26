@@ -7,13 +7,14 @@ created: 2026-05-26
 updated: 2026-05-26
 sources:
   - Raw/Sources/quant-wiki-multiformat.md
-source_count: 1
-aliases: [attachment-ingest, file-ingest]
+  - Raw/Sources/termux-guided-installation-setup-html.md
+source_count: 2
+aliases: [attachment-ingest, file-ingest, multiformat-ingest]
 ---
 
 # Multi-Format Ingest
 
-System for converting non-markdown files into wiki source notes. Files dropped into `Raw/Sources/attachments/` are auto-detected, summarized in `.md`, and compiled into Wiki notes.
+System for converting non-markdown files into wiki source notes. Part of the [[llm-wiki]] system. Files dropped into `Raw/Sources/attachments/` are auto-detected, summarized as `.md`, and compiled into [[llm-wiki]] notes.
 
 ## Supported Formats
 
@@ -29,9 +30,11 @@ System for converting non-markdown files into wiki source notes. Files dropped i
 
 ## Naming Convention
 
-Output .md file: `[original-stem-lowercased-hyphenated]-[ext].md`  
-Example: `strategy.pdf` → `Raw/Sources/strategy-pdf.md`  
-Example: `qt.py` → `Raw/Sources/qt-py.md`
+Output `.md` file: `[original-stem-lowercased-hyphenated]-[ext].md`
+
+Examples:
+- `strategy.pdf` → `Raw/Sources/strategy-pdf.md`
+- `qt.py` → `Raw/Sources/qt-py.md`
 
 ## Required Frontmatter for Attachment Source Notes
 
@@ -49,13 +52,22 @@ source_count: 1
 ## Commands
 
 - `python3 scripts/wiki_tool.py attachment-scan` — show all files needing summaries
-- Batch: "Process all attachments" → attachment-scan then process all NEEDS SUMMARY files
+- `python3 scripts/wiki_tool.py source-scan` — check coverage across all sources
 
-## Skill
+## Skill Trigger
 
-`multi-format-ingest` — trigger: ingest file, process attachments, scan attachments
+`multi-format-ingest` skill triggers on: `ingest file`, `process attachments`, `scan attachments`, `ingest pdf/notebook/image/csv/json/py/xlsx`
 
-## Related
+## Batch Mode
 
-- [[raw-vs-wiki]] — how raw and wiki layers relate
-- [[llm-wiki]] — the parent system
+"Process all attachments" → `attachment-scan` → process all `NEEDS SUMMARY` files.
+
+## Connections
+
+- [[llm-wiki]] — parent system, enforces the Raw/Wiki separation
+- [[raw-vs-wiki]] — conceptual foundation for why ingest creates source notes, not wiki notes
+- [[wiki-tooling]] — `attachment-scan` command lives here
+- [[quant-agent-system]] — uses multi-format ingest for strategy notebooks and data files
+- [[kaggle-compute]] — `.ipynb` notebooks from Kaggle can be ingested this way
+- [[first-ingest]] — first time this concept was used in this system
+- [[session-2026-05-25]] — session where multi-format ingest was set up

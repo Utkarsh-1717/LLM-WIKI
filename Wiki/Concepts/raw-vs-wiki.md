@@ -1,35 +1,33 @@
 ---
 tags:
   - "concept"
-topics:
-  - "llm-wiki"
+topics: [llm-wiki, wiki, architecture]
 status: evergreen
 created: 2026-05-24
-updated: "2026-05-25"
+updated: 2026-05-26
 sources:
-  - "Raw/Sources/demo.md"
-source_count: 1
-aliases:
-  - "source-vs-wiki"
-  - "two-layer"
+  - Raw/Sources/demo.md
+  - Raw/Sources/llms-core-setup.md
+source_count: 2
+aliases: [source-vs-wiki, two-layer, raw-wiki-separation]
 ---
 
 # Raw Sources vs Wiki Notes
 
-The LLM Wiki enforces a strict two-layer separation between raw captured material and compiled knowledge.
+The [[llm-wiki]] enforces a strict two-layer separation between raw captured material and compiled knowledge.
 
 ## The Two Layers
 
 ### Raw Sources (`Raw/Sources/`)
 - Original captured material — untouched or summarized verbatim
 - Chat exports, PDFs, notebooks, scripts, data files
-- Converted to `.md` via the multi-format ingest skill
-- **Rule**: Never edit the substance of a source note; it reflects the original
+- Converted to `.md` via the [[multi-format-ingest]] skill
+- **Rule**: Never edit the substance of a source note — it reflects the original
 
 ### Wiki Notes (`Wiki/`)
 - Compiled, reusable knowledge written by the agent
 - Short, linked, claim-focused
-- **Rule**: Every wiki note must cite at least one source
+- **Rule**: Every wiki note must cite at least one source from `Raw/Sources/`
 
 ## Why This Separation Matters
 
@@ -43,11 +41,13 @@ The LLM Wiki enforces a strict two-layer separation between raw captured materia
 ## Workflow
 
 ```
-Drop file into attachments/
-  → ingest → Raw/Sources/[name].md (source note)
-    → compile → Wiki/[section]/[note].md (wiki note)
-      → build → Wiki/catalog.jsonl (search index)
+Drop file into attachments/       → [[multi-format-ingest]]
+  → Raw/Sources/[name].md          (source note)
+    → compile → Wiki/[section]/[note].md  (wiki note)
+      → build → Wiki/catalog.jsonl       (search index)
 ```
+
+Tooling that enforces this: [[wiki-tooling]]
 
 ## Source Note Required Frontmatter
 
@@ -62,6 +62,9 @@ tags:
 
 ## Connections
 
-- [[llm-wiki]] — parent system
+- [[llm-wiki]] — parent system that enforces this separation
 - [[multi-format-ingest]] — how non-markdown files become source notes
-- [[first-ingest]] — first time this system was used
+- [[wiki-tooling]] — `lint` and `source-lint` commands enforce it mechanically
+- [[agent-rules]] — Rule 1 and 2 in AGENTS.md encode this separation
+- [[first-ingest]] — first time this system was exercised
+- [[quant-agent-system]] — follows the same separation for quant data
