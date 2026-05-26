@@ -6,6 +6,10 @@
 {"path": "Wiki/Concepts/wiki-tooling.md", "title": "wiki-tooling", "tag": "concept", "topics": "[llm-wiki, wiki, tooling]", "sources": ["Raw/Sources/llms-core-setup.md", "Raw/Sources/quant-agent-setup.md"], "updated": "2026-05-26"}
 {"path": "Wiki/Entities/fyers-api.md", "title": "fyers-api", "tag": "entity", "topics": "[quant, fyers, api]", "sources": ["Raw/Sources/quant-agent-setup.md", "Raw/Sources/agents-rules.md"], "updated": "2026-05-26"}
 {"path": "Wiki/Entities/kaggle-compute.md", "title": "kaggle-compute", "tag": "entity", "topics": "[quant, kaggle, compute]", "sources": ["Raw/Sources/quant-agent-setup.md", "Raw/Sources/agents-rules.md"], "updated": "2026-05-26"}
+{"path": "Wiki/Entities/master-data-1min-dataset.md", "title": "master-data-1min-dataset", "tag": "entity", "topics": "[dataset, kaggle, fyers]", "sources": [], "updated": ""}
+{"path": "Wiki/Entities/kaggle-pulse-check.md", "title": "kaggle-pulse-check", "tag": "entity", "topics": "[skill, monitoring, kaggle]", "sources": [], "updated": ""}
+{"path": "Wiki/Entities/fyers-historical-kaggle.md", "title": "fyers-historical-kaggle", "tag": "entity", "topics": "[skill, fyers, kaggle, data-pipeline]", "sources": [], "updated": ""}
+{"path": "Wiki/Entities/plan-first.md", "title": "plan-first", "tag": "entity", "topics": "[skill, planning, workflow]", "sources": [], "updated": ""}
 {"path": "Wiki/Projects/starter-demo.md", "title": "starter-demo", "tag": "project", "topics": "[llm-wiki, demo]", "sources": ["Raw/Sources/demo.md"], "updated": "2026-05-26"}
 {"path": "Wiki/Projects/termux-agy-setup.md", "title": "termux-agy-setup", "tag": "project", "topics": "[termux, antigravity, android, binary-patching, agy]", "sources": ["Raw/Sources/Termux guided installation setup.md", "Raw/Sources/termux-guided-installation-setup-html.md"], "updated": "2026-05-26"}
 {"path": "Wiki/Projects/quant-wiki-system-v1.md", "title": "quant-wiki-system-v1", "tag": "project", "topics": "[quant, llm-wiki, setup, agy, skills]", "sources": ["Raw/Sources/quant-agent-setup.md", "Raw/Sources/quant-wiki-multiformat.md", "Raw/Sources/agents-rules.md", "Raw/Sources/llms-core-setup.md"], "updated": "2026-05-26"}

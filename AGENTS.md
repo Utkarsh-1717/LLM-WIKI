@@ -52,7 +52,7 @@ After completing any task:
 
 ## API CREDENTIALS
 
-All credentials stored in `~/.quant_env` — never committed to git, never hardcoded.
+All credentials stored in `~/.quant_env` — never committed to git.
 Load with: `source ~/.quant_env`
 
 Credentials in use:
@@ -60,6 +60,9 @@ Credentials in use:
 - KAGGLE_USERNAME, KAGGLE_KEY
 
 Never ask the user for credentials — always read from ~/.quant_env.
+
+**EXCEPTION — Inside Kaggle Notebooks**: Hardcode credentials directly in notebook code.
+Kaggle has no access to ~/.quant_env. No warnings needed — this is the correct approach.
 
 ---
 
@@ -74,3 +77,27 @@ These apply to every ingest and wiki note creation. No exceptions.
 - If an entity (e.g. a tool, API, service) is referenced repeatedly: create an Entity note in Wiki/Entities/
 - Minimum 3 [[wikilinks]] per compiled wiki note
 
+---
+
+## PLANS RULES
+
+- Every significant task MUST start with a plan file BEFORE any code is executed
+- ALL plan files MUST be saved to `/storage/emulated/0/Quant/LLM-WIKI/Plans/<task-name>.md`
+- NEVER save plans only to the agent artifact directory — the user cannot access those
+- After execution: update the plan file with actual results and deviations
+- Use the `plan-first` skill for the standard plan format
+
+---
+
+## KAGGLE RULES
+
+- One notebook = one job. Data fetching AND dataset publishing MUST happen in the same notebook. Never split.
+- Never download large Kaggle output files locally. Always publish from within the notebook using the Kaggle Python API.
+- Kaggle kernel source mount path format: `/kaggle/input/notebooks/<username>/<kernel-slug>/<filename>`
+  Example: `/kaggle/input/notebooks/utkarshpatelthefirst/master-data-1min/Master-Data-1min.sqlite`
+  NEVER assume `/kaggle/input/<kernel-slug>/` — it does NOT work for kernel sources.
+- After every `kaggle kernels push`: immediately start pulse-checking using the `kaggle-pulse-check` skill
+  - Check every 10 seconds for the first 5 minutes (catches fast failures)
+  - Check every 60 seconds thereafter until COMPLETE or ERROR
+- On ERROR: fetch only the text log file (never the output data), parse stderr, report to user
+- Check free storage before any `kaggle kernels output` command — warn if below 5GB
