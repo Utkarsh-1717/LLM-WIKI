@@ -16,17 +16,38 @@ description: Converts any supported file in Raw/Sources/attachments/ into a wiki
    Example: strategy.pdf → Raw/Sources/strategy-pdf.md
 3. Every generated .md file MUST have this frontmatter:
    ---
-   title: [descriptive title]
+   Title: [descriptive title]
+   Reference: [original filename or url]
    format: [python|pdf|notebook|image|csv|json|spreadsheet]
    source_file: Raw/Sources/attachments/[filename]
-   created: YYYY-MM-DD
+   Created: YYYY-MM-DD
    updated: YYYY-MM-DD
-   tags: [inferred topic tags]
-   sources: [Raw/Sources/attachments/filename]
+   Processed: true
+   tags:
+     - source
+   sources:
+     - Raw/Sources/attachments/[filename]
    source_count: 1
    ---
 4. After creating .md file: run python3 scripts/wiki_tool.py lint
 5. Fix any lint errors before proceeding
+6. MANDATORY — Search catalog BEFORE compiling into wiki notes:
+   python3 scripts/wiki_tool.py search-catalog --query "[key topic from source]"
+   Open the top 3-5 most relevant existing wiki notes found.
+   Identify every existing note that relates to the ingested content.
+7. MANDATORY — Compile source into at least one Wiki/ note:
+   Create a new note OR update an existing note in Wiki/Topics/, Wiki/Concepts/, or Wiki/Projects/
+   The wiki note body MUST contain [[wikilinks]] to ALL related existing wiki notes
+   The wiki note frontmatter sources: MUST include the new Raw/Sources/ path
+8. MANDATORY — Every Wiki/ note MUST end with a ## Connections section:
+   Format: - [[note-name]] -- one-line description of the relationship
+   Minimum 3 connections required: parent topic + at least 2 related notes
+   Never reference an entity (e.g. [[fyers-api]]) unless its .md file exists in Wiki/Entities/
+9. After compiling wiki note: run maintenance gate
+   python3 scripts/wiki_tool.py build
+   python3 scripts/wiki_tool.py lint
+   python3 scripts/wiki_tool.py source-scan --update --accept-covered
+   python3 scripts/wiki_tool.py source-lint
 
 ---
 
@@ -183,4 +204,5 @@ Most important tables or values found.
 If user says "process all attachments" or "scan and ingest all":
 1. Run python3 scripts/wiki_tool.py attachment-scan
 2. For every file showing NEEDS SUMMARY: process it using rules above
-3. Report: files processed, files skipped, any errors
+3. After all files processed: run full maintenance gate (rules 9 above)
+4. Report: files processed, files skipped, any errors, connections made

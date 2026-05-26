@@ -60,3 +60,17 @@ Credentials in use:
 - KAGGLE_USERNAME, KAGGLE_KEY
 
 Never ask the user for credentials — always read from ~/.quant_env.
+
+---
+
+## CONNECTION RULES
+
+These apply to every ingest and wiki note creation. No exceptions.
+
+- Every Wiki/ note MUST have [[wikilinks]] in its body text to all related notes
+- Every Wiki/ note MUST end with a ## Connections section listing all related notes
+- Never reference [[a-note-name]] unless that .md file actually exists in Wiki/
+- After any ingest: search catalog, identify connections, update related notes bidirectionally
+- If an entity (e.g. a tool, API, service) is referenced repeatedly: create an Entity note in Wiki/Entities/
+- Minimum 3 [[wikilinks]] per compiled wiki note
+
