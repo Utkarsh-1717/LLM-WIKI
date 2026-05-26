@@ -1,52 +1,41 @@
 ---
 tags:
   - "concept"
-topics:
-  - "llm-wiki"
-  - "multi-format"
+topics: [llm-wiki, wiki, ingest, multiformat]
 status: evergreen
-created: "2026-05-25"
-updated: "2026-05-25"
+created: 2026-05-26
+updated: 2026-05-26
 sources:
-  - "Raw/Sources/termux-guided-installation-setup-html.md"
+  - Raw/Sources/quant-wiki-multiformat.md
 source_count: 1
-aliases:
-  - "attachment-ingest"
-  - "file-ingest"
+aliases: [attachment-ingest, file-ingest]
 ---
 
 # Multi-Format Ingest
 
-The multi-format ingest system allows any supported file dropped into `Raw/Sources/attachments/` to be automatically converted into a wiki source note, then compiled into the Wiki like any other source.
+System for converting non-markdown files into wiki source notes. Files dropped into `Raw/Sources/attachments/` are auto-detected, summarized in `.md`, and compiled into Wiki notes.
 
 ## Supported Formats
 
-| Extension | Format | Output md filename pattern |
+| Extension | Format Name | What Is Extracted |
 |---|---|---|
-| `.py` | python | `[name]-py.md` |
-| `.pdf` | pdf | `[name]-pdf.md` |
-| `.ipynb` | notebook | `[name]-ipynb.md` |
-| `.jpg` | image | `[name]-jpg.md` |
-| `.png` | image | `[name]-png.md` |
-| `.csv` | csv | `[name]-csv.md` |
-| `.json` | json | `[name]-json.md` |
-| `.xlsx` | spreadsheet | `[name]-xlsx.md` |
+| `.py` | python | Functions, logic, data flow, dependencies |
+| `.pdf` | pdf | Summary, concepts, methodology, findings |
+| `.ipynb` | notebook | Stage summaries, strategy logic, results |
+| `.jpg/.png` | image | Description, chart values, interpretation |
+| `.csv` | csv | Schema, date range, data quality, use cases |
+| `.json` | json | Structure, content summary, key fields |
+| `.xlsx` | spreadsheet | Sheet summaries, key tables |
 
-Original files are **never** modified or deleted from `attachments/`.
+## Naming Convention
 
-## Naming Rule
+Output .md file: `[original-stem-lowercased-hyphenated]-[ext].md`  
+Example: `strategy.pdf` → `Raw/Sources/strategy-pdf.md`  
+Example: `qt.py` → `Raw/Sources/qt-py.md`
 
-Output `.md` file: `[original-stem-lowercased-hyphenated]-[ext].md`
-
-Examples:
-- `qt.py` → `Raw/Sources/qt-py.md`
-- `strategy.pdf` → `Raw/Sources/strategy-pdf.md`
-- `my_data.csv` → `Raw/Sources/my-data-csv.md`
-
-## Required Frontmatter (every generated file)
+## Required Frontmatter for Attachment Source Notes
 
 ```yaml
----
 title: [descriptive title]
 format: [python|pdf|notebook|image|csv|json|spreadsheet]
 source_file: Raw/Sources/attachments/[filename]
@@ -55,33 +44,18 @@ updated: YYYY-MM-DD
 tags: [inferred topic tags]
 sources: [Raw/Sources/attachments/filename]
 source_count: 1
----
 ```
 
-## Workflow
+## Commands
 
-### Single File
-```
-Ingest Raw/Sources/attachments/strategy.pdf
-```
+- `python3 scripts/wiki_tool.py attachment-scan` — show all files needing summaries
+- Batch: "Process all attachments" → attachment-scan then process all NEEDS SUMMARY files
 
-### Batch
-```
-Process all attachments
-```
-Or check pending first:
-```bash
-python3 scripts/wiki_tool.py attachment-scan
-```
+## Skill
 
-## Scanning
+`multi-format-ingest` — trigger: ingest file, process attachments, scan attachments
 
-`attachment-scan` reports:
-- ❌ `NEEDS SUMMARY` — no corresponding `.md` exists yet
-- ✅ `has summary` — `.md` already created
+## Related
 
-## Connections
-
-- [[llm-wiki]] — parent system
-- [[raw-vs-wiki]] — explains source vs wiki separation
-- [[termux-agy-setup]] — device this system runs on
+- [[raw-vs-wiki]] — how raw and wiki layers relate
+- [[llm-wiki]] — the parent system

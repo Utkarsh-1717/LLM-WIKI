@@ -47,3 +47,16 @@ After completing any task:
 5. On every subsequent use of that skill → increment use_count and update last_used
 6. On any revision needed → bump version, archive old version to _temp-skills/archive/
 7. Never delete temp-skills — only the kill switch can do that
+
+---
+
+## API CREDENTIALS
+
+All credentials stored in `~/.quant_env` — never committed to git, never hardcoded.
+Load with: `source ~/.quant_env`
+
+Credentials in use:
+- FYERS_APP_ID, FYERS_SECRET_KEY, FYERS_TOTP_KEY, FYERS_USERNAME, FYERS_PIN, FYERS_REDIRECT
+- KAGGLE_USERNAME, KAGGLE_KEY
+
+Never ask the user for credentials — always read from ~/.quant_env.

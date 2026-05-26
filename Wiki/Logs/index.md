@@ -2,3 +2,4 @@
 
 - [[first-ingest]]
 - [[session-2026-05-25]]
+- [[session-2026-05-26]]

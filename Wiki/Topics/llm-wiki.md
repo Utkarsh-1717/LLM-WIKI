@@ -3,82 +3,44 @@ tags:
   - "topic"
 topics: []
 status: evergreen
-created: 2026-05-24
-updated: "2026-05-25"
+created: 2026-05-26
+updated: 2026-05-26
 sources:
-  - "Raw/Sources/demo.md"
-source_count: 1
-aliases:
-  - "quant-wiki"
-  - "wiki-system"
+  - Raw/Sources/llms-core-setup.md
+  - Raw/Sources/quant-agent-setup.md
+  - Raw/Sources/quant-wiki-multiformat.md
+  - Raw/Sources/agents-rules.md
+source_count: 4
+aliases: [llm-wiki-system]
 ---
 
-# LLM Wiki
+# LLM Wiki System
 
-An LLM Wiki is a two-layer knowledge system that strictly separates raw captured material from compiled, reusable knowledge notes.
+A self-improving knowledge management system for quantitative research. Runs on Android (Termux + agy). Separates raw source material from compiled, reusable knowledge.
 
-## Core Principle
-
-> Search the compiled Wiki first. Open Raw sources only when you need more evidence or context.
-
-The system is optimized for AI agents operating under token constraints — keeping the working context small by letting agents hit `catalog.jsonl` first, then drilling into `Raw/Sources/` only for the specific note needed.
-
-## Two Layers
-
-| Layer | Location | Purpose |
-|---|---|---|
-| **Raw Sources** | `Raw/Sources/` | Original captured material — untouched |
-| **Wiki Notes** | `Wiki/` | Compiled, reusable knowledge — agent-facing |
-
-## Folder Structure
+## Architecture
 
 ```
-LLM-WIKI/
-├── Raw/
-│   └── Sources/
-│       ├── *.md              ← source notes (markdown summaries)
-│       └── attachments/      ← original files (.py, .pdf, .ipynb, .csv, etc.)
-├── Wiki/
-│   ├── Topics/               ← broad topic notes
-│   ├── Concepts/             ← definitions and explanations
-│   ├── Entities/             ← people, tools, services
-│   ├── Projects/             ← project-specific notes
-│   ├── Logs/                 ← session logs
-│   └── catalog.jsonl         ← fast search index
-├── Schema/
-│   └── source-manifest.jsonl ← source coverage tracking
-├── .agents/
-│   └── skills/               ← agent skill definitions
-├── scripts/
-│   └── wiki_tool.py          ← maintenance CLI
-└── AGENTS.md                 ← agent rules and constraints
+Raw/Sources/        ← captured source material (.md summaries)
+Raw/Sources/attachments/ ← original files (.py .pdf .ipynb .jpg .png .csv .json .xlsx)
+Wiki/               ← compiled, reusable knowledge linked to sources
+Schema/             ← rules and documentation
+_templates/         ← note templates
+.agents/skills/     ← fixed permanent skills (5 quant + 4 core)
+_temp-skills/       ← auto-learned skills (grows over time)
+scripts/            ← maintenance tooling
 ```
 
-## Maintenance Gate
+## Core Principles
 
-Run before every commit:
-```bash
-python3 scripts/wiki_tool.py doctor
-python3 scripts/wiki_tool.py build
-python3 scripts/wiki_tool.py lint
-python3 scripts/wiki_tool.py source-lint
-python3 scripts/wiki_tool.py attachment-scan
-python3 scripts/audit_public.py
-```
+1. Raw/Sources/ = source material only — never compiled notes
+2. Wiki/ = reusable knowledge — always linked back to Raw sources
+3. Search catalog.jsonl before opening Raw context
+4. Run maintenance gate before every commit
+5. Never invent citations
 
-## Multi-Format Attachment Support
+## Related Topics
 
-Drop any of these file types into `Raw/Sources/attachments/`:
-`.py` `.pdf` `.ipynb` `.jpg` `.png` `.csv` `.json` `.xlsx`
-
-Tell the agent:
-- Single file: `Ingest Raw/Sources/attachments/filename`
-- All pending: `Process all attachments`
-- Check pending: `python3 scripts/wiki_tool.py attachment-scan`
-
-## Connections
-
-- [[raw-vs-wiki]] — explains the two-layer separation in depth
-- [[termux-agy-setup]] — the device environment running this system
-- [[multi-format-ingest]] — attachment ingestion skill
-- [[session-2026-05-25]] — session that established the full system
+- [[quant-agent-system]] — the quant layer built on top
+- [[multi-format-ingest]] — how non-markdown sources are ingested
+- [[agent-rules]] — AGENTS.md rules governing all agent behavior
