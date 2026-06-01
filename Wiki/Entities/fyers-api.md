@@ -70,3 +70,5 @@ SQLite table `ohlcv_1min`:
 - [[quant-agent-system]] — uses Fyers as data source
 - [[kaggle-compute]] — where data is uploaded for processing
 - [[agent-rules]] — API rate limit rule (0.5s sleep)
+- [[qt-tick-collector]] — local tick collector using Fyers WebSocket SymbolUpdate feed
+- [[higher-level-tick-pipeline]] — planned cloud-native tick pipeline (Nifty + BankNifty futures)

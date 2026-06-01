@@ -14,3 +14,5 @@ The [[fyers-historical-kaggle]] skill orchestrates the entire bulk 1-minute data
 - [[fyers-1min-ingestion-pipeline]]
 - [[fyers-api]]
 - [[kaggle-compute]]
+- [[qt-tick-collector]] — this skill handles 1-min OHLCV; qt-tick-collector handles real-time tick collection
+- [[higher-level-tick-pipeline]] — the planned tick pipeline that will use similar Kaggle publish patterns

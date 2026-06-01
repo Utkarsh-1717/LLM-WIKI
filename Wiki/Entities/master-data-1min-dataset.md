@@ -27,3 +27,5 @@ To use this dataset in future Kaggle projects, simply attach the `utkarshpatelth
 - [[fyers-1min-ingestion-pipeline]]
 - [[fyers-api]]
 - [[kaggle-compute]]
+- [[qt-tick-collector]] — tick-level companion dataset (higher resolution than 1-min bars)
+- [[higher-level-tick-pipeline]] — planned cloud pipeline producing the tick-level complement to this dataset

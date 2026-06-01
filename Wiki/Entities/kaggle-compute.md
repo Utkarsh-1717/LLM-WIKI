@@ -73,3 +73,5 @@ Every notebook MUST follow the markdown+code cell pattern:
 - [[fyers-api]] — data source that feeds into Kaggle datasets
 - [[agent-rules]] — hardware constraint: all heavy compute → Kaggle only
 - [[wiki-tooling]] — kaggle-db-update records uploads in Wiki
+- [[higher-level-tick-pipeline]] — planned cloud tick collector to run on this platform
+- [[qt-tick-collector]] — current local tick collector; cloud upgrade targets Kaggle

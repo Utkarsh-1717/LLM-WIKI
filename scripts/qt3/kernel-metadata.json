@@ -1,0 +1,14 @@
+{
+  "id": "utkarshpatelthefirst/nse-futures-tick-collector",
+  "title": "NSE Futures Tick Collector",
+  "code_file": "cloud_tick_collector.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

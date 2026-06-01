@@ -6,3 +6,4 @@
 - [[kaggle-pulse-check]]
 - [[fyers-historical-kaggle]]
 - [[plan-first]]
+- [[qt-tick-collector]]
