@@ -986,12 +986,73 @@ Every dropped depth field then becomes:
 
 ## Status Log
 
-| Date | Event |
-|---|---|
-| 2026-05-30 | Initial plan created from qt.py + user requirements |
-| 2026-05-31 | Full rewrite: API research done, dual-socket architecture, 2-state day logic, schema redesigned, qt.py used as reference only — not copied |
-| 2026-05-31 | Added Final Data Specification section: independent-only fields, BLOB depth, 7-field tick schema, storage estimates revised based on qt.py 30MB reality |
+| Date       | Event                                                                                                                                                             |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-05-30 | Initial plan created from qt.py + user requirements                                                                                                               |
+| 2026-05-31 | Full rewrite: API research done, dual-socket architecture, 2-state day logic, schema redesigned, qt.py used as reference only — not copied                        |
+| 2026-05-31 | Added Final Data Specification section: independent-only fields, BLOB depth, 7-field tick schema, storage estimates revised based on qt.py 30MB reality           |
 | 2026-05-31 | Added "Dropped Fields — How to Recover Everything Later" section: SQL/Python recovery code for every excluded field, BLOB unpack function, master reference table |
-| 2026-05-31 | User approved plan |
-| 2026-05-31 | Kaggle notebook generated (`cloud_tick_collector.ipynb`) and pushed |
-| 2026-05-31 | First scheduled run completed. Successfully logged in, checked `fyers.market_status()`, detected Sunday (non-trading day), and exited cleanly. |
+| 2026-05-31 | User approved plan                                                                                                                                                |
+| 2026-05-31 | Kaggle notebook generated (`cloud_tick_collector.ipynb`) and pushed                                                                                               |
+| 2026-05-31 | First scheduled run completed. Successfully logged in, checked `fyers.market_status()`, detected Sunday (non-trading day), and exited cleanly.                    |
+|            |                                                                                                                                                                   |
+
+
+## Plan Revision: Unified WebSockets & Daily Partitioning (2026-06-02)
+
+**Reason for Revision:**
+The previous dual-socket architecture (Socket A for SymbolUpdate, Socket B for DepthUpdate) failed in production. The Fyers API V3 explicitly prohibits opening multiple WebSocket connections using the same access token. Socket A was immediately rejected, causing the script to exit early without collecting data. Additionally, Kaggle datasets were overwriting the DB files instead of accumulating them daily.
+
+### 1. Unified WebSocket Architecture (Local Notebook)
+- **Delete Socket B:** We will no longer run a background thread for .
+- **Refactor Socket A ():** We will use a single WebSocket connection on the main thread.
+- **Combined Subscription:** In , we will sequentially call:
+  - 
+  - 
+- **Unified Router:** We will combine  and  into a single  callback.
+  - *Routing Logic:* If the payload contains the key , route to the depth processing logic. Otherwise, route to the tick processing logic.
+- **Blocking Execution:**  will now block the main thread cleanly until 15:31 IST, at which point the session timer thread will call .
+
+### 2. Daily Database Partitioning
+- **Filename Suffixing:** The SQLite databases will be renamed to include the session date dynamically.
+  - *From:*  
+  - *To:* 
+- **Kaggle Versioning:** By naming files with the date, the Kaggle Dataset "Versions" UI will explicitly show which files belong to which date, allowing easy assessment of individual day data.
+
+### 3. Execution & Verification
+- Modify the raw JSON notebook .
+- Commit the changes locally to .
+- Push the notebook via the Kaggle REST API as Version 4.
+- Query Kaggle  2 minutes post-launch to verify the unified socket loop stays active.
+
+**Status:** Awaiting User Approval to execute this revision.
+
+
+## Plan Revision: Unified WebSockets & Daily Partitioning (2026-06-02)
+
+**Reason for Revision:**
+The previous dual-socket architecture (Socket A for SymbolUpdate, Socket B for DepthUpdate) failed in production. The Fyers API V3 explicitly prohibits opening multiple WebSocket connections using the same access token. Socket A was immediately rejected, causing the script to exit early without collecting data. Additionally, Kaggle datasets were overwriting the DB files instead of accumulating them daily.
+
+### 1. Unified WebSocket Architecture (Local Notebook)
+- **Delete Socket B:** We will no longer run a background thread for `ws_b`.
+- **Refactor Socket A (`ws`):** We will use a single WebSocket connection on the main thread.
+- **Combined Subscription:** In `on_open()`, we will sequentially call:
+  - `ws.subscribe(symbols=sym_list, data_type="SymbolUpdate")`
+  - `ws.subscribe(symbols=sym_list, data_type="DepthUpdate")`
+- **Unified Router:** We will combine `on_tick` and `on_depth` into a single `on_message` callback.
+  - *Routing Logic:* If the payload contains the key `"bids"`, route to the depth processing logic. Otherwise, route to the tick processing logic.
+- **Blocking Execution:** `ws.keep_running()` will now block the main thread cleanly until 15:31 IST, at which point the session timer thread will call `ws.close_connection()`.
+
+### 2. Daily Database Partitioning
+- **Filename Suffixing:** The SQLite databases will be renamed to include the session date dynamically.
+  - *From:* `NIFTY_FUT.db` 
+  - *To:* `NIFTY_FUT_{SESSION_DATE}.db`
+- **Kaggle Versioning:** By naming files with the date, the Kaggle Dataset "Versions" UI will explicitly show which files belong to which date, allowing easy assessment of individual day data.
+
+### 3. Execution & Verification
+- Modify the raw JSON notebook `nse-futures-tick-collector.ipynb`.
+- Commit the changes locally to `LLM-WIKI`.
+- Push the notebook via the Kaggle REST API as Version 4.
+- Query Kaggle `kernels/output` 2 minutes post-launch to verify the unified socket loop stays active.
+
+**Status:** Awaiting User Approval to execute this revision.
