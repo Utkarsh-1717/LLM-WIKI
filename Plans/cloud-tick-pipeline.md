@@ -1056,3 +1056,17 @@ The previous dual-socket architecture (Socket A for SymbolUpdate, Socket B for D
 - Query Kaggle `kernels/output` 2 minutes post-launch to verify the unified socket loop stays active.
 
 **Status:** Awaiting User Approval to execute this revision.
+
+
+## Plan Revision: Split Dual Datasets (2026-06-02)
+
+**Reason for Revision:**
+The user requested to stop publishing a single combined dataset and instead publish two completely separate datasets per day (one for Nifty 50, one for Bank Nifty). This allows independent access without digging through versions.
+
+### 1. Split Publishing Logic (Notebook)
+- The notebook will create two temporary folders: `/kaggle/working/nifty` and `/kaggle/working/banknifty`.
+- It will move `NIFTY_FUT.db` and `BANKNIFTY_FUT.db` into their respective folders.
+- It will generate independent `dataset-metadata.json` files for each.
+- It will call `api.dataset_create_new()` twice to create:
+  - `utkarshpatelthefirst/nifty-50-tick-data-{SESSION_DATE}`
+  - `utkarshpatelthefirst/bank-nifty-tick-data-{SESSION_DATE}`
