@@ -61,6 +61,12 @@ tags:
 ```
 
 ## Connections
+- [[starter-demo]]
+- [[quant-wiki-system-v1]]
+- [[session-2026-05-26b]]
+- [[session-2026-05-26]]
+- [[session-2026-05-25]]
+- [[index]]
 
 - [[llm-wiki]] — parent system that enforces this separation
 - [[multi-format-ingest]] — how non-markdown files become source notes

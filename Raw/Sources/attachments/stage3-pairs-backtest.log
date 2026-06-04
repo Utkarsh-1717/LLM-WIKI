@@ -1,0 +1,181 @@
+[{"stream_name":"stderr","time":9.998643845,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.998715752,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.998722952,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.998727481,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":10.817307394,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.817346159,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.81735227,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.817357526,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":12.352763479,"data":"Notebook version: v1.0-FRESH\n"}
+,{"stream_name":"stdout","time":12.352814384,"data":"\n"}
+,{"stream_name":"stdout","time":12.35281904,"data":"=== /kaggle/input ===\n"}
+,{"stream_name":"stdout","time":12.352822376,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite  (2333.0 MB)\n"}
+,{"stream_name":"stdout","time":12.352825764,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/pairs-stage1-pearson/pairs_all.csv  (6.1 MB)\n"}
+,{"stream_name":"stdout","time":12.352829173,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/pairs-stage1-pearson/pairs_top500.csv  (0.0 MB)\n"}
+,{"stream_name":"stdout","time":12.352832331,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/pairs-stage2-kalman-ou/pairs_stage2_kalman_ou.csv  (0.4 MB)\n"}
+,{"stream_name":"stdout","time":12.352835367,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/pairs-stage2-kalman-ou/skipped_pairs_stage2.csv  (0.0 MB)\n"}
+,{"stream_name":"stdout","time":12.352838507,"data":"\n"}
+,{"stream_name":"stdout","time":12.352841287,"data":"DB_PATH = /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite\n"}
+,{"stream_name":"stdout","time":12.352844337,"data":"S2_CSV  = /kaggle/input/datasets/utkarshpatelthefirst/pairs-stage2-kalman-ou/pairs_stage2_kalman_ou.csv\n"}
+,{"stream_name":"stdout","time":12.352855659,"data":"S1_CSV  = /kaggle/input/datasets/utkarshpatelthefirst/pairs-stage1-pearson/pairs_top500.csv\n"}
+,{"stream_name":"stdout","time":13.508965796,"data":"WARMUP_BARS : 3750 (10 trading days)\n"}
+,{"stream_name":"stdout","time":13.509001948,"data":"CAPITAL     : Rs 10,000 per pair\n"}
+,{"stream_name":"stdout","time":13.509007399,"data":"Z_ENTRY     : 2.0\n"}
+,{"stream_name":"stdout","time":13.509011712,"data":"Z_EXIT      : 0.0\n"}
+,{"stream_name":"stdout","time":13.509015837,"data":"HL filter   : 5.0 \u003c= HL \u003c= 120.0 minutes\n"}
+,{"stream_name":"stdout","time":13.632032626,"data":"Stage 2 total rows    : 500\n"}
+,{"stream_name":"stdout","time":13.632069485,"data":"Stage 3 filtered pairs: 41  (HL: 5.0-120.0 min)\n"}
+,{"stream_name":"stdout","time":13.632076108,"data":"      symbol_a    symbol_b  half_life_minutes  pearson_rho  stage1_rank        Q_beta       Q_alpha         R\n"}
+,{"stream_name":"stdout","time":13.632081291,"data":"0          BDL     MAZDOCK          42.978654     0.651684            3  1.000000e-12  9.531650e-08  0.001731\n"}
+,{"stream_name":"stdout","time":13.632086159,"data":"1          BDL         HAL          25.455336     0.582577           25  1.000000e-12  1.945408e-07  0.001336\n"}
+,{"stream_name":"stdout","time":13.632109087,"data":"2   ADANIENSOL  ADANIGREEN           6.060707     0.574837           28  1.000000e-12  8.629984e-05  0.051385\n"}
+,{"stream_name":"stdout","time":13.632114247,"data":"3     ADANIENT  ADANIPORTS           7.195609     0.549592           40  1.000000e-12  1.070197e-06  0.000808\n"}
+,{"stream_name":"stdout","time":13.632117685,"data":"4        CANBK        SBIN           6.020989     0.517469           65  8.511051e-10  7.810210e-06  0.003551\n"}
+,{"stream_name":"stdout","time":13.632120841,"data":"5        IRCON        IRFC           8.962405     0.513345           68  7.495315e-09  1.000000e-12  0.000187\n"}
+,{"stream_name":"stdout","time":13.632123916,"data":"6   BANKBARODA        SBIN           6.748281     0.510719           69  1.000000e-12  1.711689e-05  0.010339\n"}
+,{"stream_name":"stdout","time":13.632127037,"data":"7          BDL  COCHINSHIP           6.374385     0.493505           77  1.000000e-12  6.568858e-07  0.000513\n"}
+,{"stream_name":"stdout","time":13.632130103,"data":"8          PNB        SBIN          10.119243     0.488676           83  3.675310e-07  1.000000e-12  0.022331\n"}
+,{"stream_name":"stdout","time":13.63213321,"data":"9    BANKINDIA        SBIN           6.921614     0.485892           87  1.000000e-12  1.430154e-06  0.000877\n"}
+,{"stream_name":"stdout","time":13.632136226,"data":"10  HEROMOTOCO    TVSMOTOR           9.756099     0.480445           93  1.000000e-12  5.544020e-06  0.006436\n"}
+,{"stream_name":"stdout","time":13.632139278,"data":"11  JINDALSTEL    JSWSTEEL           6.874635     0.477244          100  1.000000e-12  5.077830e-05  0.033143\n"}
+,{"stream_name":"stdout","time":13.63214232,"data":"12   EICHERMOT    TVSMOTOR           9.049057     0.460097          120  1.000000e-12  1.659493e-06  0.001943\n"}
+,{"stream_name":"stdout","time":13.632145425000001,"data":"13       IREDA     MAZDOCK           8.719406     0.446122          145  1.000000e-12  7.560697e-07  0.000734\n"}
+,{"stream_name":"stdout","time":13.632148428,"data":"14   EICHERMOT         M\u0026M           9.172340     0.445431          150  1.000000e-12  2.648013e-06  0.002977\n"}
+,{"stream_name":"stdout","time":13.632151848,"data":"15         BEL  COCHINSHIP           6.902681     0.440332          164  1.000000e-12  3.426360e-06  0.002577\n"}
+,{"stream_name":"stdout","time":13.632156059,"data":"16    HINDALCO  HINDCOPPER           5.659462     0.429531          196  1.000000e-12  4.784685e-06  0.001945\n"}
+,{"stream_name":"stdout","time":13.632159225,"data":"17      AUBANK  IDFCFIRSTB          25.762091     0.427725          200  5.800382e-09  1.000000e-12  0.000508\n"}
+,{"stream_name":"stdout","time":13.632162315,"data":"18       HUDCO        IRFC          10.360009     0.424446          211  3.027695e-08  1.000000e-12  0.000740\n"}
+,{"stream_name":"stdout","time":13.632165375,"data":"19  JINDALSTEL  NATIONALUM           5.440022     0.424320          213  1.000000e-12  1.688242e-05  0.005403\n"}
+,{"stream_name":"stdout","time":13.632168416,"data":"20  ADANIENSOL  ADANIPORTS           8.657752     0.421704          227  1.000000e-12  5.660498e-05  0.041723\n"}
+,{"stream_name":"stdout","time":13.632171518,"data":"21         BDL       IREDA           6.957555     0.421126          230  1.000000e-12  4.581801e-08  0.000028\n"}
+,{"stream_name":"stdout","time":13.63217497,"data":"22   CENTRALBK     UCOBANK         113.757140     0.413723          255  1.000000e-12  1.000000e-12  0.000010\n"}
+,{"stream_name":"stdout","time":13.63217841,"data":"23         BEL        RVNL           5.292203     0.411373          260  1.000000e-12  3.258527e-07  0.000107\n"}
+,{"stream_name":"stdout","time":13.632181435,"data":"24        CDSL     MAZDOCK           9.145354     0.406895          284  1.000000e-12  1.737166e-05  0.016547\n"}
+,{"stream_name":"stdout","time":13.632187791,"data":"25  JINDALSTEL        VEDL          40.705638     0.401466          307  1.000000e-12  3.278528e-06  0.040036\n"}
+,{"stream_name":"stdout","time":13.63219099,"data":"26   JSWENERGY   TATAPOWER           6.204410     0.399893          314  3.780700e-07  2.980427e-04  0.111570\n"}
+,{"stream_name":"stdout","time":13.632194063,"data":"27      RECLTD   TATAPOWER           5.186009     0.399179          319  1.000000e-12  2.045722e-05  0.006811\n"}
+,{"stream_name":"stdout","time":13.632197104,"data":"28       IREDA   TATAPOWER           6.215288     0.398259          322  1.000000e-12  8.462434e-06  0.002847\n"}
+,{"stream_name":"stdout","time":13.632200188,"data":"29  ADANIENSOL   TATAPOWER           6.956737     0.397042          329  7.594014e-06  3.234140e-04  0.291816\n"}
+,{"stream_name":"stdout","time":13.632203223,"data":"30        GAIL   TATAPOWER           5.837579     0.396867          330  1.000000e-12  1.242221e-05  0.004138\n"}
+,{"stream_name":"stdout","time":13.632206333,"data":"31  ADANIGREEN   AMBUJACEM           5.081884     0.386669          387  2.535356e-09  1.962787e-05  0.008113\n"}
+,{"stream_name":"stdout","time":13.632209325,"data":"32    DIVISLAB  LAURUSLABS          96.282487     0.380349          432  1.000000e-12  1.000000e-12  0.000007\n"}
+,{"stream_name":"stdout","time":13.632212424,"data":"33        CDSL     HDFCAMC           9.033312     0.380206          433  1.000000e-12  5.319682e-06  0.005259\n"}
+,{"stream_name":"stdout","time":13.632215431,"data":"34        NBCC   TATAPOWER          70.253954     0.377974          452  1.000000e-12  3.778500e-07  0.012198\n"}
+,{"stream_name":"stdout","time":13.632218753,"data":"35        NBCC      VOLTAS           7.251522     0.376354          467  1.580198e-08  1.895249e-06  0.001750\n"}
+,{"stream_name":"stdout","time":13.632221815,"data":"36     CGPOWER     MAZDOCK           9.178037     0.376074          470  1.000000e-12  3.029059e-06  0.003194\n"}
+,{"stream_name":"stdout","time":13.632224935,"data":"37   EICHERMOT   MOTHERSON          92.942066     0.376041          471  2.473737e-09  1.000000e-12  0.002890\n"}
+,{"stream_name":"stdout","time":13.632227958,"data":"38         IOB     UCOBANK          11.379397     0.373591          490  2.543233e-09  1.000000e-12  0.000244\n"}
+,{"stream_name":"stdout","time":13.632232245,"data":"39   MOTHERSON    TVSMOTOR          24.732736     0.373303          492  1.000000e-12  1.612116e-07  0.000873\n"}
+,{"stream_name":"stdout","time":13.632237683,"data":"40         IOC    PETRONET           5.216648     0.373128          493  1.000000e-12  9.130465e-05  0.024356\n"}
+,{"stream_name":"stdout","time":14.625800334000001,"data":"Test pair: BDL / MAZDOCK\n"}
+,{"stream_name":"stdout","time":14.625844763,"data":"Total bars in session-continuous series: 44250\n"}
+,{"stream_name":"stdout","time":14.625849475,"data":"First bar: 2025-12-02 09:15:00+05:30  |  Last bar: 2026-05-26 15:29:00+05:30\n"}
+,{"stream_name":"stdout","time":14.625852955,"data":"Min time: 09:15:00  |  Max time: 15:29:00\n"}
+,{"stream_name":"stdout","time":14.658127049,"data":"Kalman filter + OLS init functions defined.\n"}
+,{"stream_name":"stdout","time":14.686091656,"data":"Leader/lagger detection function defined.\n"}
+,{"stream_name":"stdout","time":14.716491305,"data":"Fee breakdown for Rs 10,000 turnover (round trip):\n"}
+,{"stream_name":"stdout","time":14.716528014,"data":"  brokerage           : Rs 40.0000\n"}
+,{"stream_name":"stdout","time":14.716533629,"data":"  stt                 : Rs 1.2500\n"}
+,{"stream_name":"stdout","time":14.716538625,"data":"  exchange_charge     : Rs 0.3450\n"}
+,{"stream_name":"stdout","time":14.716542522,"data":"  gst                 : Rs 7.2621\n"}
+,{"stream_name":"stdout","time":14.716560956,"data":"  sebi                : Rs 0.0100\n"}
+,{"stream_name":"stdout","time":14.716564286,"data":"  stamp               : Rs 0.1500\n"}
+,{"stream_name":"stdout","time":14.716567238,"data":"  total_fees          : Rs 49.0171\n"}
+,{"stream_name":"stdout","time":14.826823406,"data":"Backtest engine defined.\n"}
+,{"stream_name":"stdout","time":64.339786112,"data":"[  1/41] BDL - MAZDOCK  (HL=43.0min) ... trades=145  net_pnl=Rs-8913.1  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":113.964972701,"data":"[  2/41] BDL - HAL  (HL=25.5min) ... trades=178  net_pnl=Rs-9206.1  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":163.743766723,"data":"[  3/41] ADANIENSOL - ADANIGREEN  (HL=6.1min) ... trades=556  net_pnl=Rs-27463.0  calmar=-1.54\n"}
+,{"stream_name":"stdout","time":214.626190165,"data":"[  4/41] ADANIENT - ADANIPORTS  (HL=7.2min) ... trades=460  net_pnl=Rs-21853.6  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":264.96568861,"data":"[  5/41] CANBK - SBIN  (HL=6.0min) ... trades=468  net_pnl=Rs-24161.3  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":314.928803452,"data":"[  6/41] IRCON - IRFC  (HL=9.0min) ... trades=354  net_pnl=Rs-17340.6  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":365.185564918,"data":"[  7/41] BANKBARODA - SBIN  (HL=6.7min) ... trades=417  net_pnl=Rs-21703.2  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":415.294877034,"data":"[  8/41] BDL - COCHINSHIP  (HL=6.4min) ... trades=427  net_pnl=Rs-19656.2  calmar=-1.54\n"}
+,{"stream_name":"stdout","time":465.069919426,"data":"[  9/41] PNB - SBIN  (HL=10.1min) ... trades=316  net_pnl=Rs-17107.7  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":515.002622803,"data":"[ 10/41] BANKINDIA - SBIN  (HL=6.9min) ... trades=459  net_pnl=Rs-22152.4  calmar=-1.54\n"}
+,{"stream_name":"stdout","time":564.737051634,"data":"[ 11/41] HEROMOTOCO - TVSMOTOR  (HL=9.8min) ... trades=322  net_pnl=Rs-15802.8  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":614.277331266,"data":"[ 12/41] JINDALSTEL - JSWSTEEL  (HL=6.9min) ... trades=412  net_pnl=Rs-21246.0  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":663.914966597,"data":"[ 13/41] EICHERMOT - TVSMOTOR  (HL=9.0min) ... trades=337  net_pnl=Rs-17379.4  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":713.573154669,"data":"[ 14/41] IREDA - MAZDOCK  (HL=8.7min) ... trades=372  net_pnl=Rs-17606.6  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":763.364304467,"data":"[ 15/41] EICHERMOT - M\u0026M  (HL=9.2min) ... trades=340  net_pnl=Rs-17803.8  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":813.215700824,"data":"[ 16/41] BEL - COCHINSHIP  (HL=6.9min) ... trades=431  net_pnl=Rs-21071.0  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":862.660759772,"data":"[ 17/41] HINDALCO - HINDCOPPER  (HL=5.7min) ... trades=526  net_pnl=Rs-27030.8  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":912.251549492,"data":"[ 18/41] AUBANK - IDFCFIRSTB  (HL=25.8min) ... trades=187  net_pnl=Rs-9501.6  calmar=-1.56\n"}
+,{"stream_name":"stdout","time":962.11352463,"data":"[ 19/41] HUDCO - IRFC  (HL=10.4min) ... trades=325  net_pnl=Rs-15924.3  calmar=-1.53\n"}
+,{"stream_name":"stdout","time":1012.112728107,"data":"[ 20/41] JINDALSTEL - NATIONALUM  (HL=5.4min) ... trades=451  net_pnl=Rs-24151.1  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":1061.425929544,"data":"[ 21/41] ADANIENSOL - ADANIPORTS  (HL=8.7min) ... trades=401  net_pnl=Rs-18519.2  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":1110.769132625,"data":"[ 22/41] BDL - IREDA  (HL=7.0min) ... trades=485  net_pnl=Rs-24996.9  calmar=-1.54\n"}
+,{"stream_name":"stdout","time":1160.062796592,"data":"[ 23/41] CENTRALBK - UCOBANK  (HL=113.8min) ... trades=109  net_pnl=Rs-6049.0  calmar=-1.56\n"}
+,{"stream_name":"stdout","time":1209.538047565,"data":"[ 24/41] BEL - RVNL  (HL=5.3min) ... trades=479  net_pnl=Rs-24684.3  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":1258.915499672,"data":"[ 25/41] CDSL - MAZDOCK  (HL=9.1min) ... trades=354  net_pnl=Rs-18122.3  calmar=-1.54\n"}
+,{"stream_name":"stdout","time":1308.431110755,"data":"[ 26/41] JINDALSTEL - VEDL  (HL=40.7min) ... trades=142  net_pnl=Rs-6895.0  calmar=-1.54\n"}
+,{"stream_name":"stdout","time":1358.595443062,"data":"[ 27/41] JSWENERGY - TATAPOWER  (HL=6.2min) ... trades=440  net_pnl=Rs-20647.0  calmar=-1.54\n"}
+,{"stream_name":"stdout","time":1408.299533199,"data":"[ 28/41] RECLTD - TATAPOWER  (HL=5.2min) ... trades=531  net_pnl=Rs-26978.0  calmar=-1.54\n"}
+,{"stream_name":"stdout","time":1457.8035785,"data":"[ 29/41] IREDA - TATAPOWER  (HL=6.2min) ... trades=508  net_pnl=Rs-24213.5  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":1507.626165404,"data":"[ 30/41] ADANIENSOL - TATAPOWER  (HL=7.0min) ... trades=492  net_pnl=Rs-23968.6  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":1557.160207813,"data":"[ 31/41] GAIL - TATAPOWER  (HL=5.8min) ... trades=560  net_pnl=Rs-28298.4  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":1606.74598356,"data":"[ 32/41] ADANIGREEN - AMBUJACEM  (HL=5.1min) ... trades=556  net_pnl=Rs-26812.7  calmar=-1.54\n"}
+,{"stream_name":"stdout","time":1656.634586451,"data":"[ 33/41] DIVISLAB - LAURUSLABS  (HL=96.3min) ... trades=79  net_pnl=Rs-4566.4  calmar=-1.53\n"}
+,{"stream_name":"stdout","time":1706.406317343,"data":"[ 34/41] CDSL - HDFCAMC  (HL=9.0min) ... trades=358  net_pnl=Rs-17133.6  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":1756.165434774,"data":"[ 35/41] NBCC - TATAPOWER  (HL=70.3min) ... trades=77  net_pnl=Rs-3769.7  calmar=-1.59\n"}
+,{"stream_name":"stdout","time":1805.886531523,"data":"[ 36/41] NBCC - VOLTAS  (HL=7.3min) ... trades=413  net_pnl=Rs-22177.9  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":1855.541588669,"data":"[ 37/41] CGPOWER - MAZDOCK  (HL=9.2min) ... trades=315  net_pnl=Rs-15230.0  calmar=-1.54\n"}
+,{"stream_name":"stdout","time":1905.169673413,"data":"[ 38/41] EICHERMOT - MOTHERSON  (HL=92.9min) ... trades=77  net_pnl=Rs-3528.5  calmar=-1.54\n"}
+,{"stream_name":"stdout","time":1954.858592052,"data":"[ 39/41] IOB - UCOBANK  (HL=11.4min) ... trades=347  net_pnl=Rs-16109.5  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":2004.928442477,"data":"[ 40/41] MOTHERSON - TVSMOTOR  (HL=24.7min) ... trades=210  net_pnl=Rs-10206.3  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":2054.529285322,"data":"[ 41/41] IOC - PETRONET  (HL=5.2min) ... trades=455  net_pnl=Rs-22404.2  calmar=-1.55\n"}
+,{"stream_name":"stdout","time":2054.529323865,"data":"\n"}
+,{"stream_name":"stdout","time":2054.529330548,"data":"All 41 pairs processed.\n"}
+,{"stream_name":"stdout","time":2054.615800274,"data":"\n"}
+,{"stream_name":"stdout","time":2054.615839002,"data":"=== STAGE 3 SUMMARY ===\n"}
+,{"stream_name":"stdout","time":2054.615846127,"data":"Total pairs   : 41\n"}
+,{"stream_name":"stdout","time":2054.615852097,"data":"Backtested    : 41\n"}
+,{"stream_name":"stdout","time":2054.615858187,"data":"Skipped       : 0\n"}
+,{"stream_name":"stdout","time":2054.615863963,"data":"Errors        : 0\n"}
+,{"stream_name":"stdout","time":2054.615870192,"data":"\n"}
+,{"stream_name":"stdout","time":2054.615876109,"data":"Top 15 pairs by Calmar Ratio:\n"}
+,{"stream_name":"stdout","time":2054.615881785,"data":" stage3_rank   symbol_a   symbol_b  half_life_minutes  total_trades  win_rate_pct  total_net_pnl  max_drawdown_pct  sharpe_ratio  calmar_ratio  avg_fees_multiple lagging_asset\n"}
+,{"stream_name":"stdout","time":2054.615888559,"data":"           1      HUDCO       IRFC          10.360009           325     12.615385  -15924.264296        160.216772    -16.797194     -1.533827           0.035332         HUDCO\n"}
+,{"stream_name":"stdout","time":2054.615914244,"data":"           2   DIVISLAB LAURUSLABS          96.282487            79     22.784810   -4566.355610         45.930574    -11.766860     -1.534238          -0.141496    LAURUSLABS\n"}
+,{"stream_name":"stdout","time":2054.615920196,"data":"           3  EICHERMOT  MOTHERSON          92.942066            77     24.675325   -3528.497005         35.358476    -11.385867     -1.540002           0.080092     EICHERMOT\n"}
+,{"stream_name":"stdout","time":2054.615924992,"data":"           4 JINDALSTEL       VEDL          40.705638           142     24.647887   -6894.956828         68.974377     -9.085025     -1.542655           0.043504          VEDL\n"}
+,{"stream_name":"stdout","time":2054.615930532,"data":"           5  JSWENERGY  TATAPOWER           6.204410           440     10.227273  -20646.973921        206.538554    -19.261575     -1.542696           0.075253     JSWENERGY\n"}
+,{"stream_name":"stdout","time":2054.615934179,"data":"           6       CDSL    MAZDOCK           9.145354           354     11.016949  -18122.309930        181.232103    -14.700209     -1.543133          -0.015128       MAZDOCK\n"}
+,{"stream_name":"stdout","time":2054.615937494,"data":"           7     RECLTD  TATAPOWER           5.186009           531      3.954802  -26978.044622        269.779407    -17.271159     -1.543216          -0.000732     TATAPOWER\n"}
+,{"stream_name":"stdout","time":2054.615940825,"data":"           8 ADANIGREEN  AMBUJACEM           5.081884           556      5.755396  -26812.678499        268.086618    -20.148736     -1.543441           0.049663     AMBUJACEM\n"}
+,{"stream_name":"stdout","time":2054.615944117,"data":"           9    CGPOWER    MAZDOCK           9.178037           315     12.380952  -15230.024953        152.228869    -18.177868     -1.543933           0.041118       MAZDOCK\n"}
+,{"stream_name":"stdout","time":2054.615948603,"data":"          10        BDL COCHINSHIP           6.374385           427     15.925059  -19656.222450        196.416387    -14.593734     -1.544356           0.089366    COCHINSHIP\n"}
+,{"stream_name":"stdout","time":2054.61595202,"data":"          11  BANKINDIA       SBIN           6.921614           459      8.278867  -22152.404248        221.341009    -15.891070     -1.544486           0.050015     BANKINDIA\n"}
+,{"stream_name":"stdout","time":2054.61595527,"data":"          12        BDL      IREDA           6.957555           485      6.391753  -24996.880775        249.726953    -17.034315     -1.544704          -0.014429         IREDA\n"}
+,{"stream_name":"stdout","time":2054.615966382,"data":"          13 ADANIENSOL ADANIGREEN           6.060707           556     10.071942  -27462.978083        274.358174    -19.761614     -1.544738           0.024653    ADANIGREEN\n"}
+,{"stream_name":"stdout","time":2054.615969752,"data":"          14        BEL COCHINSHIP           6.902681           431     13.225058  -21070.977720        210.407948    -13.983138     -1.545424           0.032571    COCHINSHIP\n"}
+,{"stream_name":"stdout","time":2054.615972997,"data":"          15      IRCON       IRFC           8.962405           354     17.231638  -17340.617186        173.115930    -12.354405     -1.545797           0.035755         IRCON\n"}
+,{"stream_name":"stdout","time":2054.615976302,"data":"\n"}
+,{"stream_name":"stdout","time":2054.615983879,"data":"Output  : /kaggle/working/pairs_stage3_backtest.csv  (21.1 KB)\n"}
+,{"stream_name":"stdout","time":2054.615987054,"data":"Skipped : /kaggle/working/skipped_stage3.csv\n"}
+,{"stream_name":"stdout","time":2056.151094251,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\n"}
+,{"stream_name":"stdout","time":2056.151150217,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\n"}
+,{"stream_name":"stdout","time":2056.151157053,"data":"Starting upload for file skipped_stage3.csv\n"}
+,{"stream_name":"stderr","time":2056.152202831,"data":"\r  0%|          | 0.00/615 [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":2056.342423262,"data":"\r  0%|          | 0.00/615 [00:00\u003c?, ?B/s]\r100%|██████████| 615/615 [00:00\u003c00:00, 3.25kB/s]\n"}
+,{"stream_name":"stderr","time":2056.352049997,"data":"\r100%|██████████| 615/615 [00:00\u003c00:00, 3.25kB/s]\n"}
+,{"stream_name":"stderr","time":2056.352087213,"data":"\n"}
+,{"stream_name":"stderr","time":2056.352092827,"data":"\n"}
+,{"stream_name":"stdout","time":2056.427839237,"data":"Upload successful: skipped_stage3.csv (615B)\n"}
+,{"stream_name":"stdout","time":2056.427873473,"data":"Starting upload for file pairs_stage3_backtest.csv\n"}
+,{"stream_name":"stderr","time":2056.429608434,"data":"\r  0%|          | 0.00/21.1k [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":2056.605336727,"data":"\r  0%|          | 0.00/21.1k [00:00\u003c?, ?B/s]\r100%|██████████| 21.1k/21.1k [00:00\u003c00:00, 123kB/s]\n"}
+,{"stream_name":"stderr","time":2056.629041838,"data":"\r100%|██████████| 21.1k/21.1k [00:00\u003c00:00, 123kB/s]\n"}
+,{"stream_name":"stderr","time":2056.629080231,"data":"\n"}
+,{"stream_name":"stderr","time":2056.629086168,"data":"\n"}
+,{"stream_name":"stdout","time":2056.808019238,"data":"Upload successful: pairs_stage3_backtest.csv (21KB)\n"}
+,{"stream_name":"stdout","time":2057.488881771,"data":"Updated existing dataset.\n"}
+,{"stream_name":"stdout","time":2057.488915942,"data":"Published: https://www.kaggle.com/datasets/utkarshpatelthefirst/pairs-stage3-backtest\n"}
+,{"stream_name":"stderr","time":2061.106735115,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":2061.106788429,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":2061.355710276,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":2061.355760521,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":2062.186279572,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":2062.61966016,"data":"[NbConvertApp] Writing 60954 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":2065.819666008,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":2067.034320303,"data":"[NbConvertApp] Writing 414375 bytes to __results__.html\n"}
+]

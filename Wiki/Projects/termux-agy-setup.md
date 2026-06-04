@@ -89,6 +89,8 @@ echo 'source ~/.quant_env' >> ~/.bashrc
 The [[llm-wiki]] system was created during this setup session. See [[session-2026-05-25]] for full session log.
 
 ## Connections
+- [[session-2026-05-26b]]
+- [[index]]
 
 - [[llm-wiki]] — the system installed alongside agy in this project
 - [[agent-rules]] — credentials and hardware rules configured here

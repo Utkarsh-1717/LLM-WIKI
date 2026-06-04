@@ -111,6 +111,11 @@ The "scale invariant" framing suggests that the raw tick data collected by this 
 The tick schema (especially `tot_buy_qty`, `tot_sell_qty`, `open_interest`) is designed to feed these scale-invariant features directly.
 
 ## Connections
+- [[session-2026-05-30]]
+- [[pairs-stage1-pearson]]
+- [[kaggle-github-scheduler]]
+- [[index]]
+- [[cloud-tick-pipeline]]
 
 - [[qt-tick-collector]] — current local v2.0 implementation; cloud version inherits its schema and auth logic
 - [[fyers-api]] — the data source; WebSocket SymbolUpdate feed used for all tick collection

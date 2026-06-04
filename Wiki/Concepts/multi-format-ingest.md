@@ -63,6 +63,11 @@ source_count: 1
 "Process all attachments" → `attachment-scan` → process all `NEEDS SUMMARY` files.
 
 ## Connections
+- [[starter-demo]]
+- [[quant-wiki-system-v1]]
+- [[session-2026-05-26b]]
+- [[session-2026-05-26]]
+- [[index]]
 
 - [[llm-wiki]] — parent system, enforces the Raw/Wiki separation
 - [[raw-vs-wiki]] — conceptual foundation for why ingest creates source notes, not wiki notes

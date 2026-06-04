@@ -63,6 +63,11 @@ source_count: 1
 These limitations are addressed by the planned [[higher-level-tick-pipeline]] cloud-native upgrade.
 
 ## Connections
+- [[session-2026-06-01]]
+- [[session-2026-05-30]]
+- [[kaggle-github-scheduler]]
+- [[index]]
+- [[cloud-tick-pipeline]]
 
 - [[fyers-api]] — uses Fyers REST auth (5-step TOTP, same flow documented in [[fyers-api]]) + WebSocket for tick streaming
 - [[higher-level-tick-pipeline]] — planned cloud-native successor that runs on Kaggle/cloud, auto-detects holidays, and publishes to cloud storage

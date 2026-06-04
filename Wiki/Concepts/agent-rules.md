@@ -71,6 +71,12 @@ Credentials:
 - `KAGGLE_USERNAME`, `KAGGLE_KEY` → [[kaggle-compute]]
 
 ## Connections
+- [[termux-agy-setup]]
+- [[quant-wiki-system-v1]]
+- [[session-2026-05-26b]]
+- [[session-2026-05-26]]
+- [[session-2026-05-25]]
+- [[index]]
 
 - [[llm-wiki]] — system these rules govern
 - [[quant-agent-system]] — quantitative layer that extends these rules

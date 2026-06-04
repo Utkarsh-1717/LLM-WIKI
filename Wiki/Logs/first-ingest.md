@@ -30,6 +30,8 @@ The first source note, `Raw/Sources/demo.md` ("LLM Wiki Starter Demo Source"), w
 Proved the full pipeline works end-to-end before any real data was added.
 
 ## Connections
+- [[session-2026-05-26b]]
+- [[index]]
 
 - [[llm-wiki]] — system this validated
 - [[raw-vs-wiki]] — the concept first demonstrated here

@@ -52,6 +52,9 @@ Complete setup and initialization of the [[quant-agent-system]] v1.0.0 on top of
 - [[session-2026-05-26]] — Section A self-evaluation + full ingest
 
 ## Connections
+- [[termux-agy-setup]]
+- [[session-2026-05-26b]]
+- [[index]]
 
 - [[llm-wiki]] — foundation this project builds on
 - [[quant-agent-system]] — system this project sets up

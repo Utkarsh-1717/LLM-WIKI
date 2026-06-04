@@ -78,3 +78,8 @@ See [[agent-rules]] for AGENTS.md rules governing all agent behavior.
 - [[multi-format-ingest]] — attachment ingestion
 - [[wiki-tooling]] — maintenance scripts
 - [[agent-rules]] — governing rules
+
+
+## Connections
+- [[session-2026-05-26b]]
+- [[index]]

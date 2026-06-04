@@ -2,9 +2,9 @@
 type: temp-skill
 name: wiki-update
 version: 1
-use_count: 1
+use_count: 5
 created: 2026-06-01
-last_used: 2026-06-01
+last_used: 2026-06-04
 description: Routine procedure for ingesting new notes into the LLM-WIKI, running validation checks, and committing to git.
 tags: [temp-skill, wiki, maintenance]
 ---

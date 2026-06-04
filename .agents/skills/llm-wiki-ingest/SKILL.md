@@ -11,6 +11,7 @@ When the user adds a new source, follow this workflow exactly:
    ```bash
    python3 scripts/wiki_tool.py build
    python3 scripts/wiki_tool.py lint
+   python3 scripts/wiki_tool.py link-check
    python3 scripts/wiki_tool.py source-scan --update --accept-covered
    python3 scripts/wiki_tool.py source-lint
    ```

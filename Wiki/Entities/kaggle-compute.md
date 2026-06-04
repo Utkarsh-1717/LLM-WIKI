@@ -75,3 +75,31 @@ Every notebook MUST follow the markdown+code cell pattern:
 - [[wiki-tooling]] — kaggle-db-update records uploads in Wiki
 - [[higher-level-tick-pipeline]] — planned cloud tick collector to run on this platform
 - [[qt-tick-collector]] — current local tick collector; cloud upgrade targets Kaggle
+- [[pairs-trading-pipeline]] — Stage 1 Pearson correlation screening ran here (2026-06-02)
+- [[kaggle-notebook-hardening]] — production failure modes and fixes for notebooks
+- [[pairs-stage1-pearson]] — first completed pairs screening output dataset
+
+## Connections
+- [[quant-wiki-system-v1]]
+- [[session-2026-06-02b]]
+- [[session-2026-05-30]]
+- [[session-2026-05-26b]]
+- [[session-2026-05-25]]
+- [[master-data-1min-dataset]]
+- [[kaggle-pulse-check]]
+- [[fyers-historical-kaggle]]
+- [[pearson-correlation-screening]]
+- [[multi-format-ingest]]
+- [[index]]
+- [[fyers-1min-ingestion-pipeline]]
+- [[cloud-tick-pipeline]]
+- [[quant-agent-system]]
+- [[fyers-api]]
+- [[agent-rules]]
+- [[wiki-tooling]]
+- [[higher-level-tick-pipeline]]
+- [[qt-tick-collector]]
+- [[pairs-trading-pipeline]]
+- [[kaggle-notebook-hardening]]
+- [[pairs-stage1-pearson]]
+- [[pairs-stage2-kalman-ou]]

@@ -10,6 +10,9 @@ status: active
 The [[fyers-historical-kaggle]] skill orchestrates the entire bulk 1-minute data ingestion pipeline for the NSE 500 index. It merges the capabilities of [[fyers-api]] fetching with [[kaggle-compute]] infrastructure, allowing agents to reliably generate a multi-gigabyte historical database without downloading files to the local device.
 
 ## Connections
+- [[session-2026-05-30]]
+- [[pairs-stage1-pearson]]
+- [[index]]
 - [[master-data-1min-dataset]]
 - [[fyers-1min-ingestion-pipeline]]
 - [[fyers-api]]

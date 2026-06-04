@@ -1,0 +1,87 @@
+[{"stream_name":"stderr","time":8.17579925,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.17589848,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.17590444,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.175907,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.795723836,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.795760326,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.795766076,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.795770126,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":10.02847271,"data":"Notebook version: v8.0-final\n"}
+,{"stream_name":"stdout","time":10.02852504,"data":"\n"}
+,{"stream_name":"stdout","time":10.02852859,"data":"=== /kaggle/input ===\n"}
+,{"stream_name":"stdout","time":10.028530861,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/pairs-stage1-pearson/pairs_all.csv  (6.1 MB)\n"}
+,{"stream_name":"stdout","time":10.028532941,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/pairs-stage1-pearson/pairs_top500.csv  (0.0 MB)\n"}
+,{"stream_name":"stdout","time":10.02853495,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite  (2333.0 MB)\n"}
+,{"stream_name":"stdout","time":10.02853695,"data":"\n"}
+,{"stream_name":"stdout","time":10.028539121,"data":"DB_PATH   = /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite\n"}
+,{"stream_name":"stdout","time":10.028541201,"data":"PAIRS_CSV = /kaggle/input/datasets/utkarshpatelthefirst/pairs-stage1-pearson/pairs_top500.csv\n"}
+,{"stream_name":"stdout","time":13.017686029,"data":"CPUs        : 4\n"}
+,{"stream_name":"stdout","time":13.017746539,"data":"EM_STEP     : 1  (EM uses every 1th bar)\n"}
+,{"stream_name":"stdout","time":13.017752849,"data":"EM_MAX_ITER : 15\n"}
+,{"stream_name":"stdout","time":13.017756629,"data":"Imports and constants loaded\n"}
+,{"stream_name":"stdout","time":13.067871653,"data":"Pairs: 500\n"}
+,{"stream_name":"stdout","time":13.067915453,"data":"     symbol_a symbol_b  pearson_rho    t_stat  p_value  n_obs  rank\n"}
+,{"stream_name":"stdout","time":13.067919933,"data":"0         PFC   RECLTD     0.670173  178.8159      0.0  39220     1\n"}
+,{"stream_name":"stdout","time":13.067923033,"data":"1        INFY      TCS     0.659622  173.8012      0.0  39220     2\n"}
+,{"stream_name":"stdout","time":13.067926063,"data":"2         BDL  MAZDOCK     0.651684  170.1491      0.0  39220     3\n"}
+,{"stream_name":"stdout","time":13.067929033,"data":"3  BANKBARODA    CANBK     0.635350  162.9341      0.0  39220     4\n"}
+,{"stream_name":"stdout","time":13.067931933,"data":"4        GRSE  MAZDOCK     0.631132  161.1324      0.0  39220     5\n"}
+,{"stream_name":"stdout","time":13.219149677,"data":"Unique symbols: 161\n"}
+,{"stream_name":"stdout","time":39.380715627,"data":"Raw rows loaded : 7,124,205  in 26.0s\n"}
+,{"stream_name":"stdout","time":47.392728237,"data":"Price cache built: 161 symbols\n"}
+,{"stream_name":"stdout","time":47.392782807,"data":"Smoke-test PFC/RECLTD: 44,250 bars | 2025-12-02 09:15:00+05:30 -\u003e 2026-05-26 15:29:00+05:30\n"}
+,{"stream_name":"stdout","time":47.392789557,"data":"  ln_PFC[:3] = [5.88735325 5.88485325 5.8849923 ]\n"}
+,{"stream_name":"stdout","time":49.006224294,"data":"Numba available — JIT compilation enabled\n"}
+,{"stream_name":"stdout","time":49.006273664,"data":"Numba available: True\n"}
+,{"stream_name":"stdout","time":49.145318025,"data":"Processing 500 pairs on 4 CPUs\n"}
+,{"stream_name":"stdout","time":49.145368265,"data":"EM on every 1th bar, max 15 iterations\n"}
+,{"stream_name":"stdout","time":948.130616613,"data":"Done in 899.0s (15.0 min) | OK=500 Skipped=0 Errors=0\n"}
+,{"stream_name":"stdout","time":948.178369524,"data":"=== STAGE 2 SUMMARY ===\n"}
+,{"stream_name":"stdout","time":948.178414734,"data":"Total processed : 500\n"}
+,{"stream_name":"stdout","time":948.178429474,"data":"Tradeable       : 124\n"}
+,{"stream_name":"stdout","time":948.178435014,"data":"EM converged    : 20\n"}
+,{"stream_name":"stdout","time":948.178439924,"data":"ADF p\u003c0.05      : 400\n"}
+,{"stream_name":"stdout","time":948.178445394,"data":"Hurst \u003c 0.5     : 437\n"}
+,{"stream_name":"stdout","time":948.178450434,"data":"\n"}
+,{"stream_name":"stdout","time":948.178455374,"data":"half_life_minutes               min=0.033448  med=9.0972  max=21180\n"}
+,{"stream_name":"stdout","time":948.178460884,"data":"Q_beta                          min=1e-12  med=1e-12  max=1.2967e-05\n"}
+,{"stream_name":"stdout","time":948.178466604,"data":"Q_beta_sqrt                     min=1e-06  med=1e-06  max=0.0036009\n"}
+,{"stream_name":"stdout","time":948.178471885,"data":"Q_alpha                         min=1e-12  med=1e-12  max=0.00032341\n"}
+,{"stream_name":"stdout","time":948.178477325,"data":"R                               min=1.436e-07  med=0.00060321  max=0.29182\n"}
+,{"stream_name":"stdout","time":948.178482554,"data":"R_sqrt                          min=0.00037895  med=0.02456  max=0.5402\n"}
+,{"stream_name":"stdout","time":948.178487674,"data":"SNR_beta_R                      min=1.9461e-11  med=2.8927e-09  max=0.80679\n"}
+,{"stream_name":"stdout","time":948.178492865,"data":"hurst_exponent                  min=-0.010114  med=0.21943  max=0.52948\n"}
+,{"stream_name":"stdout","time":948.178497385,"data":"\n"}
+,{"stream_name":"stdout","time":948.178502565,"data":"Top 15 tradeable (shortest half-life first):\n"}
+,{"stream_name":"stdout","time":948.178507514,"data":"  symbol_a   symbol_b  half_life_minutes       Q_beta  Q_beta_sqrt        R   SNR_beta_R   adf_pvalue  hurst_exponent  beta_mean  beta_std\n"}
+,{"stream_name":"stdout","time":948.178513265,"data":" MOTHERSON   TVSMOTOR          24.732736 1.000000e-12     0.000001 0.000873 1.145397e-09 0.000000e+00        0.351614  -0.256517  0.000018\n"}
+,{"stream_name":"stdout","time":948.178518065,"data":"       BDL        HAL          25.455336 1.000000e-12     0.000001 0.001336 7.483811e-10 0.000000e+00        0.386436   1.890011  0.000013\n"}
+,{"stream_name":"stdout","time":948.178523134,"data":"    AUBANK IDFCFIRSTB          25.762091 5.800382e-09     0.000076 0.000508 1.142372e-05 0.000000e+00        0.361961  -0.262068  0.016007\n"}
+,{"stream_name":"stdout","time":948.178528165,"data":"JINDALSTEL       VEDL          40.705638 1.000000e-12     0.000001 0.040036 2.497729e-11 0.000000e+00        0.417016  -1.705965  0.000002\n"}
+,{"stream_name":"stdout","time":948.178533345,"data":"       BDL    MAZDOCK          42.978654 1.000000e-12     0.000001 0.001731 5.777804e-10 1.907536e-29        0.427031   1.923171  0.000028\n"}
+,{"stream_name":"stdout","time":948.178538445,"data":"      NBCC  TATAPOWER          70.253954 1.000000e-12     0.000001 0.012198 8.197851e-11 7.666875e-27        0.444424  -2.412195  0.000007\n"}
+,{"stream_name":"stdout","time":948.178541794,"data":" EICHERMOT  MOTHERSON          92.942066 2.473737e-09     0.000050 0.002890 8.560333e-07 1.049905e-24        0.458806  -0.265982  0.011668\n"}
+,{"stream_name":"stdout","time":948.178564294,"data":"  DIVISLAB LAURUSLABS          96.282487 1.000000e-12     0.000001 0.000007 1.453400e-07 6.426804e-22        0.465398   0.200191  0.003846\n"}
+,{"stream_name":"stdout","time":948.178569374,"data":" CENTRALBK    UCOBANK         113.757143 1.000000e-12     0.000001 0.000010 9.573837e-08 9.448845e-05        0.365671   0.967829  0.008526\n"}
+,{"stream_name":"stdout","time":948.178572265,"data":" CENTRALBK        PNB         125.027140 1.000000e-12     0.000001 0.000010 9.588427e-08 5.332687e-12        0.422396   0.640060  0.004005\n"}
+,{"stream_name":"stdout","time":948.178574334,"data":"      OFSS      TECHM         164.853846 1.000000e-12     0.000001 0.000009 1.109804e-07 4.184701e-17        0.492512  -0.276938  0.016715\n"}
+,{"stream_name":"stdout","time":948.178576494,"data":"  JSWSTEEL       VEDL         212.681479 1.000000e-12     0.000001 0.000015 6.477698e-08 2.457058e-14        0.488983  -0.276136  0.014400\n"}
+,{"stream_name":"stdout","time":948.178578494,"data":"   INDIANB       SBIN         269.407598 1.000000e-12     0.000001 0.000029 3.455007e-08 1.204710e-10        0.509780   2.284780  0.015299\n"}
+,{"stream_name":"stdout","time":948.178580505,"data":"COCHINSHIP        HAL         289.195387 1.000000e-12     0.000001 0.000076 1.317705e-08 4.759246e-09        0.502977   1.241408  0.003222\n"}
+,{"stream_name":"stdout","time":948.178582594,"data":"HEROMOTOCO        M\u0026M         290.408270 1.000000e-12     0.000001 0.000150 6.680173e-09 2.432672e-09        0.476122   0.609100  0.002973\n"}
+,{"stream_name":"stdout","time":948.178584814,"data":"\n"}
+,{"stream_name":"stdout","time":948.178588674,"data":"Output columns (66): ['symbol_a', 'symbol_b', 'pearson_rho', 'stage1_rank', 'n_obs', 'n_obs_trading_days', 'data_start', 'data_end', 'Q_beta', 'Q_alpha', 'Q_beta_sqrt', 'Q_alpha_sqrt', 'Q_beta_annualised', 'Q_alpha_annualised', 'R', 'R_sqrt', 'SNR_beta_R', 'SNR_alpha_R', 'log_likelihood', 'log_likelihood_per_obs', 'em_iterations', 'em_converged', 'beta_initial', 'beta_final', 'beta_mean', 'beta_std', 'beta_drift_total', 'alpha_initial', 'alpha_final', 'alpha_mean', 'alpha_std', 'P_beta_final', 'P_alpha_final', 'kalman_gain_beta_mean', 'kalman_gain_alpha_mean', 'innovation_mean', 'innovation_std', 'spread_mean', 'spread_std', 'spread_skew', 'spread_kurtosis', 'spread_min', 'spread_max', 'spread_autocorr_lag1', 'ou_kappa', 'ou_mu', 'ou_sigma', 'half_life_minutes', 'half_life_hours', 'ou_equilibrium_minutes', 'spread_stationary_std', 'ar1_phi', 'ar1_c', 'ar1_phi_pvalue', 'adf_stat', 'adf_pvalue', 'adf_critical_1pct', 'adf_critical_5pct', 'adf_critical_10pct', 'hurst_exponent', 'tradeable', 'tradeable_reason', 'runtime_s', 'skipped', 'skip_reason', 'error']\n"}
+,{"stream_name":"stdout","time":948.245698656,"data":"Main    : /kaggle/working/pairs_stage2_kalman_ou.csv  (342.9 KB)\n"}
+,{"stream_name":"stdout","time":948.245741466,"data":"Skipped : /kaggle/working/skipped_pairs_stage2.csv  (0.0 KB)\n"}
+,{"stream_name":"stdout","time":949.380917332,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\n"}
+,{"stream_name":"stdout","time":949.380959802,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\n"}
+,{"stream_name":"stdout","time":949.380963932,"data":"Published NEW: https://www.kaggle.com/datasets/utkarshpatelthefirst/pairs-stage2-kalman-ou\n"}
+,{"stream_name":"stderr","time":952.880837473,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":952.880879803,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":953.061501477,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":953.061541617,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":953.769914344,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":954.068942661,"data":"[NbConvertApp] Writing 45985 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":956.702180382,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":957.558720031,"data":"[NbConvertApp] Writing 429337 bytes to __results__.html\n"}
+]

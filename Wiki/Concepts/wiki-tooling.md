@@ -58,6 +58,14 @@ Run in this exact order before every commit:
 8. `python3 scripts/temp_skill_manager.py stats`
 
 ## Connections
+- [[starter-demo]]
+- [[quant-wiki-system-v1]]
+- [[session-2026-05-26b]]
+- [[session-2026-05-26]]
+- [[session-2026-05-25]]
+- [[first-ingest]]
+- [[kaggle-compute]]
+- [[index]]
 
 - [[llm-wiki]] — the system these tools maintain
 - [[agent-rules]] — rules that govern when and how to run these tools

@@ -72,3 +72,16 @@ SQLite table `ohlcv_1min`:
 - [[agent-rules]] — API rate limit rule (0.5s sleep)
 - [[qt-tick-collector]] — local tick collector using Fyers WebSocket SymbolUpdate feed
 - [[higher-level-tick-pipeline]] — planned cloud-native tick pipeline (Nifty + BankNifty futures)
+
+
+## Connections
+- [[quant-wiki-system-v1]]
+- [[session-2026-05-30]]
+- [[session-2026-05-26b]]
+- [[session-2026-05-25]]
+- [[pairs-stage1-pearson]]
+- [[master-data-1min-dataset]]
+- [[fyers-historical-kaggle]]
+- [[index]]
+- [[fyers-1min-ingestion-pipeline]]
+- [[cloud-tick-pipeline]]

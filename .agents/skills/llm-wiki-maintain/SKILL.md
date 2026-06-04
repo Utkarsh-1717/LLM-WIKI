@@ -5,6 +5,7 @@ Before every meaningful commit, run the maintenance gate:
 python3 scripts/wiki_tool.py doctor
 python3 scripts/wiki_tool.py build
 python3 scripts/wiki_tool.py lint
+python3 scripts/wiki_tool.py link-check
 python3 scripts/wiki_tool.py source-lint
 python3 scripts/audit_public.py
 ```

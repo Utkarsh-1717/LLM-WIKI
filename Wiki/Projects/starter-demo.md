@@ -33,6 +33,8 @@ Proves that the two-layer system works end-to-end:
 - [[first-ingest]] — the log entry for this demo ingest
 
 ## Connections
+- [[session-2026-05-26b]]
+- [[index]]
 
 - [[llm-wiki]] — the system this demo validates
 - [[raw-vs-wiki]] — the concept demonstrated

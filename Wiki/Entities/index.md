@@ -7,3 +7,5 @@
 - [[fyers-historical-kaggle]]
 - [[plan-first]]
 - [[qt-tick-collector]]
+- [[pairs-stage1-pearson]]
+- [[pairs-stage2-kalman-ou]]

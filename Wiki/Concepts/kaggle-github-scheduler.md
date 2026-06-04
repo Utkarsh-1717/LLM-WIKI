@@ -43,6 +43,9 @@ To run a script every single day of the week at **09:00 AM IST** (03:30 AM UTC),
 Even on weekends or market holidays, the script triggers Kaggle. The intelligence resides within the Kaggle notebook itself, which calls `fyers.market_status()` upon waking up and exits cleanly in ~30 seconds if the market is closed, saving resources.
 
 ## Connections
+- [[session-2026-06-02]]
+- [[session-2026-06-01]]
+- [[index]]
 - [[cloud-tick-pipeline]]
 - [[higher-level-tick-pipeline]]
 - [[qt-tick-collector]]

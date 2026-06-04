@@ -40,11 +40,12 @@ Kaggle (heavy compute) → [[kaggle-compute]]
 ## Skills
 
 | Skill | Trigger | Purpose |
-|---|---|---|
+|---|---|—|
 | fyers-auth | fyers data, authenticate fyers | 5-step TOTP auth via [[fyers-api]] |
 | fyers-historical | OHLCV, historical data | Download 1-min data to SQLite |
 | kaggle-notebook-run | backtest, kaggle run | Run strategy notebooks on [[kaggle-compute]] |
 | kaggle-db-update | upload to Kaggle | Push SQLite to [[kaggle-compute]] dataset |
+| kaggle-pulse-check | monitor kaggle | Monitor running kernels; extract slug from push URL |
 | multi-format-ingest | ingest file, process attachments | Convert any file → [[multi-format-ingest]] |
 
 ## Hardware Rules
@@ -85,3 +86,22 @@ See [[wiki-tooling]] for all maintenance commands and the maintenance gate.
 - [[raw-vs-wiki]] — data layer separation concept
 - [[fyers-api]] — market data provider
 - [[kaggle-compute]] — compute layer
+- [[pairs-trading-pipeline]] — active quant strategy pipeline (Stage 1 complete)
+- [[kaggle-notebook-hardening]] — production lessons for reliable Kaggle notebooks
+
+## Connections
+- [[termux-agy-setup]]
+- [[session-2026-05-26b]]
+- [[session-2026-05-26]]
+- [[session-2026-05-25]]
+- [[plan-first]]
+- [[index]]
+- [[agent-rules]]
+- [[wiki-tooling]]
+- [[multi-format-ingest]]
+- [[raw-vs-wiki]]
+- [[fyers-api]]
+- [[kaggle-compute]]
+- [[pairs-trading-pipeline]]
+- [[kaggle-notebook-hardening]]
+- [[llm-wiki]]

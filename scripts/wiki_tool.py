@@ -153,6 +153,61 @@ def cmd_lint():
         sys.exit(1)
     print("Lint passed.")
 
+def cmd_link_check():
+    import glob
+    all_md = []
+    for d in WIKI_DIRS:
+        all_md.extend(get_files(d))
+    
+    valid_titles = {os.path.splitext(os.path.basename(f))[0] for f in all_md}
+    
+    # Allow linking to agent skills
+    if os.path.exists('.agents/skills'):
+        valid_titles.update(os.listdir('.agents/skills'))
+    
+    # Known words used in prose that get caught by the regex
+    PROSE_FALSE_POSITIVES = {"wikilinks", "links", "note-name", "skill-name"}
+    
+    broken = []
+    links_from = {}
+    
+    for f in sorted(all_md):
+        title = os.path.splitext(os.path.basename(f))[0]
+        links_from[title] = set()
+        with open(f, 'r', encoding='utf-8') as file:
+            text = file.read()
+        links = re.findall(r'\[\[([^\]|]+?)(?:\|[^\]]+)?\]\]', text)
+        for link in links:
+            link = link.strip()
+            if link in PROSE_FALSE_POSITIVES or '/' in link:
+                continue # Ignore prose placeholders and path-style links
+            if link not in valid_titles:
+                broken.append((f, link))
+            else:
+                links_from[title].add(link)
+    
+    if broken:
+        print(f"❌ BROKEN LINKS FOUND ({len(broken)}):")
+        for src, lnk in broken:
+            print(f"   {src}  ->  [[{lnk}]]")
+        sys.exit(1)
+        
+    missing_backlinks = []
+    for src, targets in links_from.items():
+        if src == 'index': continue
+        for target in targets:
+            if target == 'index': continue
+            if target in links_from and src not in links_from[target]:
+                missing_backlinks.append((src, target))
+                
+    if missing_backlinks:
+        print(f"❌ MISSING BACKLINKS ({len(missing_backlinks)}):")
+        for src, target in missing_backlinks:
+            print(f"   [[{src}]] links to [[{target}]], but [[{target}]] does not link back.")
+        sys.exit(1)
+        
+    print("Link check passed. All links valid and bidirectional.")
+
 ATTACHMENT_FORMATS = {
     ".py": "python",
     ".pdf": "pdf",
@@ -365,6 +420,7 @@ if __name__ == "__main__":
     subparsers.add_parser('doctor')
     subparsers.add_parser('build')
     subparsers.add_parser('lint')
+    subparsers.add_parser('link-check')
     
     scan_parser = subparsers.add_parser('source-scan')
     scan_parser.add_argument('--update', action='store_true')
@@ -390,8 +446,9 @@ if __name__ == "__main__":
         cmd_build()
     elif args.command == 'lint':
         cmd_lint()
-    elif args.command == 'source-scan':
-        cmd_source_scan(args.update, args.accept_covered)
+    elif args.command == 'link-check':
+        cmd_link_check()
+    elif args.command == 'source-scan':        cmd_source_scan(args.update, args.accept_covered)
     elif args.command == 'source-lint':
         cmd_source_lint()
     elif args.command == 'source-delta':

@@ -1,0 +1,80 @@
+[{"stream_name":"stderr","time":5.349591519,"data":"/usr/local/lib/python3.12/dist-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":5.34966061,"data":"  validate(nb)\n"}
+,{"stream_name":"stderr","time":6.097662272,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.097692754,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.097705562,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.097708303,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.672520949,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.672548915,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.672553376,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.672562574,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":8.396185269,"data":"Imports successful.\n"}
+,{"stream_name":"stdout","time":8.447319957,"data":"DB_PATH = /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite\n"}
+,{"stream_name":"stdout","time":8.447349963,"data":"STAGE2_CSV = /kaggle/input/datasets/utkarshpatelthefirst/pairs-stage2-kalman-ou/pairs_stage2_kalman_ou.csv\n"}
+,{"stream_name":"stdout","time":8.447355801,"data":"Config loaded.\n"}
+,{"stream_name":"stdout","time":8.496024987,"data":"Loaded 1 target pairs.\n"}
+,{"stream_name":"stdout","time":8.597265291,"data":"Loading data once for BDL and COCHINSHIP...\n"}
+,{"stream_name":"stdout","time":9.686850729,"data":"Calculating Kalman Filter and Z-Scores globally...\n"}
+,{"stream_name":"stdout","time":51.374713526,"data":"Global pre-computations complete!\n"}
+,{"stream_name":"stdout","time":51.374743726,"data":"Total Grid Configurations: 4215\n"}
+,{"stream_name":"stderr","time":51.374759876,"data":"[Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.\n"}
+,{"stream_name":"stderr","time":51.374766011,"data":"\n"}
+,{"stream_name":"stderr","time":51.374771256,"data":"[Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.\n"}
+,{"stream_name":"stderr","time":52.764998868,"data":"[Parallel(n_jobs=-1)]: Done   2 tasks      | elapsed:    1.2s\n"}
+,{"stream_name":"stderr","time":52.765045026,"data":"\n"}
+,{"stream_name":"stderr","time":52.765646266,"data":"[Parallel(n_jobs=-1)]: Done   2 tasks      | elapsed:    1.2s\n"}
+,{"stream_name":"stderr","time":53.03805307,"data":"[Parallel(n_jobs=-1)]: Done   8 tasks      | elapsed:    1.5s\n"}
+,{"stream_name":"stderr","time":53.038103724,"data":"\n"}
+,{"stream_name":"stderr","time":53.038247536,"data":"[Parallel(n_jobs=-1)]: Done   8 tasks      | elapsed:    1.5s\n"}
+,{"stream_name":"stderr","time":63.676819252,"data":"[Parallel(n_jobs=-1)]: Done 258 tasks      | elapsed:   12.1s\n"}
+,{"stream_name":"stderr","time":63.676864983,"data":"\n"}
+,{"stream_name":"stderr","time":63.676871121,"data":"[Parallel(n_jobs=-1)]: Done 258 tasks      | elapsed:   12.1s\n"}
+,{"stream_name":"stderr","time":69.354873478,"data":"[Parallel(n_jobs=-1)]: Done 508 tasks      | elapsed:   17.8s\n"}
+,{"stream_name":"stderr","time":69.354915206,"data":"\n"}
+,{"stream_name":"stderr","time":69.354921234,"data":"[Parallel(n_jobs=-1)]: Done 508 tasks      | elapsed:   17.8s\n"}
+,{"stream_name":"stderr","time":79.566872099,"data":"[Parallel(n_jobs=-1)]: Done 858 tasks      | elapsed:   28.0s\n"}
+,{"stream_name":"stderr","time":79.566913472,"data":"\n"}
+,{"stream_name":"stderr","time":79.566919911,"data":"[Parallel(n_jobs=-1)]: Done 858 tasks      | elapsed:   28.0s\n"}
+,{"stream_name":"stderr","time":86.081817418,"data":"[Parallel(n_jobs=-1)]: Done 1208 tasks      | elapsed:   34.5s\n"}
+,{"stream_name":"stderr","time":86.081855024,"data":"\n"}
+,{"stream_name":"stderr","time":86.08186326,"data":"[Parallel(n_jobs=-1)]: Done 1208 tasks      | elapsed:   34.5s\n"}
+,{"stream_name":"stderr","time":100.398402674,"data":"[Parallel(n_jobs=-1)]: Done 1658 tasks      | elapsed:   48.8s\n"}
+,{"stream_name":"stderr","time":100.39844686,"data":"\n"}
+,{"stream_name":"stderr","time":100.398453303,"data":"[Parallel(n_jobs=-1)]: Done 1658 tasks      | elapsed:   48.8s\n"}
+,{"stream_name":"stderr","time":110.957202486,"data":"[Parallel(n_jobs=-1)]: Done 2108 tasks      | elapsed:   59.4s\n"}
+,{"stream_name":"stderr","time":110.957235484,"data":"\n"}
+,{"stream_name":"stderr","time":110.959682014,"data":"[Parallel(n_jobs=-1)]: Done 2108 tasks      | elapsed:   59.4s\n"}
+,{"stream_name":"stderr","time":125.979286676,"data":"[Parallel(n_jobs=-1)]: Done 2658 tasks      | elapsed:  1.2min\n"}
+,{"stream_name":"stderr","time":125.979315874,"data":"\n"}
+,{"stream_name":"stderr","time":125.979321254,"data":"[Parallel(n_jobs=-1)]: Done 2658 tasks      | elapsed:  1.2min\n"}
+,{"stream_name":"stderr","time":137.572890044,"data":"[Parallel(n_jobs=-1)]: Done 3208 tasks      | elapsed:  1.4min\n"}
+,{"stream_name":"stderr","time":137.572936074,"data":"\n"}
+,{"stream_name":"stderr","time":137.572942871,"data":"[Parallel(n_jobs=-1)]: Done 3208 tasks      | elapsed:  1.4min\n"}
+,{"stream_name":"stderr","time":156.32392225,"data":"[Parallel(n_jobs=-1)]: Done 3858 tasks      | elapsed:  1.7min\n"}
+,{"stream_name":"stderr","time":156.32395871,"data":"\n"}
+,{"stream_name":"stderr","time":156.323964673,"data":"[Parallel(n_jobs=-1)]: Done 3858 tasks      | elapsed:  1.7min\n"}
+,{"stream_name":"stdout","time":162.722994647,"data":"Sweep Complete.\n"}
+,{"stream_name":"stderr","time":162.724218226,"data":"[Parallel(n_jobs=-1)]: Done 4215 out of 4215 | elapsed:  1.9min finished\n"}
+,{"stream_name":"stderr","time":162.724242531,"data":"\n"}
+,{"stream_name":"stderr","time":162.724248079,"data":"[Parallel(n_jobs=-1)]: Done 4215 out of 4215 | elapsed:  1.9min finished\n"}
+,{"stream_name":"stdout","time":162.805862217,"data":"Pushing to Kaggle Datasets...\n"}
+,{"stream_name":"stdout","time":163.821438723,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\r\n"}
+,{"stream_name":"stdout","time":163.973084223,"data":"Dataset creation error: The requested title \"Pairs Optimization Gridsearch\" is already in use by a dataset. Please choose another title.\r\n"}
+,{"stream_name":"stdout","time":164.561002519,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\r\n"}
+,{"stream_name":"stdout","time":164.611564821,"data":"Starting upload for file __notebook__.ipynb\r\n"}
+,{"stream_name":"stdout","time":165.621352676,"data":"\r  0%|                                               | 0.00/26.5k [00:00\u003c?, ?B/s]\r100%|██████████████████████████████████████| 26.5k/26.5k [00:00\u003c00:00, 38.3kB/s]\r\n"}
+,{"stream_name":"stdout","time":165.621403576,"data":"Upload successful: __notebook__.ipynb (27KB)\r\n"}
+,{"stream_name":"stdout","time":165.621408254,"data":"Starting upload for file gridsearch_summary.csv\r\n"}
+,{"stream_name":"stdout","time":166.43272102,"data":"\r  0%|                                                | 0.00/929k [00:00\u003c?, ?B/s]\r100%|████████████████████████████████████████| 929k/929k [00:00\u003c00:00, 1.40MB/s]\r\n"}
+,{"stream_name":"stdout","time":166.43276312,"data":"Upload successful: gridsearch_summary.csv (929KB)\r\n"}
+,{"stream_name":"stdout","time":167.34621891,"data":"Dataset version is being created. Please check progress at https://www.kaggle.com/datasets/utkarshpatelthefirst/pairs-optimization-gridsearch\r\n"}
+,{"stream_name":"stdout","time":167.463676626,"data":"Done!\n"}
+,{"stream_name":"stderr","time":172.242069565,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":172.242108746,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":172.385155481,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":172.385183566,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":173.003432997,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":173.313934035,"data":"[NbConvertApp] Writing 27714 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":175.625714441,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":176.473848678,"data":"[NbConvertApp] Writing 348264 bytes to __results__.html\n"}
+]
