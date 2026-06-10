@@ -2,3 +2,6 @@
 python3 scripts/wiki_tool.py build
 python3 scripts/wiki_tool.py lint
 python3 scripts/wiki_tool.py source-lint
+python3 scripts/wiki_tool.py link-check --fix
+# Stage any files modified by auto-fix so the commit succeeds seamlessly
+git add Wiki/ Soul/ Raw/

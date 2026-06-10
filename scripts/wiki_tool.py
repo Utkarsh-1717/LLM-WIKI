@@ -153,7 +153,7 @@ def cmd_lint():
         sys.exit(1)
     print("Lint passed.")
 
-def cmd_link_check():
+def cmd_link_check(fix=False):
     import glob
     all_md = []
     for d in WIKI_DIRS:
@@ -201,10 +201,56 @@ def cmd_link_check():
                 missing_backlinks.append((src, target))
                 
     if missing_backlinks:
-        print(f"❌ MISSING BACKLINKS ({len(missing_backlinks)}):")
-        for src, target in missing_backlinks:
-            print(f"   [[{src}]] links to [[{target}]], but [[{target}]] does not link back.")
-        sys.exit(1)
+        if fix:
+            print(f"🔧 FIXING MISSING BACKLINKS ({len(missing_backlinks)}):")
+            from collections import defaultdict
+            missing_by_target = defaultdict(list)
+            for src, target in missing_backlinks:
+                missing_by_target[target].append(src)
+                
+            name_to_path = {}
+            for f in all_md:
+                name_to_path[os.path.splitext(os.path.basename(f))[0]] = f
+                
+            for target, srcs in missing_by_target.items():
+                if target not in name_to_path:
+                    continue
+                fpath = name_to_path[target]
+                with open(fpath, 'r', encoding='utf-8') as file:
+                    content = file.read()
+                
+                new_content = content
+                if "## Connections" in new_content:
+                    lines = new_content.split('\n')
+                    conn_idx = -1
+                    for i, line in enumerate(lines):
+                        if line.startswith("## Connections"):
+                            conn_idx = i
+                            break
+                    insert_idx = len(lines)
+                    for i in range(conn_idx + 1, len(lines)):
+                        if lines[i].startswith("## ") and i != conn_idx:
+                            insert_idx = i
+                            break
+                    for src in reversed(srcs):
+                        lines.insert(insert_idx, f"- [[{src}]]")
+                    new_content = '\n'.join(lines)
+                else:
+                    new_content = new_content.strip() + "\n\n## Connections\n"
+                    for src in srcs:
+                        new_content += f"- [[{src}]]\n"
+                        
+                with open(fpath, 'w', encoding='utf-8') as file:
+                    file.write(new_content)
+                print(f"   Updated {fpath} with {len(srcs)} missing reverse link(s)")
+            print("✅ Auto-fix complete. All links are now bidirectional.")
+            sys.exit(0)
+        else:
+            print(f"❌ MISSING BACKLINKS ({len(missing_backlinks)}):")
+            for src, target in missing_backlinks:
+                print(f"   [[{src}]] links to [[{target}]], but [[{target}]] does not link back.")
+            print("Run with --fix to automatically resolve these.")
+            sys.exit(1)
         
     print("Link check passed. All links valid and bidirectional.")
 
@@ -420,7 +466,8 @@ if __name__ == "__main__":
     subparsers.add_parser('doctor')
     subparsers.add_parser('build')
     subparsers.add_parser('lint')
-    subparsers.add_parser('link-check')
+    link_parser = subparsers.add_parser('link-check')
+    link_parser.add_argument('--fix', action='store_true', help='Automatically append missing backlinks to ## Connections')
     
     scan_parser = subparsers.add_parser('source-scan')
     scan_parser.add_argument('--update', action='store_true')
@@ -447,7 +494,7 @@ if __name__ == "__main__":
     elif args.command == 'lint':
         cmd_lint()
     elif args.command == 'link-check':
-        cmd_link_check()
+        cmd_link_check(args.fix)
     elif args.command == 'source-scan':        cmd_source_scan(args.update, args.accept_covered)
     elif args.command == 'source-lint':
         cmd_source_lint()
