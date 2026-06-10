@@ -43,3 +43,10 @@
 {"path": "Wiki/Entities/QC-decisions-pairs-trading.md", "title": "QC-decisions-pairs-trading", "tag": "entity", "topics": "[\"pairs-trading\", \"qc\", \"design-decisions\", \"rebuttals\"]", "sources": [], "updated": "2026-06-10"}
 {"path": "Wiki/Entities/stage3-execution-engine.md", "title": "stage3-execution-engine", "tag": "entity", "topics": "[\"pairs-trading\", \"kalman-filter\", \"execution\", \"z-score\"]", "sources": [], "updated": "2026-06-10"}
 {"path": "Wiki/Entities/backtest-record-pairs-trading.md", "title": "backtest-record-pairs-trading", "tag": "entity", "topics": "[\"pairs-trading\", \"backtest\", \"results\", \"performance\"]", "sources": [], "updated": "2026-06-10"}
+{"path": "Plans/plans.md", "title": "Execution Plans Index", "tags": ["project"], "topics": ["plans", "execution"], "sources": [], "source_count": 0, "updated": "2026-06-10"}
+{"path": "Schema/schema.md", "title": "System Schema Index", "tags": ["concept"], "topics": ["schema", "rules"], "sources": [], "source_count": 0, "updated": "2026-06-10"}
+{"path": "Archive/archive.md", "title": "Historical Archive Index", "tags": ["topic"], "topics": ["archive"], "sources": [], "source_count": 0, "updated": "2026-06-10"}
+{"path": "_templates/templates.md", "title": "Templates Index", "tags": ["concept"], "topics": ["templates"], "sources": [], "source_count": 0, "updated": "2026-06-10"}
+{"path": "PROJECT.md", "title": "Project Overview", "tags": ["project"], "topics": ["overview"], "sources": [], "source_count": 0, "updated": "2026-06-10"}
+{"path": "AGENTS.md", "title": "Agent Directives", "tags": ["concept"], "topics": ["agents", "rules"], "sources": [], "source_count": 0, "updated": "2026-06-10"}
+{"path": "Welcome.md", "title": "Welcome", "tags": ["topic"], "topics": ["welcome"], "sources": [], "source_count": 0, "updated": "2026-06-10"}

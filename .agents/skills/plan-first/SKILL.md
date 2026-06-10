@@ -61,9 +61,10 @@ One-paragraph description of what we are trying to achieve.
 
 ## After Creating Plan
 
-1. Tell the user: "Plan saved at `LLM-WIKI/Plans/<task-name>.md`. Please review before I proceed."
-2. Wait for explicit user approval before executing
-3. After execution: update the plan file with actual results and any deviations
+1. **Update the Index**: Append a `[[task-name]]` link to `Plans/plans.md` so the new plan is properly indexed in the directory.
+2. Tell the user: "Plan saved at `LLM-WIKI/Plans/<task-name>.md`. Please review before I proceed."
+3. Wait for explicit user approval before executing
+4. After execution: update the plan file with actual results and any deviations
 
 ## Connections
 - [[kaggle-notebook-run]]
