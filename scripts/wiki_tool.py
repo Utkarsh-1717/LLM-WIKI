@@ -441,7 +441,7 @@ def cmd_source_coverage():
             for line in file:
                 if line.strip():
                     entry = json.loads(line)
-                    print(f"{entry['path']}: {entry['covered_by']}")
+                    print(f"{entry['path']}: {entry.get('covered_by', [])}")
 
 def cmd_search_catalog(query):
     query_norm = re.sub(r'[\W_]+', '', query).lower()
