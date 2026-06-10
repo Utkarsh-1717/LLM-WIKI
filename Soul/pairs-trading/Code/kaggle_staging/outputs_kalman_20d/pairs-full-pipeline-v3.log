@@ -1,0 +1,33 @@
+[{"stream_name":"stderr","time":8.893610179,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.893690236,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.89369782,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.893701348,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":9.666339683,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.666376788,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.666381395,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.666385635,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":13.774258205,"data":"=== /kaggle/input contents ===\n"}
+,{"stream_name":"stdout","time":13.774316225,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite  (2.17 GB)\n"}
+,{"stream_name":"stdout","time":13.774322822,"data":"\n"}
+,{"stream_name":"stdout","time":13.774327076,"data":"✅ DB_PATH = /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite\n"}
+,{"stream_name":"stdout","time":13.961652101,"data":"=== Loading All DB Data ===\n"}
+,{"stream_name":"stdout","time":133.874994196,"data":"Pivoting to price matrix...\n"}
+,{"stream_name":"stdout","time":142.04665211,"data":"Price matrix: (44250, 500)\n"}
+,{"stream_name":"stdout","time":142.246720514,"data":"Computing pairwise Pearson correlation...\n"}
+,{"stream_name":"stdout","time":684.391376189,"data":"Saved Stage 1 outputs.\n"}
+,{"stream_name":"stdout","time":684.391466934,"data":"\n"}
+,{"stream_name":"stdout","time":684.391474983,"data":"Using Top 500 Production Pairs for Stage 2 \u0026 3...\n"}
+,{"stream_name":"stdout","time":701.607319083,"data":"Saved Stage 2 outputs.\n"}
+,{"stream_name":"stdout","time":2080.635278098,"data":"Saved Stage 3 outputs.\n"}
+,{"stream_name":"stdout","time":2081.94766163,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\n"}
+,{"stream_name":"stdout","time":2081.947714977,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\n"}
+,{"stream_name":"stdout","time":2081.947723712,"data":"✅ Dataset ready and published.\n"}
+,{"stream_name":"stderr","time":2085.577813919,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":2085.577854923,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":2085.800310328,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":2085.800344524,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":2086.605007099,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":2087.01507373,"data":"[NbConvertApp] Writing 28868 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":2090.077371885,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":2091.277622274,"data":"[NbConvertApp] Writing 355159 bytes to __results__.html\n"}
+]

@@ -1,0 +1,16 @@
+{
+  "id": "utkarshpatelthefirst/stage-2-approach2-ou-fit",
+  "title": "Stage 2 Approach 2 OU Fit",
+  "code_file": "stage2-approach2-test.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "utkarshpatelthefirst/master-data-1min-db"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

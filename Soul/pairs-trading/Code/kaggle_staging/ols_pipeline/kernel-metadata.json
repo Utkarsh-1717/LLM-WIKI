@@ -1,0 +1,16 @@
+{
+  "id": "utkarshpatelthefirst/pairs-ols-pipeline-v1",
+  "title": "Pairs OLS Pipeline v1",
+  "code_file": "ols-pipeline.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "utkarshpatelthefirst/master-data-1min-db"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

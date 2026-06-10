@@ -1,0 +1,22 @@
+[{"stream_name":"stderr","time":8.10549197,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.105569624,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.10557727,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.105582367,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.892927177,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.892965365,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.892972208,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.893013158,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":11.317043849,"data":"=== /kaggle/input contents ===\n"}
+,{"stream_name":"stdout","time":11.317096943,"data":"\n"}
+,{"stream_name":"stdout","time":11.317103417,"data":"✅ DB_PATH = /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite\n"}
+,{"stream_name":"stdout","time":13.871617907,"data":"\n"}
+,{"stream_name":"stdout","time":13.871654809,"data":"Analyzing 5 Pairs across 4 Temporal Chunks...\n"}
+,{"stream_name":"stderr","time":17.211316198,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":17.211378474,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":17.419597167,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":17.419627935,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":18.200505098,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":18.61202192,"data":"[NbConvertApp] Writing 11446 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":21.865775722,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":22.992019055,"data":"[NbConvertApp] Writing 296154 bytes to __results__.html\n"}
+]

@@ -1,0 +1,47 @@
+[{"stream_name":"stderr","time":9.274384262,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.274454767,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.274460931,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.274464157,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":10.110121284,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.110159925,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.110165884,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.110170882,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":12.864186948,"data":"=== /kaggle/input contents ===\n"}
+,{"stream_name":"stdout","time":12.864249466,"data":"\n"}
+,{"stream_name":"stdout","time":12.864255473,"data":"✅ DB_PATH = /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite\n"}
+,{"stream_name":"stderr","time":15.793497948,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":15.793531445,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":15.793537999,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":15.793757123,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":15.793766218,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":15.793861357,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":15.794071008,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":15.794083423,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":15.79408841,"data":"Exception encountered at \"In [3]\":\n"}
+,{"stream_name":"stderr","time":15.794093195,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":15.794096517,"data":"AttributeError                            Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":15.794099627,"data":"/tmp/ipykernel_16/587282539.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":15.794104298,"data":"     10 \n"}
+,{"stream_name":"stderr","time":15.79410888,"data":"     11     for tau in taus:\n"}
+,{"stream_name":"stderr","time":15.794113504,"data":"---\u003e 12         actual_hl, spread_var, q_beta = run_speed_limit_kalman(ya, yb, times, tau)\n"}
+,{"stream_name":"stderr","time":15.794118412,"data":"     13 \n"}
+,{"stream_name":"stderr","time":15.794122624,"data":"     14         results.append({\n"}
+,{"stream_name":"stderr","time":15.794126903,"data":"\n"}
+,{"stream_name":"stderr","time":15.794131137,"data":"/tmp/ipykernel_16/1877067833.py in run_speed_limit_kalman(ya, yb, timestamps, target_tau)\n"}
+,{"stream_name":"stderr","time":15.794135767,"data":"     36 \n"}
+,{"stream_name":"stderr","time":15.794140228,"data":"     37     # 09:15 Gap Protocol Prep\n"}
+,{"stream_name":"stderr","time":15.794144448,"data":"---\u003e 38     time_int = timestamps.dt.hour * 100 + timestamps.dt.minute\n"}
+,{"stream_name":"stderr","time":15.794165507,"data":"     39     is_open_bar = (time_int == 915).values\n"}
+,{"stream_name":"stderr","time":15.794170232,"data":"     40 \n"}
+,{"stream_name":"stderr","time":15.794174514,"data":"\n"}
+,{"stream_name":"stderr","time":15.794178832,"data":"AttributeError: 'DatetimeIndex' object has no attribute 'dt'\n"}
+,{"stream_name":"stderr","time":15.794183596,"data":"\n"}
+,{"stream_name":"stderr","time":18.76166796,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":18.761721922,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":18.976727345,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":18.976758652,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":19.777984131,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":20.192165805,"data":"[NbConvertApp] Writing 11238 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":23.658638963,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":24.812898951,"data":"[NbConvertApp] Writing 300769 bytes to __results__.html\n"}
+]

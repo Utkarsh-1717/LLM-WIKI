@@ -1,0 +1,38 @@
+[{"stream_name":"stderr","time":9.438178579,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.439530871,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.439548415,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.439555079,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":10.282878653,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.282918319,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.282924914,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.28292955,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":13.138271038,"data":"=== Loading DB ===\n"}
+,{"stream_name":"stdout","time":15.871278188,"data":"\n"}
+,{"stream_name":"stdout","time":15.871322632,"data":"Processing PFC-RECLTD...\n"}
+,{"stream_name":"stdout","time":18.542268393,"data":"  App 1 (120m) -\u003e PnL: ₹-1244.48 | Trades: 316\n"}
+,{"stream_name":"stdout","time":18.542314166,"data":"  App 2 (2838.1m) -\u003e PnL: ₹6015.13 | Trades: 221\n"}
+,{"stream_name":"stdout","time":18.542322248,"data":"\n"}
+,{"stream_name":"stdout","time":18.542326431,"data":"Processing BDL-MAZDOCK...\n"}
+,{"stream_name":"stdout","time":21.224277808,"data":"  App 1 (120m) -\u003e PnL: ₹-12610.16 | Trades: 294\n"}
+,{"stream_name":"stdout","time":21.224319897,"data":"  App 2 (6359.4m) -\u003e PnL: ₹-8106.27 | Trades: 189\n"}
+,{"stream_name":"stdout","time":21.224325362,"data":"\n"}
+,{"stream_name":"stdout","time":21.224329166,"data":"Processing GRSE-MAZDOCK...\n"}
+,{"stream_name":"stdout","time":23.901806175,"data":"  App 1 (120m) -\u003e PnL: ₹-4298.49 | Trades: 306\n"}
+,{"stream_name":"stdout","time":23.901856774,"data":"  App 2 (2459.9m) -\u003e PnL: ₹15482.92 | Trades: 202\n"}
+,{"stream_name":"stdout","time":23.901863506,"data":"\n"}
+,{"stream_name":"stdout","time":23.901867995,"data":"Processing BANKBARODA-CANBK...\n"}
+,{"stream_name":"stdout","time":26.577611157,"data":"  App 1 (120m) -\u003e PnL: ₹-7185.20 | Trades: 273\n"}
+,{"stream_name":"stdout","time":26.57765718,"data":"  App 2 (2001.4m) -\u003e PnL: ₹-11631.37 | Trades: 194\n"}
+,{"stream_name":"stdout","time":26.577664085,"data":"\n"}
+,{"stream_name":"stdout","time":26.577668557,"data":"Processing BPCL-HINDPETRO...\n"}
+,{"stream_name":"stdout","time":28.941808768,"data":"  App 1 (120m) -\u003e PnL: ₹-15489.51 | Trades: 599\n"}
+,{"stream_name":"stdout","time":28.941850698,"data":"  App 2 (4034.3m) -\u003e PnL: ₹-11846.97 | Trades: 215\n"}
+,{"stream_name":"stderr","time":32.582012596,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":32.582055176,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":32.812422252,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":32.81244975,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":33.632516182,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":34.029407823,"data":"[NbConvertApp] Writing 18758 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":37.298635973,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":38.426354246,"data":"[NbConvertApp] Writing 319564 bytes to __results__.html\n"}
+]

@@ -1,0 +1,16 @@
+{
+  "id": "utkarshpatelthefirst/master-pairs-trading-soul",
+  "title": "Master Pairs Trading Soul",
+  "code_file": "Master_Pairs_Trading_Soul.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "utkarshpatelthefirst/master-data-1min-db"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

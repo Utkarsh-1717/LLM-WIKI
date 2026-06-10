@@ -1,0 +1,16 @@
+{
+  "id": "utkarshpatelthefirst/stage-3-backtest-engine",
+  "title": "Stage 3 Backtest Engine",
+  "code_file": "stage3-backtest-engine.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "utkarshpatelthefirst/master-data-1min-db"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

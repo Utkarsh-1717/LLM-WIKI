@@ -1,0 +1,57 @@
+[{"stream_name":"stderr","time":9.170622984,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.171684861,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.171692566,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.171697433,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":10.012912167,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.012951427,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.012957947,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.012962992,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":11.356930975,"data":"=== /kaggle/input contents ===\n"}
+,{"stream_name":"stdout","time":11.356992362,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite  (2.17 GB)\n"}
+,{"stream_name":"stdout","time":11.3569976,"data":"\n"}
+,{"stream_name":"stdout","time":11.357000825,"data":"✅ DB_PATH = /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite\n"}
+,{"stream_name":"stdout","time":12.682933214,"data":"Loading data for symbols: ['BDL', 'PFC', 'CANBK', 'BPCL', 'GRSE', 'RECLTD', 'BANKBARODA', 'HINDPETRO', 'MAZDOCK']\n"}
+,{"stream_name":"stdout","time":16.802246519,"data":"\n"}
+,{"stream_name":"stdout","time":16.802296834,"data":"Processing PFC vs RECLTD | Valid Pairwise Bars: 44250\n"}
+,{"stream_name":"stderr","time":21.429222859,"data":"/tmp/ipykernel_16/2771734456.py:66: RuntimeWarning: invalid value encountered in log\n"}
+,{"stream_name":"stderr","time":21.429509123,"data":"  loglik -= 0.5 * (np.log(2 * np.pi) + np.log(S_t[0,0]) + (v_t**2)*S_inv[0,0])\n"}
+,{"stream_name":"stderr","time":21.430591751,"data":"\n"}
+,{"stream_name":"stderr","time":21.43061309,"data":"/tmp/ipykernel_16/2771734456.py:66: RuntimeWarning: invalid value encountered in log\n"}
+,{"stream_name":"stderr","time":21.430620333,"data":"  loglik -= 0.5 * (np.log(2 * np.pi) + np.log(S_t[0,0]) + (v_t**2)*S_inv[0,0])\n"}
+,{"stream_name":"stdout","time":501.157323042,"data":"Converged: False in 99 iterations | Half-life: 4.37 mins\n"}
+,{"stream_name":"stdout","time":501.157361809,"data":"\n"}
+,{"stream_name":"stdout","time":501.157369395,"data":"Processing BDL vs MAZDOCK | Valid Pairwise Bars: 44250\n"}
+,{"stream_name":"stderr","time":505.687868777,"data":"/tmp/ipykernel_16/2771734456.py:66: RuntimeWarning: invalid value encountered in log\n"}
+,{"stream_name":"stderr","time":505.687906731,"data":"  loglik -= 0.5 * (np.log(2 * np.pi) + np.log(S_t[0,0]) + (v_t**2)*S_inv[0,0])\n"}
+,{"stream_name":"stderr","time":505.68791384,"data":"\n"}
+,{"stream_name":"stderr","time":505.687920133,"data":"/tmp/ipykernel_16/2771734456.py:66: RuntimeWarning: invalid value encountered in log\n"}
+,{"stream_name":"stderr","time":505.687924249,"data":"  loglik -= 0.5 * (np.log(2 * np.pi) + np.log(S_t[0,0]) + (v_t**2)*S_inv[0,0])\n"}
+,{"stream_name":"stdout","time":950.711807379,"data":"Converged: False in 99 iterations | Half-life: 1.28 mins\n"}
+,{"stream_name":"stdout","time":950.711862928,"data":"\n"}
+,{"stream_name":"stdout","time":950.711872913,"data":"Processing GRSE vs MAZDOCK | Valid Pairwise Bars: 44250\n"}
+,{"stream_name":"stderr","time":955.218413356,"data":"/tmp/ipykernel_16/2771734456.py:66: RuntimeWarning: invalid value encountered in log\n"}
+,{"stream_name":"stderr","time":955.218487171,"data":"  loglik -= 0.5 * (np.log(2 * np.pi) + np.log(S_t[0,0]) + (v_t**2)*S_inv[0,0])\n"}
+,{"stream_name":"stderr","time":955.218494738,"data":"\n"}
+,{"stream_name":"stderr","time":955.218499462,"data":"/tmp/ipykernel_16/2771734456.py:66: RuntimeWarning: invalid value encountered in log\n"}
+,{"stream_name":"stderr","time":955.218504151,"data":"  loglik -= 0.5 * (np.log(2 * np.pi) + np.log(S_t[0,0]) + (v_t**2)*S_inv[0,0])\n"}
+,{"stream_name":"stdout","time":1413.286878947,"data":"Converged: False in 99 iterations | Half-life: 1.15 mins\n"}
+,{"stream_name":"stdout","time":1413.286925274,"data":"\n"}
+,{"stream_name":"stdout","time":1413.286933545,"data":"Processing BANKBARODA vs CANBK | Valid Pairwise Bars: 44250\n"}
+,{"stream_name":"stderr","time":1431.159793815,"data":"/tmp/ipykernel_16/2771734456.py:66: RuntimeWarning: invalid value encountered in log\n"}
+,{"stream_name":"stderr","time":1431.159857698,"data":"  loglik -= 0.5 * (np.log(2 * np.pi) + np.log(S_t[0,0]) + (v_t**2)*S_inv[0,0])\n"}
+,{"stream_name":"stderr","time":1431.159868343,"data":"\n"}
+,{"stream_name":"stderr","time":1431.159875017,"data":"/tmp/ipykernel_16/2771734456.py:66: RuntimeWarning: invalid value encountered in log\n"}
+,{"stream_name":"stderr","time":1431.159881753,"data":"  loglik -= 0.5 * (np.log(2 * np.pi) + np.log(S_t[0,0]) + (v_t**2)*S_inv[0,0])\n"}
+,{"stream_name":"stdout","time":1873.441592265,"data":"Converged: False in 99 iterations | Half-life: 32.31 mins\n"}
+,{"stream_name":"stdout","time":1873.441641795,"data":"\n"}
+,{"stream_name":"stdout","time":1873.441650209,"data":"Processing BPCL vs HINDPETRO | Valid Pairwise Bars: 44250\n"}
+,{"stream_name":"stdout","time":2322.6330841,"data":"Converged: False in 99 iterations | Half-life: 0.68 mins\n"}
+,{"stream_name":"stderr","time":2326.172329183,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":2326.172370438,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":2326.394950932,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":2326.394983189,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":2327.219417021,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":2327.64193937,"data":"[NbConvertApp] Writing 19404 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":2330.945757833,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":2332.148389594,"data":"[NbConvertApp] Writing 317944 bytes to __results__.html\n"}
+]

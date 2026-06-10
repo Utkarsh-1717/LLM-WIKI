@@ -1,0 +1,60 @@
+[{"stream_name":"stderr","time":7.267889609,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.268038906,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.268052351,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.26805554,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.926272142,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.926311691,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.926317653,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.926322756,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":11.830990266,"data":"=== /kaggle/input Contents ===\n"}
+,{"stream_name":"stdout","time":11.831059168,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite  (2.17 GB)\n"}
+,{"stream_name":"stdout","time":11.831064568,"data":"\n"}
+,{"stream_name":"stdout","time":11.83106823,"data":"✅ DB_PATH = /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite\n"}
+,{"stream_name":"stdout","time":133.773547571,"data":"Loaded 22,091,099 rows in 121.71s\n"}
+,{"stream_name":"stdout","time":158.896926644,"data":"Intraday rows: 22,091,099\n"}
+,{"stream_name":"stdout","time":179.066023051,"data":"Close matrix pivot shape: (44250, 500)\n"}
+,{"stream_name":"stdout","time":179.066061635,"data":"Dropping 1 sparse symbols (\u003c80% coverage)\n"}
+,{"stream_name":"stdout","time":179.889564598,"data":"Aligned Close Matrix shape: (39325, 499)\n"}
+,{"stream_name":"stdout","time":179.889604744,"data":"Aligned Open Matrix shape: (39325, 499)\n"}
+,{"stream_name":"stdout","time":180.306427221,"data":"Log returns matrix shape: (39220, 499)\n"}
+,{"stream_name":"stdout","time":180.306455275,"data":"Computing correlation matrix...\n"}
+,{"stream_name":"stdout","time":188.599205939,"data":"GPU path failed (transform: failed inside CUB: cudaErrorNoKernelImageForDevice: no kernel image is available for execution on the device) — using CPU\n"}
+,{"stream_name":"stdout","time":275.894974109,"data":"Processing upper-triangle pairs...\n"}
+,{"stream_name":"stdout","time":286.533267262,"data":"Total pairs before filter: 124,251\n"}
+,{"stream_name":"stdout","time":287.801172138,"data":"Saved pairs_all.csv (124233 rows) and pairs_top500.csv (500 rows)\n"}
+,{"stream_name":"stdout","time":287.801203671,"data":"In-Sample period: 2025-12-19 09:15:00+05:30 to 2026-04-09 11:52:00+05:30 (27527 bars)\n"}
+,{"stream_name":"stdout","time":287.801210997,"data":"Out-of-Sample period: 2026-04-09 11:53:00+05:30 to 2026-05-26 15:29:00+05:30 (11798 bars)\n"}
+,{"stream_name":"stdout","time":288.002277939,"data":"Stage 2 Unique symbols: 161\n"}
+,{"stream_name":"stdout","time":288.240674033,"data":"Numba available for JIT: True\n"}
+,{"stream_name":"stdout","time":288.240704897,"data":"Calibrating 500 pairs...\n"}
+,{"stream_name":"stdout","time":1185.960601108,"data":"Stage 2 complete. Total tradeable pairs: 0 / 500\n"}
+,{"stream_name":"stdout","time":1186.156107088,"data":"Stage 3A Tradeable Pairs: 500\n"}
+,{"stream_name":"stderr","time":1190.746926323,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":1190.746956232,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":1190.746977036,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":1190.747185073,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":1190.747202176,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":1190.747445188,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":1190.747557387,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":1190.747565972,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":1190.747570355,"data":"Exception encountered at \"In [4]\":\n"}
+,{"stream_name":"stderr","time":1190.747612664,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":1190.747618122,"data":"ValueError                                Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":1190.747623137,"data":"/tmp/ipykernel_23/2411317179.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":1190.747628162,"data":"    166 \n"}
+,{"stream_name":"stderr","time":1190.74763211,"data":"    167 \n"}
+,{"stream_name":"stderr","time":1190.747635826,"data":"--\u003e 168     hl_bars = int(np.ceil(row['half_life_minutes']))\n"}
+,{"stream_name":"stderr","time":1190.747639878,"data":"    169 \n"}
+,{"stream_name":"stderr","time":1190.747643531,"data":"    170 \n"}
+,{"stream_name":"stderr","time":1190.747647483,"data":"\n"}
+,{"stream_name":"stderr","time":1190.747651237,"data":"ValueError: cannot convert float NaN to integer\n"}
+,{"stream_name":"stderr","time":1190.747655145,"data":"\n"}
+,{"stream_name":"stderr","time":1193.12172476,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1193.121765849,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1193.28514951,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1193.28518287,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1193.957307682,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":1194.33141006,"data":"[NbConvertApp] Writing 62522 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":1196.971880496,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1198.072202807,"data":"[NbConvertApp] Writing 483741 bytes to __results__.html\n"}
+]

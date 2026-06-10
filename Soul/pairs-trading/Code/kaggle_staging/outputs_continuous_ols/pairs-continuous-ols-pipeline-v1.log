@@ -1,0 +1,46 @@
+[{"stream_name":"stderr","time":8.723063869,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.723150809,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.723157839,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.723160879,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":9.421221585,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.421270505,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.421275405,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.421279045,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":14.038260138,"data":"=== /kaggle/input contents ===\n"}
+,{"stream_name":"stdout","time":14.038319247,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite  (2.17 GB)\n"}
+,{"stream_name":"stdout","time":14.038322978,"data":"\n"}
+,{"stream_name":"stdout","time":14.038325538,"data":"✅ DB_PATH = /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite\n"}
+,{"stream_name":"stdout","time":14.228699353,"data":"=== Loading All DB Data ===\n"}
+,{"stream_name":"stdout","time":100.496843757,"data":"Pivoting to price matrix...\n"}
+,{"stream_name":"stdout","time":107.135853526,"data":"Price matrix: (44250, 500)\n"}
+,{"stream_name":"stdout","time":107.337188218,"data":"Computing pairwise Pearson correlation...\n"}
+,{"stream_name":"stdout","time":572.586820863,"data":"Saved Stage 1 outputs.\n"}
+,{"stream_name":"stdout","time":572.586988043,"data":"\n"}
+,{"stream_name":"stdout","time":572.586995073,"data":"Using Top 500 Production Pairs for Execution...\n"}
+,{"stream_name":"stdout","time":643.464582047,"data":"Saved Continuous OLS outputs.\n"}
+,{"stream_name":"stdout","time":645.500346886,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\n"}
+,{"stream_name":"stdout","time":645.732517393,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\n"}
+,{"stream_name":"stdout","time":646.589886253,"data":"Starting upload for file continuous_ols_production_results.csv\n"}
+,{"stream_name":"stderr","time":647.267041687,"data":"\r  0%|          | 0.00/29.0k [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":648.033448789,"data":"\r  0%|          | 0.00/29.0k [00:00\u003c?, ?B/s]\r100%|██████████| 29.0k/29.0k [00:00\u003c00:00, 38.8kB/s]\n"}
+,{"stream_name":"stderr","time":648.234298161,"data":"\r100%|██████████| 29.0k/29.0k [00:00\u003c00:00, 38.8kB/s]\n"}
+,{"stream_name":"stderr","time":648.234346201,"data":"\n"}
+,{"stream_name":"stderr","time":648.234352761,"data":"\n"}
+,{"stream_name":"stdout","time":648.236369421,"data":"Upload successful: continuous_ols_production_results.csv (29KB)\n"}
+,{"stream_name":"stdout","time":648.236392641,"data":"Starting upload for file pairs_top500.csv\n"}
+,{"stream_name":"stderr","time":648.9358415,"data":"\r  0%|          | 0.00/11.4k [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":650.349809408,"data":"\r  0%|          | 0.00/11.4k [00:00\u003c?, ?B/s]\r100%|██████████| 11.4k/11.4k [00:01\u003c00:00, 8.27kB/s]\n"}
+,{"stream_name":"stderr","time":650.550660811,"data":"\r100%|██████████| 11.4k/11.4k [00:01\u003c00:00, 8.27kB/s]\n"}
+,{"stream_name":"stderr","time":650.550699791,"data":"\n"}
+,{"stream_name":"stderr","time":650.5507032,"data":"\n"}
+,{"stream_name":"stdout","time":650.55144277,"data":"Upload successful: pairs_top500.csv (11KB)\n"}
+,{"stream_name":"stdout","time":658.791589498,"data":"✅ Dataset ready and published.\n"}
+,{"stream_name":"stderr","time":662.213875991,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":662.213913441,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":662.420239185,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":662.420285605,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":663.14072114,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":663.406434252,"data":"[NbConvertApp] Writing 22187 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":665.904587185,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":666.722086382,"data":"[NbConvertApp] Writing 322263 bytes to __results__.html\n"}
+]

@@ -1,0 +1,64 @@
+[{"stream_name":"stderr","time":5.525129366,"data":"/usr/local/lib/python3.12/dist-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":5.525215667,"data":"  validate(nb)\n"}
+,{"stream_name":"stderr","time":6.286486293,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.28652003,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.286523715,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.286526214,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.841962785,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.841991408,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.841996045,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.8419997089999995,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":11.490431573,"data":"Numba: True\n"}
+,{"stream_name":"stdout","time":11.490483829,"data":"=== /kaggle/input Contents ===\n"}
+,{"stream_name":"stdout","time":11.49049013,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite  (2.17 GB)\n"}
+,{"stream_name":"stdout","time":11.490495587,"data":"\n"}
+,{"stream_name":"stdout","time":11.490500056,"data":"✅ DB_PATH = /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite\n"}
+,{"stream_name":"stdout","time":124.787463273,"data":"Loaded 22,091,099 rows in 113.1s\n"}
+,{"stream_name":"stdout","time":151.405520802,"data":"Intraday rows: 22,091,099\n"}
+,{"stream_name":"stdout","time":165.464759282,"data":"Pivot shape: (44250, 500)\n"}
+,{"stream_name":"stdout","time":165.464826321,"data":"Dropping 1 sparse symbols (\u003c80%)\n"}
+,{"stream_name":"stdout","time":166.367482959,"data":"Aligned Close: (39325, 499),  Open: (39325, 499)\n"}
+,{"stream_name":"stdout","time":166.718099127,"data":"Log-returns shape: (39220, 499)\n"}
+,{"stream_name":"stdout","time":166.718156497,"data":"Computing correlation matrix ...\n"}
+,{"stream_name":"stdout","time":172.364309324,"data":"CPU corr (GPU failed: transform: failed inside CUB: cudaErrorNoKernelImageForDevice: no kernel image is available for execution on the device)\n"}
+,{"stream_name":"stdout","time":262.126759986,"data":"Total pairs: 124,251\n"}
+,{"stream_name":"stdout","time":263.33885313,"data":"Saved pairs_all.csv (124233) and pairs_top500.csv (500 rows)\n"}
+,{"stream_name":"stdout","time":263.338889617,"data":"IS  : 2025-12-19 09:15:00+05:30  →  2026-04-09 11:52:00+05:30  (27527 bars)\n"}
+,{"stream_name":"stdout","time":263.338911978,"data":"OOS : 2026-04-09 11:53:00+05:30  →  2026-05-26 15:29:00+05:30  (11798 bars)\n"}
+,{"stream_name":"stdout","time":263.539895557,"data":"Stage 2 unique symbols: 161\n"}
+,{"stream_name":"stdout","time":263.934696486,"data":"Calibrating 500 pairs (single-threaded) ...\n"}
+,{"stream_name":"stdout","time":744.506491535,"data":"Stage 2 complete. Tradeable: 6 / 500\n"}
+,{"stream_name":"stdout","time":744.506544724,"data":"EM converged: 1 / 500\n"}
+,{"stream_name":"stdout","time":744.506558074,"data":"             Q_beta       Q_alpha             R\n"}
+,{"stream_name":"stdout","time":744.506560933,"data":"count  5.000000e+02  5.000000e+02  5.000000e+02\n"}
+,{"stream_name":"stdout","time":744.506563228,"data":"mean   1.770104e-07  1.494977e-04  1.044841e-01\n"}
+,{"stream_name":"stdout","time":744.506565844,"data":"std    6.653634e-07  4.796605e-04  4.741747e-01\n"}
+,{"stream_name":"stdout","time":744.506568222,"data":"min    1.000000e-07  3.992280e-07  6.609244e-07\n"}
+,{"stream_name":"stdout","time":744.506570486,"data":"25%    1.000000e-07  5.316047e-06  2.552689e-04\n"}
+,{"stream_name":"stdout","time":744.506572974,"data":"50%    1.000000e-07  2.134728e-05  3.423599e-03\n"}
+,{"stream_name":"stdout","time":744.506575535,"data":"75%    1.000000e-07  1.079135e-04  3.220082e-02\n"}
+,{"stream_name":"stdout","time":744.506577829,"data":"max    1.269856e-05  5.105974e-03  5.426538e+00\n"}
+,{"stream_name":"stdout","time":744.729021596,"data":"Stage 3A pairs: 500\n"}
+,{"stream_name":"stdout","time":828.769535659,"data":"Stage 3A done. Saved 500 rows.\n"}
+,{"stream_name":"stdout","time":828.769575431,"data":"Non-zero trade pairs: 496\n"}
+,{"stream_name":"stdout","time":907.568290709,"data":"Stage 3B done. Saved 500 rows.\n"}
+,{"stream_name":"stdout","time":907.568325412,"data":"Pairs with trades: 490\n"}
+,{"stream_name":"stdout","time":907.568331215,"data":"Total net profit: -1406882.31\n"}
+,{"stream_name":"stdout","time":908.681431194,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\n"}
+,{"stream_name":"stdout","time":908.681468499,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\n"}
+,{"stream_name":"stdout","time":908.681473027,"data":"Copied pairs_all.csv\n"}
+,{"stream_name":"stdout","time":908.68147628,"data":"Copied pairs_top500.csv\n"}
+,{"stream_name":"stdout","time":908.681479568,"data":"Copied pairs_stage2_kalman_ou.csv\n"}
+,{"stream_name":"stdout","time":908.681482743,"data":"Copied pairs_stage3a_optimized.csv\n"}
+,{"stream_name":"stdout","time":908.681485914,"data":"Copied pairs_stage3b_backtest.csv\n"}
+,{"stream_name":"stdout","time":908.681489103,"data":"Publishing dataset ...\n"}
+,{"stream_name":"stdout","time":908.875184213,"data":"✅ New dataset published\n"}
+,{"stream_name":"stderr","time":913.983697323,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":913.983749394,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":914.140503888,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":914.14055072,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":914.760030458,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":915.063410092,"data":"[NbConvertApp] Writing 42738 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":917.385218838,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":918.330551424,"data":"[NbConvertApp] Writing 464010 bytes to __results__.html\n"}
+]

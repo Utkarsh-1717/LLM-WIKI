@@ -36,3 +36,7 @@
 {"path": "Wiki/Logs/session-2026-06-01.md", "title": "session-2026-06-01", "tag": "log", "topics": "[kaggle, github, scheduler, cron, setup, automation, llm-wiki, ingest]", "sources": ["Raw/Sources/agents-rules.md"], "updated": "2026-06-01"}
 {"path": "Wiki/Logs/session-2026-06-02.md", "title": "session-2026-06-02", "tag": "log", "topics": "[kaggle, github, scheduler, bug-fix, tick-data]", "sources": ["Raw/Sources/agents-rules.md"], "updated": "2026-06-02"}
 {"path": "Wiki/Logs/session-2026-06-02b.md", "title": "session-2026-06-02b", "tag": "log", "topics": "[quant, pairs-trading, kaggle, debugging, ingest]", "sources": [], "updated": "2026-06-02"}
+{"path": "Wiki/Logs/session-2026-06-09.md", "title": "session-2026-06-09", "tag": "log", "topics": "[pairs-trading, kalman, ols, cointegration, 500-pairs, backtest, z-score, kaggle]", "sources": [], "updated": "2026-06-10"}
+{"path": "Wiki/Entities/pairs-stage1b-cointegration.md", "title": "pairs-stage1b-cointegration", "tag": "entity", "topics": "[pairs-trading, cointegration, engle-granger, adf, nse500, kaggle]", "sources": [], "updated": "2026-06-10"}
+{"path": "Wiki/Entities/continuous-ols-execution.md", "title": "continuous-ols-execution", "tag": "entity", "topics": "[pairs-trading, ols, rolling-regression, vectorized, kaggle]", "sources": [], "updated": "2026-06-10"}
+{"path": "Wiki/Entities/pairs-trading-strategy.md", "title": "pairs-trading-strategy", "tag": "entity", "topics": "[pairs-trading, kalman, ols, cointegration, nse500, intraday, mean-reversion]", "sources": [], "updated": "2026-06-10"}

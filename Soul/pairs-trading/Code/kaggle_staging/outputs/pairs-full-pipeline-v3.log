@@ -1,0 +1,79 @@
+[{"stream_name":"stderr","time":8.639382901,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.63945672,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.639462267999999,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.639464993,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":9.396188242000001,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.396222389,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.396225994,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.396228729,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":13.531982232,"data":"=== /kaggle/input contents ===\n"}
+,{"stream_name":"stdout","time":13.532043918,"data":"  /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite  (2.17 GB)\n"}
+,{"stream_name":"stdout","time":13.532050308,"data":"\n"}
+,{"stream_name":"stdout","time":13.532055115,"data":"✅ DB_PATH = /kaggle/input/datasets/utkarshpatelthefirst/master-data-1min-db/Master-Data-1min.sqlite\n"}
+,{"stream_name":"stdout","time":13.723618356,"data":"=== Loading All DB Data ===\n"}
+,{"stream_name":"stdout","time":133.043101626,"data":"Pivoting to price matrix...\n"}
+,{"stream_name":"stdout","time":142.504240092,"data":"Price matrix: (44250, 500)\n"}
+,{"stream_name":"stdout","time":142.704782671,"data":"Computing pairwise Pearson correlation...\n"}
+,{"stream_name":"stdout","time":749.875925397,"data":"Saved Stage 1 outputs.\n"}
+,{"stream_name":"stdout","time":749.875992965,"data":"\n"}
+,{"stream_name":"stdout","time":749.875999189,"data":"Using Top 5 Production Pairs for Stage 2 \u0026 3: [('PFC', 'RECLTD'), ('BDL', 'MAZDOCK'), ('GRSE', 'MAZDOCK'), ('BANKBARODA', 'CANBK'), ('BPCL', 'HINDPETRO')]\n"}
+,{"stream_name":"stdout","time":750.14876652,"data":"Saved Stage 2 outputs.\n"}
+,{"stream_name":"stdout","time":763.208634745,"data":"Saved Stage 3 outputs.\n"}
+,{"stream_name":"stdout","time":764.945075512,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\n"}
+,{"stream_name":"stdout","time":765.338668645,"data":"Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.1), please consider upgrading to the latest version (2.0.2)\n"}
+,{"stream_name":"stdout","time":765.751466033,"data":"Starting upload for file stage2_ou_calibration.csv\n"}
+,{"stream_name":"stderr","time":765.982084882,"data":"\r  0%|          | 0.00/861 [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":766.768080599,"data":"\r  0%|          | 0.00/861 [00:00\u003c?, ?B/s]\r100%|██████████| 861/861 [00:00\u003c00:00, 1.10kB/s]\n"}
+,{"stream_name":"stderr","time":766.926194981,"data":"\r100%|██████████| 861/861 [00:00\u003c00:00, 1.10kB/s]\n"}
+,{"stream_name":"stderr","time":766.926235769,"data":"\n"}
+,{"stream_name":"stderr","time":766.926242451,"data":"\n"}
+,{"stream_name":"stdout","time":766.92711932,"data":"Upload successful: stage2_ou_calibration.csv (861B)\n"}
+,{"stream_name":"stdout","time":766.927144702,"data":"Starting upload for file stage2_stability_summary.csv\n"}
+,{"stream_name":"stderr","time":766.928148396,"data":"\r  0%|          | 0.00/213 [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":767.316785413,"data":"\r  0%|          | 0.00/213 [00:00\u003c?, ?B/s]\r100%|██████████| 213/213 [00:00\u003c00:00, 549B/s]\n"}
+,{"stream_name":"stderr","time":767.517715187,"data":"\r100%|██████████| 213/213 [00:00\u003c00:00, 549B/s]\n"}
+,{"stream_name":"stderr","time":767.517752218,"data":"\n"}
+,{"stream_name":"stderr","time":767.517756044,"data":"\n"}
+,{"stream_name":"stdout","time":767.518493119,"data":"Upload successful: stage2_stability_summary.csv (213B)\n"}
+,{"stream_name":"stdout","time":767.518510393,"data":"Starting upload for file pairs_top500.csv\n"}
+,{"stream_name":"stderr","time":767.730026021,"data":"\r  0%|          | 0.00/22.1k [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":768.105797766,"data":"\r  0%|          | 0.00/22.1k [00:00\u003c?, ?B/s]\r100%|██████████| 22.1k/22.1k [00:00\u003c00:00, 60.3kB/s]\n"}
+,{"stream_name":"stderr","time":768.261148649,"data":"\r100%|██████████| 22.1k/22.1k [00:00\u003c00:00, 60.3kB/s]\n"}
+,{"stream_name":"stderr","time":768.262833689,"data":"\n"}
+,{"stream_name":"stderr","time":768.262847234,"data":"\n"}
+,{"stream_name":"stdout","time":768.262658745,"data":"Upload successful: pairs_top500.csv (22KB)\n"}
+,{"stream_name":"stdout","time":768.262862091,"data":"Starting upload for file pairs_all.csv\n"}
+,{"stream_name":"stderr","time":768.263891043,"data":"\r  0%|          | 0.00/5.81M [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":768.376427838,"data":"\r  0%|          | 0.00/5.81M [00:00\u003c?, ?B/s]\r 20%|██        | 1.17M/5.81M [00:00\u003c00:00, 10.9MB/s]\n"}
+,{"stream_name":"stderr","time":768.65351244,"data":"\r 20%|██        | 1.17M/5.81M [00:00\u003c00:00, 10.9MB/s]\r 39%|███▉      | 2.27M/5.81M [00:00\u003c00:00, 5.64MB/s]\n"}
+,{"stream_name":"stderr","time":768.800021295,"data":"\r 39%|███▉      | 2.27M/5.81M [00:00\u003c00:00, 5.64MB/s]\r 51%|█████     | 2.94M/5.81M [00:00\u003c00:00, 5.33MB/s]\n"}
+,{"stream_name":"stderr","time":768.932513592,"data":"\r 51%|█████     | 2.94M/5.81M [00:00\u003c00:00, 5.33MB/s]\r 60%|██████    | 3.52M/5.81M [00:00\u003c00:00, 5.10MB/s]\n"}
+,{"stream_name":"stderr","time":769.510649956,"data":"\r 60%|██████    | 3.52M/5.81M [00:00\u003c00:00, 5.10MB/s]\r100%|██████████| 5.81M/5.81M [00:01\u003c00:00, 4.89MB/s]\n"}
+,{"stream_name":"stderr","time":769.670664396,"data":"\r100%|██████████| 5.81M/5.81M [00:01\u003c00:00, 4.89MB/s]\n"}
+,{"stream_name":"stderr","time":769.670699133,"data":"\n"}
+,{"stream_name":"stderr","time":769.670705024,"data":"\n"}
+,{"stream_name":"stdout","time":769.671812676,"data":"Upload successful: pairs_all.csv (6MB)\n"}
+,{"stream_name":"stdout","time":769.671841912,"data":"Starting upload for file production_engine_results.csv\n"}
+,{"stream_name":"stderr","time":769.672907619,"data":"\r  0%|          | 0.00/485 [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":770.048727717,"data":"\r  0%|          | 0.00/485 [00:00\u003c?, ?B/s]\r100%|██████████| 485/485 [00:00\u003c00:00, 1.29kB/s]\n"}
+,{"stream_name":"stderr","time":770.249751161,"data":"\r100%|██████████| 485/485 [00:00\u003c00:00, 1.29kB/s]\n"}
+,{"stream_name":"stderr","time":770.249794781,"data":"\n"}
+,{"stream_name":"stderr","time":770.249801538,"data":"\n"}
+,{"stream_name":"stdout","time":770.250781379,"data":"Upload successful: production_engine_results.csv (485B)\n"}
+,{"stream_name":"stdout","time":770.250811126,"data":"Starting upload for file stage2_chunk_sweep.csv\n"}
+,{"stream_name":"stderr","time":770.474801692,"data":"\r  0%|          | 0.00/780 [00:00\u003c?, ?B/s]\n"}
+,{"stream_name":"stderr","time":770.836199515,"data":"\r  0%|          | 0.00/780 [00:00\u003c?, ?B/s]\r100%|██████████| 780/780 [00:00\u003c00:00, 2.16kB/s]\n"}
+,{"stream_name":"stderr","time":771.037149707,"data":"\r100%|██████████| 780/780 [00:00\u003c00:00, 2.16kB/s]\n"}
+,{"stream_name":"stderr","time":771.037191395,"data":"\n"}
+,{"stream_name":"stderr","time":771.037197091,"data":"\n"}
+,{"stream_name":"stdout","time":771.038142227,"data":"Upload successful: stage2_chunk_sweep.csv (780B)\n"}
+,{"stream_name":"stdout","time":776.710751019,"data":"✅ Dataset ready and published.\n"}
+,{"stream_name":"stderr","time":780.488420215,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":780.488460839,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":780.712734082,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":780.712764272,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":781.491974279,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":781.932329454,"data":"[NbConvertApp] Writing 28296 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":784.916947524,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":786.066876502,"data":"[NbConvertApp] Writing 357106 bytes to __results__.html\n"}
+]

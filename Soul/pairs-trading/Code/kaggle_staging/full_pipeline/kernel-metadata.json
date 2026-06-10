@@ -1,0 +1,16 @@
+{
+  "id": "utkarshpatelthefirst/pairs-full-pipeline-v3",
+  "title": "Pairs Full Pipeline v3",
+  "code_file": "full-pipeline.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "utkarshpatelthefirst/master-data-1min-db"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

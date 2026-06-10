@@ -1,0 +1,6 @@
+pair,num_chunks,chunk_half_lives,hl_max,hl_medoid,target_tau_worst_case,target_tau_dominant,Q_beta_worst_case,Q_beta_dominant
+PFC-RECLTD,4,"[np.float64(120.35), np.float64(1419.07), np.float64(463.51), np.float64(220.04)]",1419.07,463.51,2838.14,927.02,4e-09,3.73e-08
+BDL-MAZDOCK,4,"[np.float64(1888.76), np.float64(3179.69), np.float64(1065.58), np.float64(568.79)]",3179.69,1888.76,6359.39,3777.52,1.8e-09,5.1e-09
+GRSE-MAZDOCK,4,"[np.float64(311.2), np.float64(772.96), np.float64(1229.94), np.float64(1167.84)]",1229.94,772.96,2459.87,1545.91,6.05e-08,1.533e-07
+BANKBARODA-CANBK,4,"[np.float64(1000.71), np.float64(450.27), np.float64(566.8), np.float64(354.63)]",1000.71,566.8,2001.42,1133.61,7.4e-09,2.32e-08
+BPCL-HINDPETRO,4,"[np.float64(128.16), np.float64(579.4), np.float64(341.95), np.float64(2017.15)]",2017.15,579.4,4034.3,1158.8,2.03e-08,2.458e-07
