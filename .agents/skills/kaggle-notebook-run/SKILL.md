@@ -2,8 +2,8 @@
 name: kaggle-notebook-run
 trigger: [run on Kaggle, backtest, Kaggle notebook, strategy, kaggle run, kaggle fetch]
 description: Creates, runs, and monitors Kaggle notebooks. Covers all known failure modes from production use. Data fetch AND dataset publish happen in ONE notebook.
-version: 3.2.0
-last_updated: 2026-06-04
+version: 3.3.0
+last_updated: 2026-06-10
 ---
 
 # Kaggle Notebook Run Skill
@@ -23,6 +23,9 @@ last_updated: 2026-06-04
 9. **Always lock threads before multiprocessing** — set `os.environ["OPENBLAS_NUM_THREADS"] = "1"` and `OMP_NUM_THREADS = "1"` before importing NumPy if using `multiprocessing.Pool` (fork) to prevent thread clashing and silent deadlocks.
 10. **Never pre-compile Numba before a `fork`** — let each child process compile its own JIT functions to avoid fatal LLVM lock deadlocks.
 11. **Strict Loop Hoisting (O(N) & I/O)** — In any parallel processing script (`joblib`, `multiprocessing`), ALL database loads must happen exactly ONCE in the global parent. ALL invariant complex calculations (Kalman Filters, Rolling Z-Scores, Variances) MUST be hoisted out of the parallel loop. Failure to do so will cause 50+ minute disk thrashing and memory exhaustion deadlocks.
+12. **Vectorized Rolling Math — Never Loop** — For rolling regression (OLS beta/alpha) over 500 pairs × 44,000 bars, use Pandas vectorized operations. Never use a Python `for` loop. One loop = Kaggle timeout. Use `Series.rolling().cov()` and `Series.rolling().var()` instead.
+13. **Z-Score Window Validation** — Before deploying any mean-reversion strategy, validate that `ZSCORE_WINDOW ≥ max_half_life_of_any_pair`. Using a 1-day window (375 bars) on pairs with 2-9 day half-lives causes premature mean-reversion exits and friction death. The validated minimum is 7,500 bars (20 trading days).
+14. **Dual Kernel Monitoring** — When running multiple notebooks in parallel, use a single background monitor script that checks both slugs in one loop. See the `kaggle-dual-monitor` temp-skill pattern.
 
 ---
 
@@ -130,6 +133,37 @@ price_matrix = price_matrix.dropna(how='any', axis=0)
 print(f"Aligned: {price_matrix.shape[0]:,} bars × {price_matrix.shape[1]} symbols")
 assert price_matrix.shape[0] >= 5000, "Too few bars — check data quality"
 ```
+
+---
+
+### ❌ Failure 6 — Z-Score Window Too Short (Silent Alpha Destruction)
+**Cause:** Using a rolling Z-score window shorter than the pair's true half-life causes the rolling mean to re-center faster than the spread can revert. The Z-score artificially "resets" before the trade completes, generating premature exit signals. The failure is completely silent — the backtest runs with no errors and simply produces large losses.
+
+**Observed impact (production):** `ZSCORE_WINDOW = 375` (1 day) on NSE 500 pairs with true half-lives of 642–3,400 minutes → 94,000 trades, net −₹41 Lakhs. Correcting to `ZSCORE_WINDOW = 7500` (20 days) reduced trades by 75% and raised profitable pair count from 54 to 168.
+
+**Fix:** Always validate:
+```python
+assert ZSCORE_WINDOW >= max_half_life_bars * 2, "Z-Score window too short for pair half-life!"
+# Production-validated minimum: 7500 (20 trading days × 375 bars/day)
+ZSCORE_WINDOW = 7500
+```
+
+---
+
+### ❌ Failure 7 — Using Kalman or EOD OLS Residuals for ADF Cointegration Test
+**Cause:** Running ADF on Kalman residuals always passes (filter forces mean-zero). Running ADF on EOD-updated OLS residuals always fails (daily beta jumps break ADF continuity assumption).
+
+**Fix:** Use a **Continuous Vectorized Rolling OLS** spread for any ADF test:
+```python
+beta   = ya.rolling(7500).cov(yb) / yb.rolling(7500).var()
+alpha  = ya.rolling(7500).mean() - beta * yb.rolling(7500).mean()
+spread = ya - (alpha + beta * yb)  # smooth, no daily jumps, valid for ADF
+
+from statsmodels.tsa.stattools import adfuller
+adf_stat, p_val = adfuller(spread.dropna(), maxlag=1)
+# p_val < 0.05 → structurally cointegrated → include in production universe
+```
+This filter, applied to 500 NSE pairs, flipped portfolio PnL from −₹4.1 Lakh to +₹54,937.
 
 ---
 
