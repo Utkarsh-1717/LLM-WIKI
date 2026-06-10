@@ -250,3 +250,6 @@ CHUNK_SWEEP = [4, 6, 8, 10]
 - [[QC-decisions-pairs-trading]]
 - [[master-data-1min-dataset]]
 - [[kaggle-notebook-run]]
+
+- [[production-logic]]
+- [[backtest-record-pairs-trading]]

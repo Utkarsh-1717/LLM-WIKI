@@ -117,3 +117,7 @@ adf_stat, p_val = adfuller(spread.dropna(), maxlag=1)
 - [[QC-decisions-pairs-trading]]
 - [[pairs-trading-strategy]]
 - [[kaggle-notebook-run]]
+
+- [[stage3b-continuous-ols]]
+- [[backtest-record-pairs-trading]]
+- [[session-2026-06-09]]

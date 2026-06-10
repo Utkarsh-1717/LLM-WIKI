@@ -135,3 +135,7 @@ All open positions are forcibly closed at 15:15 PM regardless of Z-score state.
 - [[stage2-ou-calibration]]
 - [[stage3-execution-engine]]
 - [[production-logic]]
+
+- [[stage1b-cointegration]]
+- [[stage3b-continuous-ols]]
+- [[backtest-record-pairs-trading]]

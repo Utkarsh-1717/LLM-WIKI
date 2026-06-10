@@ -220,3 +220,6 @@ net_pnl = gross_pnl - (qty * exit_price) * friction_pct
 - [[kaggle-notebook-run]]
 - [[master-data-1min-dataset]]
 - [[backtest-record-pairs-trading]]
+
+- [[production-logic]]
+- [[pairs-stage1b-cointegration]]

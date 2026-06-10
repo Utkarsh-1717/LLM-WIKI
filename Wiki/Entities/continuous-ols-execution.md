@@ -59,3 +59,7 @@ spread = ya - (alpha + beta * yb)
 - [[stage3-execution-engine]]
 - [[production-logic]]
 - [[kaggle-notebook-run]]
+
+- [[pairs-stage1b-cointegration]]
+- [[backtest-record-pairs-trading]]
+- [[session-2026-06-09]]

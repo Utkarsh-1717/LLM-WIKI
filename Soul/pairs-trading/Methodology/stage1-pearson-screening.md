@@ -178,3 +178,9 @@ print(f"Total valid pairs: {len(pairs_df)} | Top pair: {pairs_df.iloc[0]['symbol
 - [[master-data-1min-dataset]]
 - [[kaggle-notebook-run]]
 - [[QC-decisions-pairs-trading]]
+
+- [[stage3-execution-engine]]
+- [[production-logic]]
+- [[stage3b-continuous-ols]]
+- [[stage1b-cointegration]]
+- [[pairs-stage1b-cointegration]]

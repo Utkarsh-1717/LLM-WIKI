@@ -144,3 +144,5 @@ Original experiments on Top 5 pairs only (with incorrect 375-bar Z-score window)
 - [[production-logic]]
 - [[QC-decisions-pairs-trading]]
 - [[kaggle-notebook-run]]
+
+- [[session-2026-06-09]]

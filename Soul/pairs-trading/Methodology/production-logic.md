@@ -242,3 +242,6 @@ Ranked by Engle-Granger ADF p-value on the continuous intraday OLS spread:
 - [[master-data-1min-dataset]]
 - [[pairs-trading-strategy]]
 - [[continuous-ols-execution]]
+
+- [[stage3b-continuous-ols]]
+- [[pairs-stage1b-cointegration]]
