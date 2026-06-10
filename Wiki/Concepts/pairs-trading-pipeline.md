@@ -87,3 +87,5 @@ Stage 3 — Intraday Backtesting            ← COMPLETE ✅
 - [[kaggle-compute]]
 - [[kaggle-notebook-hardening]]
 - [[pairs-stage2-kalman-ou]]
+
+- [[pairs-trading-stop-loss-dynamics]]

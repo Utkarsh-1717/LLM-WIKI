@@ -90,3 +90,5 @@ log_returns = log_returns_raw.dropna(how='any')
 - [[pairs-trading-pipeline]]
 - [[timeseries-alignment]]
 - [[master-data-1min-dataset]]
+
+- [[fee-drag-and-microstructure-noise]]

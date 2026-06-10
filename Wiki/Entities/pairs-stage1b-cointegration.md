@@ -1,3 +1,13 @@
+---
+title: "Stage 1B \u2014 Cointegration Screening"
+tags:
+- entity
+topics:
+- pairs-trading
+sources: []
+source_count: 0
+created: '2026-06-10'
+---
 # Stage 1B — Cointegration Screening
 **Type**: Entity  
 **Domain**: Quantitative Finance / Statistical Arbitrage  
@@ -54,7 +64,11 @@ The cointegration filter rejects 142 pairs that have no structural mean-reversio
 
 - [[pairs-trading-strategy]]
 - [[continuous-ols-execution]]
-- [[stage1-pearson-screening]]
+- [[pairs-stage1-pearson]]
 - [[stage3-execution-engine]]
-- [[production-logic]]
+- [[pairs-trading-strategy]]
 - [[kaggle-notebook-run]]
+
+- [[QC-decisions-pairs-trading]]
+- [[backtest-record-pairs-trading]]
+- [[session-2026-06-09]]

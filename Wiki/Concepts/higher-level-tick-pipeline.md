@@ -1,14 +1,20 @@
 ---
 title: Higher-Level Tick Pipeline
 tags:
-  - concept
-topics: [quant, tick-data, pipeline, cloud, fyers, real-time, alpha]
+- concept
+topics:
+- quant
+- tick-data
+- pipeline
+- cloud
+- fyers
+- real-time
+- alpha
 status: evergreen
 created: 2026-05-30
 updated: 2026-05-30
-sources:
-  - Raw/Sources/Higher Level Data Extraction for Trading.md
-source_count: 1
+sources: []
+source_count: 0
 ---
 
 # Higher-Level Tick Pipeline

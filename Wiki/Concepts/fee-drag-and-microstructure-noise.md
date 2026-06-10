@@ -45,3 +45,5 @@ Because brokers charge flat fees per trade (like Zerodha's ₹40 flat intraday e
 - [[pairs-trading-pipeline]] -- Stage 3 of the pipeline was killed by this exact fee drag problem.
 - [[session-continuous-returns]] -- The session continuous logic provides the clean data for this analysis.
 - [[kaggle-compute]] -- We proved this failure mode using 41 parallel backtests on Kaggle.
+
+- [[pairs-trading-stop-loss-dynamics]]

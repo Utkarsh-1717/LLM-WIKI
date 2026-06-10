@@ -56,7 +56,7 @@ To use this dataset in future Kaggle projects, simply attach the `utkarshpatelth
 - [[timeseries-alignment]] — alignment approach used when working with this dataset
 
 - [[pairs-trading-strategy]]
-- [[stage1-pearson-screening]]
-- [[stage2-ou-calibration]]
+- [[pairs-stage1-pearson]]
+- [[pairs-stage2-kalman-ou]]
 - [[stage3-execution-engine]]
-- [[production-logic]]
+- [[pairs-trading-strategy]]

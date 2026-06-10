@@ -76,3 +76,8 @@ Pass `pairs_top500.csv` to **Stage 2: Cointegration Testing** (Engle-Granger or 
 - [[kaggle-compute]]
 - [[higher-level-tick-pipeline]]
 - [[fyers-api]]
+
+- [[QC-decisions-pairs-trading]]
+- [[pairs-stage1b-cointegration]]
+- [[pairs-trading-strategy]]
+- [[stage3-execution-engine]]

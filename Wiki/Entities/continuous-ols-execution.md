@@ -1,3 +1,13 @@
+---
+title: Continuous OLS Execution Engine
+tags:
+- entity
+topics:
+- pairs-trading
+sources: []
+source_count: 0
+created: '2026-06-10'
+---
 # Continuous OLS Execution Engine
 **Type**: Entity  
 **Domain**: Quantitative Finance / Statistical Arbitrage  
@@ -55,11 +65,12 @@ spread = ya - (alpha + beta * yb)
 ## Connections
 
 - [[pairs-trading-strategy]]
-- [[stage1b-cointegration]]
+- [[pairs-stage1b-cointegration]]
 - [[stage3-execution-engine]]
-- [[production-logic]]
+- [[pairs-trading-strategy]]
 - [[kaggle-notebook-run]]
 
 - [[pairs-stage1b-cointegration]]
 - [[backtest-record-pairs-trading]]
 - [[session-2026-06-09]]
+- [[QC-decisions-pairs-trading]]

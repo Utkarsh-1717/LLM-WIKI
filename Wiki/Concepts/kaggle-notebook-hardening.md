@@ -176,3 +176,5 @@ When `fork()` is called, the OS duplicates the parent's memory state, including 
 - [[timeseries-alignment]]
 - [[pairs-trading-pipeline]]
 - [[pairs-stage2-kalman-ou]]
+
+- [[pairs-trading-stop-loss-dynamics]]

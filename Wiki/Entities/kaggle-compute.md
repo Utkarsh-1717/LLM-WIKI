@@ -103,3 +103,5 @@ Every notebook MUST follow the markdown+code cell pattern:
 - [[kaggle-notebook-hardening]]
 - [[pairs-stage1-pearson]]
 - [[pairs-stage2-kalman-ou]]
+
+- [[fee-drag-and-microstructure-noise]]

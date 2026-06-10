@@ -1,3 +1,13 @@
+---
+title: Pairs Trading Strategy
+tags:
+- entity
+topics:
+- pairs-trading
+sources: []
+source_count: 0
+created: '2026-06-10'
+---
 # Pairs Trading Strategy
 **Type**: Entity  
 **Domain**: Quantitative Finance / Statistical Arbitrage  
@@ -81,17 +91,17 @@ Top pairs confirmed structurally cointegrated by intraday Engle-Granger ADF test
 
 ## Connections
 
-- [[stage1-pearson-screening]]
-- [[stage1b-cointegration]]
-- [[stage2-ou-calibration]]
+- [[pairs-stage1-pearson]]
+- [[pairs-stage1b-cointegration]]
+- [[pairs-stage2-kalman-ou]]
 - [[stage3-execution-engine]]
 - [[continuous-ols-execution]]
-- [[production-logic]]
+- [[pairs-trading-strategy]]
 - [[QC-decisions-pairs-trading]]
 - [[backtest-record-pairs-trading]]
 - [[kaggle-notebook-run]]
 - [[master-data-1min-dataset]]
 
-- [[stage3b-continuous-ols]]
+- [[continuous-ols-execution]]
 - [[pairs-stage1b-cointegration]]
 - [[session-2026-06-09]]

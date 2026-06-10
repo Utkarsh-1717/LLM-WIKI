@@ -41,3 +41,9 @@ This dataset is the terminal output for Stage 2 and serves as the strict filteri
 - [[kaggle-compute]] -- Execution platform.
 - [[pairs-trading-pipeline]] -- The parent workflow.
 - [[kaggle-notebook-hardening]] -- During the execution of this dataset, critical multiprocessing fork deadlocks were discovered and documented.
+
+- [[QC-decisions-pairs-trading]]
+- [[backtest-record-pairs-trading]]
+- [[master-data-1min-dataset]]
+- [[pairs-trading-strategy]]
+- [[stage3-execution-engine]]
