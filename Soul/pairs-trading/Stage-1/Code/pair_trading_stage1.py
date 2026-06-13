@@ -458,9 +458,12 @@ notebook = {
     "nbformat": 4, "nbformat_minor": 5
 }
 
+RUN_DATE_STR = datetime.now(tz=pytz.timezone('Asia/Kolkata')).strftime("%Y-%m-%d") if 'pytz' in globals() else datetime.now().strftime("%Y-%m-%d")
+KERNEL_SLUG = f"pairs-stage1-run-{RUN_DATE_STR}"
+
 kernel_meta = {
-    "id": f"{KAGGLE_USER}/pairs-trading-stage1-monthly",
-    "title": "Pairs Trading Stage 1 Monthly Re-Roll",
+    "id": f"{KAGGLE_USER}/{KERNEL_SLUG}",
+    "title": KERNEL_SLUG,
     "code_file": "pair_trading_stage1.ipynb",
     "language": "python",
     "kernel_type": "notebook",
