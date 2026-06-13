@@ -38,8 +38,12 @@ md("""# NSE Pairs Trading — Stage 1: Monthly Re-Roll Engine
 Fixed filenames overwritten each run — no old file accumulation ever.
 """)
 
-# ── CELL 0: Thread Lock + Imports ──
-md("## Cell 0 — Thread Lock & Imports")
+# ── CELL 0: Setup & Installs ──
+md("## Cell 0 — Install Dependencies")
+code("!pip install pyotp fyers_apiv3 -q")
+
+# ── CELL 1: Thread Lock + Imports ──
+md("## Cell 1 — Thread Lock & Imports")
 code("""
 import os
 os.environ["OPENBLAS_NUM_THREADS"] = "1"
