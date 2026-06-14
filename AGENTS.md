@@ -50,6 +50,20 @@ After completing any task:
 
 ---
 
+## POST-MORTEM KNOWLEDGE RULE
+
+Whenever the user halts an agent due to a hallucination, flawed logic, or failure to follow reference code:
+1. The agent MUST explicitly document the failure before writing any new code.
+2. The agent must create or update a dedicated `Wiki/QC/Post_Mortems/` document.
+3. The documentation must strictly contain:
+   - **The AI's Hallucination**: What the agent incorrectly assumed or did.
+   - **The Human Correction**: What the user explicitly pointed out.
+   - **The Structural Root Cause**: Why the AI's logic was wrong in the context of the specific domain.
+   - **The Permanent Rule**: A strict directive to prevent this specific failure globally.
+4. Update `Wiki/catalog.jsonl` and interlink the Post-Mortem to the project entity.
+
+---
+
 ## API CREDENTIALS
 
 All credentials stored in `~/.quant_env` — never committed to git.

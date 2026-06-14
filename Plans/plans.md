@@ -6,3 +6,5 @@ A centralized index of all execution plans created for this repository.
 - [[Souls pairs-trading creation]]
 - [[cloud-tick-pipeline]]
 - [[soul-skill-creation]]
+- [[plan-massive-cointegration]]
+- [[plan-backtest-telemetry]]

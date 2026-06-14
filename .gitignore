@@ -8,3 +8,7 @@ Raw/Files/*
 Drafts/
 Raw/Sources/attachments/*.html
 Raw/Sources/attachments/*.HTML
+*.sqlite
+kaggle_final_output/
+kaggle_final_output_v2/
+kaggle_error_logs/

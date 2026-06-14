@@ -11,7 +11,7 @@ created: '2026-06-10'
 # Pairs Trading Strategy
 **Type**: Entity  
 **Domain**: Quantitative Finance / Statistical Arbitrage  
-**Status**: ✅ Fully validated — 500 pairs, 5.5 months, cointegration filter produces profitable portfolio  
+**Status**: ✅ Fully validated — 124,750 pairs (entire NSE 500 combinations matrix), 5.5 months, Lazy Cointegration filter produces profitable portfolio  
 **Soul Location**: `Soul/pairs-trading/`  
 **Updated**: 2026-06-10
 
@@ -29,11 +29,11 @@ An intraday mean-reversion strategy that trades the **lagging asset** in an NSE 
 
 | Stage | Tool | Key Output |
 |---|---|---|
-| 1 — Pair Discovery | Pearson correlation of log-returns | `pairs_top500.csv` (Top 500 by ρ) |
-| **1B — Cointegration** | Engle-Granger ADF on continuous OLS spread | `adf_pval` per pair |
+| 1 — Pair Discovery | Pearson correlation of log-returns | `pairs_all.csv` (All 124,750 valid pairs) |
+| **1B — Cointegration** | Lazy Engle-Granger ADF on profitable spread | `adf_pval` per profitable pair |
 | 2 — Q Calibration | OU Chunked Fit (2 methods) | Q, P0 per pair per method |
 | 3A — Kalman Execution | Kalman Filter + Z-score backtest | Net PnL (Worst-Case / DR) |
-| **3B — OLS Execution** | Continuous Vectorized Rolling OLS | Net PnL, ADF p-val per pair |
+| **3B — Numba OLS Execution** | Continuous Vectorized Numba OLS | Net PnL, Trades, WinRate per pair |
 
 ---
 
@@ -84,8 +84,10 @@ Top pairs confirmed structurally cointegrated by intraday Engle-Granger ADF test
 - Medoid for dominant regime — not mean, not median
 - **Critical Z-Score Fix**: `ZSCORE_WINDOW = 7500` (20 days). The original 375-bar (1-day) window re-centered faster than the true 642–3400 minute half-lives, causing premature exits and friction death.
 - **Cointegration Filter**: ADF must be run on Continuous OLS spread (not Kalman, not EOD OLS). Only method that gives valid, meaningful p-values.
+- **Numba Execution**: Testing combinatorial spaces N > 10,000 mandates C++ compilation via Numba `@njit` and multiprocessing via `joblib`. Pure Python sequential backtests crash the Kaggle 12-hour timeout.
+- **Lazy Evaluation**: The 1.5s/pair ADF test must be executed _after_ the 9ms/pair Numba backtest, applied only to profitable pairs. This drops Kaggle runtime from 52 hours down to 1.5 hours.
 
-→ All decisions: [[QC-decisions-pairs-trading]]
+→ All decisions: [[QC-decisions-pairs-trading]], [[PM_125h_Kaggle_Timeout]]
 
 ---
 

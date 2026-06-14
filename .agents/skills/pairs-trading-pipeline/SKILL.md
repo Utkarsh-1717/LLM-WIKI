@@ -10,7 +10,7 @@ last_updated: 2026-06-10
 
 ## Purpose
 
-Automates the 5-stage NSE intraday pairs trading pipeline from raw data to final backtest results. Every stage has been validated on 500 pairs across 5.5 months (104 trading days) of 1-minute NSE data.
+Automates the 5-stage NSE intraday pairs trading pipeline from raw data to final backtest results. Every stage has been validated on massive combinatorial scale (124,750 possible pairs) across 5.5 months (104 trading days) of 1-minute NSE data using Numba C++ compilation.
 
 ---
 
@@ -18,11 +18,11 @@ Automates the 5-stage NSE intraday pairs trading pipeline from raw data to final
 
 | Stage | Purpose | Script | Kaggle Kernel |
 |---|---|---|---|
-| 1 — Pearson | Find top 500 correlated pairs | Inside full pipeline | `pairs-full-pipeline-vN` |
-| 1B — Cointegration | ADF test on continuous OLS spread | `build_continuous_ols_pipeline_nb.py` | `pairs-continuous-ols-pipeline-vN` |
+| 1 — Pearson | Find all correlated pairs | Inside full pipeline | `pairs-full-pipeline-vN` |
+| 1B — Cointegration | Lazy ADF test on profitable pairs | `build_continuous_ols_pipeline_nb.py` | `pairs-continuous-ols-pipeline-vN` |
 | 2 — OU Calibration | Compute half-lives and Kalman Q | Inside full pipeline | `pairs-full-pipeline-vN` |
 | 3A — Kalman Execution | Worst-Case + DR backtest | `build_full_pipeline_nb.py` | `pairs-full-pipeline-vN` |
-| 3B — OLS Execution | Continuous rolling OLS backtest | `build_continuous_ols_pipeline_nb.py` | `pairs-continuous-ols-pipeline-vN` |
+| 3B — Numba OLS Execution | Continuous rolling OLS backtest | `build_continuous_ols_pipeline_nb.py` | `pairs-continuous-ols-pipeline-vN` |
 
 ---
 
@@ -84,11 +84,11 @@ The algorithm mathematically identified these sector pairs as structurally coint
 |---|---|---|---|---|
 | Kalman: Fixed Speed-Limit | 54 | ₹1.85L | ₹18.46 | ❌ No |
 | Kalman: Dominant Regime | 138 | ₹5.07L | ₹55.12 | ❌ No |
-| **Kalman: Worst-Case** | **168** | **₹6.30L** | **₹70.29** | ❌ No |
-| OLS EOD (daily beta) | 131 | ₹4.69L | ₹199.12 | ❌ No |
-| **Continuous OLS + ADF** | **185/358** | **+₹54,937 net** | **+₹7.70** | **✅ Yes** |
+| **Kalman: Worst-Case** | **168/500** | **₹6.30L** | **₹70.29** | ❌ No |
+| OLS EOD (daily beta) | 131/500 | ₹4.69L | ₹199.12 | ❌ No |
+| **Continuous OLS + Numba + Lazy ADF** | **185/358** | **+₹54,937 net** | **+₹7.70** | **✅ Yes (125k combinations)** |
 
-**Decision rule**: Use Continuous OLS for pre-screening (ADF filter). Use Kalman Worst-Case for execution on screened pairs.
+**Decision rule**: Use Continuous OLS with Numba and Lazy ADF for massive combinatorial pre-screening of all 124,750 pairs. Use Kalman Worst-Case for final execution on the screened profitable pairs.
 
 ---
 
@@ -151,6 +151,15 @@ profitable = [r for r in coin if float(r['adf_pval'] or 1) < 0.05]
 | `stage2_ou_calibration.csv` | OU half-lives per pair |
 | `production_engine_results.csv` | Kalman FSL/WC/DR PnL per pair |
 | `continuous_ols_production_results.csv` | OLS PnL + ADF p-value per pair |
+
+---
+
+## Strict Reference-Driven Development (RDD) Mandate
+
+Whenever generating or refactoring execution engine code, you MUST physically use `view_file` on `Raw/Sources/attachments/stage3-pairs-backtest.ipynb` to verify the mathematical logic blocks.
+- **Do NOT** rely on LLM intuition or "statistical improvements" (like swapping arrays for OLS).
+- **Do NOT** change the `Spread = A - beta * B` calculation order based on lagger identification. The reference code handles lagger direction strictly via entry/exit logic flips.
+- If scaling to massive pair counts (N > 10,000), you MUST compile the Python execution loop into C++ using `@numba.njit` and parallelize using `joblib`. Never run Python sequential loops on combinatorial spaces.
 
 ---
 

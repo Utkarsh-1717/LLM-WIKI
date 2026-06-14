@@ -29,6 +29,8 @@ Pairs are identified by computing the **Pearson correlation of log-returns** acr
 - Minimum 5,000 overlapping bars; p < 0.05 statistical significance
 - Top 500 by Pearson ρ passed to Stage 1B/Stage 2
 
+**Status**: Verified in Production (2026-06-10). Note: While Pearson correlation is mathematically useless for predicting actual pairs trading PnL (as proved by the 125k pair scan), it serves purely as a loose, fast heuristic to filter the initial $N^2$ combinations down to a manageable size before heavy modeling.
+
 → Full details: [[stage1-pearson-screening]]
 
 ---
@@ -137,7 +139,21 @@ $$v_t = y_t - H_t \hat{\theta}_{t|t-1} \qquad \text{where } H_t = [\ln P_{B,t},\
 
 ### 5.3 Method B — Continuous Vectorized Rolling OLS Execution (NEW)
 
-Instead of a Kalman filter, beta and alpha are computed using rolling 7,500-bar vectorized OLS (updating every minute). This generates a smooth, continuous spread that is identical to the Stage 1B cointegration test spread, ensuring **perfect alignment** between the cointegration filter and the execution signal.
+### 5.3.4. Continuous Vectorized Rolling OLS
+
+A highly scalable alternative to the Kalman Filter. Beta and alpha are updated every 1-minute bar using a 7,500-bar rolling window computed entirely via Pandas vectorized operations.
+
+**Why it exists:**
+- Eliminates Kalman filter complexity and Q-calibration overhead
+- Generates a **smooth, continuous spread** suitable for valid Engle-Granger cointegration testing
+- Allows scanning of all 124,750 possible pair combinations in ~1.5 hours using Numba C++ JIT compilation.
+
+**Execution Engine Features:**
+- `is_locked_out` state strictly enforced: if forced out at EOD, the engine cannot re-enter until the Z-Score naturally resets.
+- Exact Zerodha Equity MIS Fee implementation (brokerage capped at ₹20, STT 0.025% sell-side, etc.)
+- **Walk-Forward Predictive Parameter Extraction**: Extracts deep physical structural characteristics of the spread (`spread_vol`, `mean_abs_dev`, `zero_crossings`, `half_life`, `kalman_q`) completely independent of hindsight backtest PnL to allow for robust predictive ranking.
+
+See: `[[stage3b-continuous-ols]]`
 
 ```python
 beta   = ya.rolling(7500).cov(yb) / yb.rolling(7500).var()

@@ -60,6 +60,22 @@ First 7,500 bars (20 days) are the warmup period — no trades during this windo
 
 ---
 
+## 4b. Walk-Forward Predictive Parameter Extraction
+As of Version 5 of the massive sweep, the Numba engine extracts deep physical structural characteristics of the spread in addition to the backtest results. These parameters are strictly independent (ex-ante) and will be used to construct a walk-forward ranking filter that does not rely on hindsight PnL.
+Extracted metrics per pair include:
+- **Physical Ex-Ante Metrics**: `spread_vol`, `mean_abs_dev`, `zero_crossings`, `half_life` (via OU auto-correlation), `kalman_q` (process variance).
+- **Hindsight Derived Metrics**: `ols_gross_pnl`, `ols_net_pnl`, `gross_win_rate`, `net_win_rate`, `mean_rev_exits`, `eod_exits`, `avg_price_captured`, `avg_fee_drag`.
+
+---
+
+## 4c. Exact Zerodha Equity MIS Fee Engine & Lagger Lockout
+Unlike generic percentage friction, the Numba engine mathematically computes the exact transaction cost to the literal cent for every single execution.
+`Total_Fee = Brokerage (min(0.0003, 20)) + STT (0.00025 sell-only) + NSE Trans (0.0000325) + GST (18% on Brok+NSE) + SEBI + Stamp (buy-only)`.
+
+Additionally, the execution logic perfectly mirrors the `is_locked_out` state: If a trade is forced to close at 15:15 EOD, the engine is forbidden from re-entering until the Z-score naturally decays back into the neutral zone (`-1.0 < Z < 1.0`), preventing friction-driven "trade spam."
+
+---
+
 ## 5. Z-Score Signal Generation
 
 Same as the Kalman method, but the spread is now the OLS spread rather than the Kalman innovation:

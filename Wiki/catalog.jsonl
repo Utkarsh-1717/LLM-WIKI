@@ -50,3 +50,11 @@
 {"path": "PROJECT.md", "title": "Project Overview", "tags": ["project"], "topics": ["overview"], "sources": [], "source_count": 0, "updated": "2026-06-10"}
 {"path": "AGENTS.md", "title": "Agent Directives", "tags": ["concept"], "topics": ["agents", "rules"], "sources": [], "source_count": 0, "updated": "2026-06-10"}
 {"path": "Welcome.md", "title": "Welcome", "tags": ["topic"], "topics": ["welcome"], "sources": [], "source_count": 0, "updated": "2026-06-10"}
+{"path": "Wiki/QC/Post_Mortems/README.md", "title": "post-mortems-index", "tag": "concept", "topics": "[qc, post-mortem, rules]", "sources": [], "updated": "2026-06-12"}
+{"path": "Wiki/QC/Post_Mortems/PM_125h_Kaggle_Timeout.md", "title": "PM_125h_Kaggle_Timeout", "tag": "concept", "topics": "[qc, post-mortem, kaggle, performance, numba]", "sources": [], "updated": "2026-06-13"}
+{"path": "Wiki/soul-production-compiler.md", "title": "soul-production-compiler", "tag": "concept", "topics": "[production, compiler, soul]", "sources": [], "updated": "2026-06-13"}
+{"path": "Wiki/Logs/session-2026-06-13.md", "title": "session-2026-06-13", "tag": "log", "topics": "[pairs-trading, numba, scale, kaggle, joblib]", "sources": [], "updated": "2026-06-13"}
+{"id": "predictive-parameter-extraction", "path": "Wiki/Concepts/predictive-parameter-extraction.md", "type": "concept", "description": "Explains why hindsight PnL is dangerous and details the physical spread metrics (Half-life, Kalman Q, Volatility) needed for walk-forward prediction."}
+{"id": "correlation-vs-cointegration-fallacy", "path": "Wiki/Concepts/correlation-vs-cointegration-fallacy.md", "type": "concept", "description": "Mathematical proof from 125,000 pair scan showing Pearson correlation has zero/negative correlation with pairs trading PnL."}
+{"id": "PM_Lagger_Lockout_Failure", "path": "Wiki/QC/Post_Mortems/PM_Lagger_Lockout_Failure.md", "type": "post-mortem", "description": "Failure of Numba engine to lock out strategy after forced 15:15 exit, leading to trade spam. Fixed via is_locked_out state."}
+{"id": "walkforward-physics-analysis", "path": "Soul/pairs-trading/Conclusions/walkforward-physics-analysis.md", "type": "conclusion", "description": "Deep analysis of the 125,000 pair universe showing that Half-Life < 1000, Spread Vol > 0.045, and ADF p-val < 0.005 predict the Elite Top 50 profitable pairs."}

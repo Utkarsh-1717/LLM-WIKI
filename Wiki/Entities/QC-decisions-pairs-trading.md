@@ -142,6 +142,54 @@ All open positions are forcibly closed at 15:15 PM regardless of Z-score state.
 
 ---
 
+## 11. Reference-Driven Execution (No OLS Swapping)
+
+**What agents hallucinated**: When detecting that Asset B is the lagger, agents attempted to physically swap the `A` and `B` arrays before the OLS/Kalman calculation to "fix" the regression math (forcing `B` to be regressed against `A`).
+
+**Why it is rejected**: The pipeline's architecture dictates that `Asset A` is *always* the dependent variable and `Asset B` is *always* the independent variable for the spread calculation. The entry logic handles the directional flip perfectly. Swapping the arrays fundamentally breaks the structural comparability of the spread across the backtest.
+
+**Rule**: NEVER modify the `Spread = A - beta*B` calculation order based on lagger detection. The arrays must remain in their original order. Only flip the *entry direction* (Long vs Short) based on which asset is the lagger.
+
+---
+
+## 12. No Sequential Python Loops for N > 10,000 Pairs (The 125h Timeout)
+
+**What agents hallucinated**: Attempting to run a standard Python sequential `for t in range(...)` backtest loop over the entire 124,750 possible pair combinations of the NSE 500 matrix.
+
+**Why it is rejected**: Python is interpreted, and iterating over millions of rows of DataFrame logic causes algorithmic times of ~3.6 seconds per pair. 124,750 pairs × 3.6s = 125 hours. Kaggle kernels enforce a strict 12-hour timeout. This approach mathematically guarantees failure.
+
+**Rule**: Any execution engine meant to scale across combinatorial spaces (N > 10,000 pairs) MUST use Numba C++ compilation (`@njit`) to execute the state-dependent trading logic in microseconds, and MUST utilize `joblib.Parallel` to divide the workload across multiple CPU cores.
+
+---
+
+## 13. Lazy Evaluation for Heavy Statistical Tests
+
+**What agents hallucinated**: Running the `adfuller` Engle-Granger Cointegration test (which takes ~1.5 seconds per pair) on every single pair _before_ checking if the pair is actually profitable.
+
+**Why it is rejected**: Running a 1.5s test on 124,750 pairs takes 52 hours. Running the test on pairs that generate negative PnL is mathematically pointless.
+
+**Rule**: Always use **Lazy Evaluation**. Execute the ultra-fast Numba backtest FIRST (9ms per pair). Then, ONLY run the heavy ADF Cointegration test on the subset of pairs that generated a strictly positive PnL. This slashes Kaggle compute time from 52 hours to 1.5 hours.
+
+## 14. Lagger Entry Lockout (is_locked_out)
+
+**What agents hallucinated**: When forced to square-off an open position at 15:15 (EOD Exit), agents allowed the execution engine to immediately re-enter the exact same trade on the very next minute (15:16 or the next morning at 09:15) if the Z-Score was still > 2.0.
+
+**Why it is rejected**: This creates artificial "trade spam" that burns capital through continuous friction, inflating trade counts without capturing any mean-reverting movement. Once forced out, the engine must wait for the spread structure to physically reset before taking on new risk.
+
+**Rule**: Always implement an `is_locked_out` boolean state. If a trade is forced to close at EOD, the engine is locked out from re-entering *until* the Z-Score naturally falls back into the neutral zone (`-1.0 < Z < 1.0`).
+
+---
+
+## 15. Exact Equity MIS Friction vs Flat Percentages
+
+**What agents hallucinated**: Applying a generic flat `0.05%` friction applied evenly to the Gross PnL to simulate Indian retail brokerage costs.
+
+**Why it is rejected**: A flat percentage mathematically breaks down because Zerodha Equity MIS brokerage is capped (`min(0.03%, ₹20)` per leg), while STT is only applied to the sell-side. Furthermore, applying an exit fee correctly depends entirely on whether the specific asset leg was shorted or bought, as this affects the STT multiplier.
+
+**Rule**: All backtest engines must explicitly compute exact Zerodha Equity MIS friction using the discrete elements: Brokerage (capped at ₹20), STT (0.025% sell-side only), NSE Transaction Charges, 18% GST, SEBI, and Stamp Duty.
+
+---
+
 ## Connections
 
 - [[pairs-trading-strategy]]
@@ -153,3 +201,5 @@ All open positions are forcibly closed at 15:15 PM regardless of Z-score state.
 - [[pairs-stage1b-cointegration]]
 - [[continuous-ols-execution]]
 - [[backtest-record-pairs-trading]]
+- [[PM_125h_Kaggle_Timeout]]
+- [[soul-production-compiler]]
