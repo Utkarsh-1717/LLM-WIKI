@@ -5,7 +5,10 @@ Outputs: fixed-filename CSVs pushed to outputs/ in the same private GitHub repo.
 Safe Place is robust: files always overwritten, no old data accumulation.
 """
 import json, uuid, os
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
+
+# Standard library IST timezone (UTC + 5:30)
+IST = timezone(timedelta(hours=5, minutes=30))
 
 # ── ALL CREDENTIALS ──
 FYERS_USERNAME   = "FAI84454"
@@ -65,9 +68,11 @@ from fyers_apiv3 import fyersModel
 from statsmodels.tsa.stattools import adfuller
 from scipy.stats import t as t_dist
 
-RUN_DATE = datetime.now().strftime("%m-%d-%y")
-RUN_TS   = datetime.now().isoformat()
-print(f"Run Date : {RUN_DATE}")
+from datetime import timezone, timedelta
+ist = timezone(timedelta(hours=5, minutes=30))
+RUN_DATE = datetime.now(ist).strftime("%m-%d-%y")
+RUN_TS   = datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S")
+print(f"Run Date (IST): {RUN_DATE} | Time: {RUN_TS}")
 print(f"Run Time : {RUN_TS}")
 """)
 
@@ -459,7 +464,7 @@ notebook = {
     "nbformat": 4, "nbformat_minor": 5
 }
 
-RUN_DATE_STR = datetime.now(tz=pytz.timezone('Asia/Kolkata')).strftime("%Y-%m-%d") if 'pytz' in globals() else datetime.now().strftime("%Y-%m-%d")
+RUN_DATE_STR = datetime.now(IST).strftime("%Y-%m-%d")
 KERNEL_SLUG = f"pairs-stage1-run-{RUN_DATE_STR}"
 
 kernel_meta = {
